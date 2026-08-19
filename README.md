@@ -1,401 +1,615 @@
+<!-- ╔══════════════════════════════════════════════════════════════════════════╗ -->
+<!-- ║                                                                          ║ -->
+<!-- ║   ██████╗ ██████╗ ██████╗  █████╗ ███╗   ██╗    ██╗  ██╗██╗   ██╗██████╗ ║ -->
+<!-- ║  ██╔══██╗██╔══██╗██╔══██╗██╔══██╗████╗  ██║    ██║  ██║██║   ██║██╔══██╗ ║ -->
+<!-- ║  ███████║██████╔╝██████╔╝███████║██╔██╗ ██║    ███████║██║   ██║██║  ██║ ║ -->
+<!-- ║  ██╔══██║██╔══██╗██╔═══╝ ██╔══██║██║╚██╗██║    ██╔══██║██║   ██║██║  ██║ ║ -->
+<!-- ║  ██║  ██║██║  ██║██║     ██║  ██║██║ ╚████║    ██║  ██║╚██████╔╝██████╔╝ ║ -->
+<!-- ║  ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝     ╚═╝  ╚═╝╚═╝  ╚═══╝    ╚═╝  ╚═╝ ╚═════╝ ╚═════╝ ║ -->
+<!-- ║                                                                          ║ -->
+<!-- ║           GAMEIFIED RPG DEVELOPER PROFILE • CYBERPUNK EDITION            ║ -->
+<!-- ╚══════════════════════════════════════════════════════════════════════════╝ -->
+
 <div align="center">
 
-<!-- ========================= HERO HUD ========================= -->
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<!-- ░░░░░░░░░░░░░░░░░░░░░  SECTION 01 : PLAYER / HERO  ░░░░░░░░░░░░░░░░░ -->
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:050505,35:180000,70:B00020,100:FF3030&height=230&section=header&text=ARPAN%20DEEP%20DUBEY&fontSize=50&fontColor=ffffff&fontAlignY=38&animation=fadeIn&desc=AI%20PRODUCT%20DESIGNER%20%E2%80%A2%20FULL-STACK%20BUILDER&descAlignY=60&descSize=17&descColor=FFB8B8" width="100%"/>
+<img src="assets/pixel-background.png" width="100%" alt="Cyberpunk HUD Background"/>
 
 <br/>
 
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=19&duration=2400&pause=800&color=FF3B3B&center=true&vCenter=true&width=800&height=45&lines=%3E+INIT_PROFILE.EXE;%3E+DESIGN+%E2%86%92+BUILD+%E2%86%92+SHIP;%3E+AI+%C3%97+DESIGN+%C3%97+ENGINEERING;%3E+TURNING+IDEAS+INTO+REAL+PRODUCTS;%3E+READY_TO_CODE_%F0%9F%94%A5" alt="Terminal typing animation"/>
+<img src="https://readme-typing-svg.demolab.com?font=Press+Start+2P&weight=400&size=28&duration=3000&pause=1000&color=FF2020&center=true&vCenter=true&multiline=true&repeat=true&width=900&height=100&lines=%E2%96%88%E2%96%88+SYSTEM+BOOT+%E2%96%88%E2%96%88;PLAYER+DETECTED+%3A%3A+ARPAN+DEEP+DUBEY" alt="System Boot"/>
 
 <br/><br/>
 
-<!-- GAME STATS / LINKS -->
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=16&duration=2000&pause=600&color=FF4444&center=true&vCenter=true&width=800&height=40&lines=%3E+INITIALIZING+PROFILE.EXE...;%3E+LOADING+CHARACTER+DATA...;%3E+ESTABLISHING+NEURAL+LINK...;%3E+AI+PRODUCT+DESIGNER+%C3%97+FULL-STACK+BUILDER;%3E+ALL+SYSTEMS+OPERATIONAL+%E2%96%88" alt="Terminal Boot Animation"/>
+
+<br/><br/>
+
+<!-- QUICK ACCESS NAV -->
 
 <a href="https://arpanstudio.dev">
-<img src="https://img.shields.io/badge/%F0%9F%8C%90%20PORTFOLIO-FF3030?style=for-the-badge&labelColor=080808" />
+<img src="https://img.shields.io/badge/⚡_PORTFOLIO-FF2020?style=for-the-badge&labelColor=0A0A0A" />
 </a>
 &nbsp;
 <a href="https://www.linkedin.com/in/arpan-deep-dubey/">
-<img src="https://img.shields.io/badge/%F0%9F%92%BC%20LINKEDIN-E50914?style=for-the-badge&labelColor=080808" />
+<img src="https://img.shields.io/badge/🔗_LINKEDIN-CC0000?style=for-the-badge&labelColor=0A0A0A" />
 </a>
 &nbsp;
 <a href="mailto:contact@arpanstudio.dev">
-<img src="https://img.shields.io/badge/%F0%9F%93%A7%20EMAIL-FF4545?style=for-the-badge&labelColor=080808" />
+<img src="https://img.shields.io/badge/📡_EMAIL-990000?style=for-the-badge&labelColor=0A0A0A" />
 </a>
 &nbsp;
 <a href="https://github.com/adix-design">
-<img src="https://img.shields.io/badge/%F0%9F%90%99%20GITHUB-8B0000?style=for-the-badge&labelColor=080808" />
+<img src="https://img.shields.io/badge/🐙_GITHUB-660000?style=for-the-badge&labelColor=0A0A0A" />
 </a>
 
 <br/><br/>
 
-<img src="https://komarev.com/ghpvc/?username=adix-design&label=PROFILE%20VIEWS&color=FF3030&style=for-the-badge" />
+<img src="https://komarev.com/ghpvc/?username=adix-design&label=⬡+PROFILE+SCANS&color=FF2020&style=flat-square" alt="Profile Views"/>
 
 </div>
-
-🎮 PLAYER PROFILE
-
-<table>
-<tr>
-<td width="56%" valign="top">
-
-🧑‍💻 ARPAN DEEP DUBEY
-
-Class: AI PRODUCT DESIGNER
-Role: FULL-STACK BUILDER
-Location: INDIA
-Current Mode: BUILDING
-Mission: TURN IDEAS INTO PRODUCTS
 
 <br/>
 
-❤️ HEALTH
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<!-- ░░░░░░░░░░░░░░░░░░  SECTION 02 : PLAYER PROFILE  ░░░░░░░░░░░░░░░░░░ -->
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
 
-████████████████████ 100%
+<div align="center">
 
-⚡ SPECIALIZATION
+<img src="https://img.shields.io/badge/-%E2%96%90%E2%96%90%E2%96%90+02+%3A%3A+PLAYER+PROFILE+%E2%96%90%E2%96%90%E2%96%90-FF2020?style=for-the-badge&labelColor=0A0A0A" />
 
-AI • PRODUCT DESIGN • WEB • AUTOMATION
-
-🎯 PLAYSTYLE
-
-Design-first.
-Build fast.
-Ship real things.
-Iterate relentlessly.
-
-</td>
-
-<td width="44%" valign="top">
-
-╭──────────────────────────────╮
-│      // DEVELOPER HUD       │
-├──────────────────────────────┤
-│ name   :: Arpan Deep Dubey  │
-│ role   :: AI Product Design │
-│ stack  :: React / Node / AI │
-│ focus  :: Build real things │
-│ status :: ONLINE             │
-│                              │
-│ [ DESIGN ] -> [ BUILD ]     │
-│       -> [ SHIP ] -> [ XP ] │
-╰──────────────────────────────╯
+</div>
 
 <br/>
 
-<div align="center">
+<table>
+<tr>
 
-READY TO CODE
+<td width="30%" align="center" valign="top">
 
-</div>
+<br/>
+
+<img src="assets/arpan-portrait.jpeg" width="240" style="border-radius: 12px;" alt="Arpan Deep Dubey"/>
+
+<br/><br/>
+
+<img src="assets/sprites/player-portrait.png" width="160" alt="Pixel Arpan"/>
+
+<br/>
 
 </td>
+
+<td width="70%" valign="top">
+
+```
+╔══════════════════════════════════════════════════════════════╗
+║                    ◆ PLAYER DATA FILE ◆                     ║
+╠══════════════════════════════════════════════════════════════╣
+║                                                              ║
+║  CODENAME    :: ARPAN DEEP DUBEY                            ║
+║  CLASS       :: AI PRODUCT DESIGNER                         ║
+║  SUBCLASS    :: FULL-STACK BUILDER                          ║
+║  REGION      :: INDIA                                       ║
+║  FACTION     :: ARPAN STUDIO                                ║
+║  STATUS      :: ◉ ONLINE                                    ║
+║                                                              ║
+╠══════════════════════════════════════════════════════════════╣
+║                                                              ║
+║  ❤️ HP   ██████████████████████████████████████████░░  95%   ║
+║  ⚡ XP   █████████████████████████████████████░░░░░░  73%   ║
+║  🔥 STR  ████████████████████████████████░░░░░░░░░░  65%   ║
+║  🧠 INT  ██████████████████████████████████████████  100%   ║
+║  🎯 DEX  █████████████████████████████████████░░░░░  80%   ║
+║  🛡️ DEF  ██████████████████████████████████░░░░░░░░  70%   ║
+║                                                              ║
+╠══════════════════════════════════════════════════════════════╣
+║                                                              ║
+║  SPECIALIZATION :: AI × PRODUCT DESIGN × ENGINEERING        ║
+║  PLAYSTYLE      :: Design-first. Build fast. Ship real.     ║
+║  MISSION        :: Turn ideas into real, useful products.   ║
+║                                                              ║
+║  TRAITS                                                      ║
+║    ◈ Design-first approach                                  ║
+║    ◈ AI-assisted product development                        ║
+║    ◈ Full-stack web development                             ║
+║    ◈ Automation & intelligent workflows                     ║
+║    ◈ Relentless iteration                                   ║
+║                                                              ║
+╚══════════════════════════════════════════════════════════════╝
+```
+
+</td>
+
 </tr>
 </table>
 
-🗺️ QUEST BOARD
+<br/>
+
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<!-- ░░░░░░░░░░░░░░░░░░░  SECTION 03 : QUEST BOARD  ░░░░░░░░░░░░░░░░░░░░ -->
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
 
 <div align="center">
+
+<img src="https://img.shields.io/badge/-%E2%96%90%E2%96%90%E2%96%90+03+%3A%3A+QUEST+BOARD+%E2%96%90%E2%96%90%E2%96%90-FF2020?style=for-the-badge&labelColor=0A0A0A" />
+
+<br/><br/>
+
+<img src="https://readme-typing-svg.demolab.com?font=Press+Start+2P&size=11&duration=3000&pause=1500&color=FF2020&center=true&vCenter=true&width=500&height=30&lines=%3E+ACTIVE+QUESTS+%3A%3A+ACCEPT+%3F+%5BY%2FN%5D" alt="Quest Board"/>
+
+</div>
+
+<br/>
 
 <table>
 <tr>
 
-<td width="25%" valign="top">
+<td width="25%" valign="top" align="center">
 
-🤖 QUEST 01
+<img src="assets/sprites/skill.png" width="90" alt="Quest AI"/>
 
-AI PRODUCTS
+**`⚔️ QUEST 01`**
 
-XP +500
+**AI PRODUCTS**
 
-AI-powered applications, intelligent interfaces and useful workflows.
+```
+RANK    : ★★★★☆
+REWARD  : +500 XP
+STATUS  : IN PROGRESS
+```
 
-STATUS
+*Building AI-powered applications, intelligent interfaces & useful workflows.*
 
-IN PROGRESS
-
-Progress
-████████░░ 80%
-
-</td>
-
-<td width="25%" valign="top">
-
-🌐 QUEST 02
-
-WEB EXPERIENCES
-
-XP +350
-
-Modern, responsive and animated digital experiences.
-
-STATUS
-
-IN PROGRESS
-
-Progress
-███████░░░ 70%
+```
+▓▓▓▓▓▓▓▓░░  80%
+```
 
 </td>
 
-<td width="25%" valign="top">
+<td width="25%" valign="top" align="center">
 
-💻 QUEST 03
+<img src="assets/sprites/idle.png" width="50" alt="Quest Web"/>
 
-FULL-STACK APPS
+**`🌐 QUEST 02`**
 
-XP +450
+**WEB EXPERIENCES**
 
-End-to-end applications with polished frontend and backend systems.
+```
+RANK    : ★★★☆☆
+REWARD  : +350 XP
+STATUS  : IN PROGRESS
+```
 
-STATUS
+*Modern, responsive & animated digital experiences that captivate.*
 
-IN PROGRESS
-
-Progress
-███████░░░ 75%
-
-</td>
-
-<td width="25%" valign="top">
-
-⚙️ QUEST 04
-
-AUTOMATION
-
-XP +400
-
-AI, APIs and workflows that reduce repetitive work.
-
-STATUS
-
-IN PROGRESS
-
-Progress
-██████░░░░ 65%
+```
+▓▓▓▓▓▓▓░░░  70%
+```
 
 </td>
 
-</tr>
-</table>
+<td width="25%" valign="top" align="center">
 
-</div>
+<img src="assets/sprites/attack.png" width="60" alt="Quest FS"/>
 
-🧠 ABOUT / LOADOUT
+**`💻 QUEST 03`**
 
-<table>
-<tr>
+**FULL-STACK APPS**
 
-<td width="50%" valign="top">
+```
+RANK    : ★★★★☆
+REWARD  : +450 XP
+STATUS  : IN PROGRESS
+```
 
-🧠 ABOUT ME
+*End-to-end applications with polished frontend & backend systems.*
 
-I'm an AI Product Designer & Full-Stack Builder focused on creating intelligent, polished and useful digital experiences.
-
-🎨 Design-first approach
-
-🤖 AI-assisted product development
-
-💻 Full-stack web development
-
-⚙️ Automation & intelligent workflows
-
-🚀 Real-world business and personal products
-
-📚 Always learning and experimenting
-
-📍 India
-
-📬 contact@arpanstudio.dev
+```
+▓▓▓▓▓▓▓░░░  75%
+```
 
 </td>
 
-<td width="50%" valign="top">
+<td width="25%" valign="top" align="center">
 
-🎒 CURRENT LOADOUT
+<img src="assets/sprites/run.png" width="50" alt="Quest Auto"/>
 
-PRIMARY
-React
-Tailwind CSS
-Node.js
-MongoDB
+**`⚙️ QUEST 04`**
 
-DESIGN
-Figma
-UI / UX
-Product Thinking
+**AUTOMATION**
 
-AI POWER
-Cursor
-Claude
-Google AI
-AI Automation
+```
+RANK    : ★★★☆☆
+REWARD  : +400 XP
+STATUS  : IN PROGRESS
+```
 
-DEPLOYMENT
-Git
-GitHub
-Vercel
+*AI, APIs & workflows that eliminate repetitive work.*
+
+```
+▓▓▓▓▓▓░░░░  65%
+```
 
 </td>
 
 </tr>
 </table>
 
-⚔️ TECH ARSENAL
+<br/>
+
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<!-- ░░░░░░░░░░░░░░░░░░░  SECTION 04 : TECH ARSENAL  ░░░░░░░░░░░░░░░░░░░ -->
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
 
 <div align="center">
 
-FRONTEND
-
-<img src="https://skillicons.dev/icons?i=react,js,ts,html,css,tailwind,vite&theme=dark" />
+<img src="https://img.shields.io/badge/-%E2%96%90%E2%96%90%E2%96%90+04+%3A%3A+TECH+ARSENAL+%E2%96%90%E2%96%90%E2%96%90-FF2020?style=for-the-badge&labelColor=0A0A0A" />
 
 <br/><br/>
 
-BACKEND
+```
+                    ┌─────────────────────────────────────────────┐
+                    │         ⚔️  EQUIPPED LOADOUT  ⚔️            │
+                    │    >> OPTIMIZED FOR MAXIMUM OUTPUT <<       │
+                    └─────────────────────────────────────────────┘
+```
 
-<img src="https://skillicons.dev/icons?i=nodejs,express,mongodb&theme=dark" />
+<br/>
+
+**`▸ FRONTEND WEAPONS`**
+
+<img src="https://skillicons.dev/icons?i=react,nextjs,js,ts,html,css,tailwind,vite&theme=dark" />
 
 <br/><br/>
 
-TOOLS
+**`▸ BACKEND ARSENAL`**
+
+<img src="https://skillicons.dev/icons?i=nodejs,express,mongodb,firebase,python&theme=dark" />
+
+<br/><br/>
+
+**`▸ TOOLS & UTILITIES`**
 
 <img src="https://skillicons.dev/icons?i=git,github,figma,vscode,vercel&theme=dark" />
 
 <br/><br/>
 
-AI POWER
+**`▸ AI AUGMENTS`**
 
-<img src="https://img.shields.io/badge/CURSOR-080808?style=for-the-badge&logo=cursor&logoColor=FF3030" />
-<img src="https://img.shields.io/badge/CLAUDE-080808?style=for-the-badge&logo=anthropic&logoColor=FF3030" />
-<img src="https://img.shields.io/badge/GOOGLE%20AI-080808?style=for-the-badge&logo=google&logoColor=FF3030" />
-<img src="https://img.shields.io/badge/AI%20AUTOMATION-080808?style=for-the-badge&logo=openai&logoColor=FF3030" />
-
-</div>
-
-📊 GITHUB DASHBOARD
-
-<div align="center">
-
-<img src="https://github-readme-stats.vercel.app/api?username=adix-design&show_icons=true&include_all_commits=true&count_private=true&hide_border=true&bg_color=050505&title_color=FF3030&icon_color=FF4545&text_color=EEEEEE&ring_color=FF3030" width="49%" />
-
-<img src="https://github-readme-streak-stats.herokuapp.com/?user=adix-design&hide_border=true&background=050505&ring=FF3030&fire=FF4545&currStreakLabel=FF3030&sideLabels=AAAAAA&currStreakNum=FFFFFF&sideNums=FFFFFF&dates=777777" width="49%" />
+<img src="https://img.shields.io/badge/CURSOR-0A0A0A?style=for-the-badge&logo=cursor&logoColor=FF2020" />
+<img src="https://img.shields.io/badge/CLAUDE-0A0A0A?style=for-the-badge&logo=anthropic&logoColor=FF2020" />
+<img src="https://img.shields.io/badge/GEMINI-0A0A0A?style=for-the-badge&logo=google&logoColor=FF2020" />
+<img src="https://img.shields.io/badge/GPT-0A0A0A?style=for-the-badge&logo=openai&logoColor=FF2020" />
 
 <br/><br/>
 
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=adix-design&layout=compact&langs_count=8&hide_border=true&bg_color=050505&title_color=FF3030&text_color=EEEEEE" width="45%" />
+**`▸ DESIGN TOOLKIT`**
+
+<img src="https://img.shields.io/badge/FIGMA-0A0A0A?style=for-the-badge&logo=figma&logoColor=FF2020" />
+<img src="https://img.shields.io/badge/UI%2FUX-0A0A0A?style=for-the-badge&logoColor=FF2020" />
+<img src="https://img.shields.io/badge/PRODUCT%20THINKING-0A0A0A?style=for-the-badge&logoColor=FF2020" />
+<img src="https://img.shields.io/badge/PROTOTYPING-0A0A0A?style=for-the-badge&logoColor=FF2020" />
+
+<br/>
+
+```
+┌──────────────────────────────────────────────────────────────────┐
+│  LOADOUT STATUS : ◉ ALL SYSTEMS ARMED                           │
+│  COMBAT READY  : TRUE                                           │
+│  LAST UPGRADE  : AI AUGMENTATION MODULE v3.0                    │
+└──────────────────────────────────────────────────────────────────┘
+```
 
 </div>
 
-🐍 CONTRIBUTION SNAKE
+<br/>
+
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<!-- ░░░░░░░░░░░░░░░░░  SECTION 05 : GITHUB DASHBOARD  ░░░░░░░░░░░░░░░░░ -->
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
 
 <div align="center">
+
+<img src="https://img.shields.io/badge/-%E2%96%90%E2%96%90%E2%96%90+05+%3A%3A+GITHUB+DASHBOARD+%E2%96%90%E2%96%90%E2%96%90-FF2020?style=for-the-badge&labelColor=0A0A0A" />
+
+<br/><br/>
+
+<img src="https://readme-typing-svg.demolab.com?font=Press+Start+2P&size=10&duration=2500&pause=1000&color=FF2020&center=true&vCenter=true&width=500&height=25&lines=%3E+SCANNING+GITHUB+TELEMETRY...;%3E+LIVE+COMBAT+DATA+STREAM" alt="Dashboard Loading"/>
+
+<br/><br/>
+
+<!-- STATS ROW -->
+<img src="https://github-readme-stats.vercel.app/api?username=adix-design&show_icons=true&include_all_commits=true&count_private=true&hide_border=true&bg_color=0D0D0D&title_color=FF2020&icon_color=FF4040&text_color=C0C0C0&ring_color=FF2020&border_radius=8" width="49%" />
+&nbsp;
+<img src="https://github-readme-streak-stats.herokuapp.com/?user=adix-design&hide_border=true&background=0D0D0D&ring=FF2020&fire=FF4040&currStreakLabel=FF2020&sideLabels=888888&currStreakNum=FFFFFF&sideNums=FFFFFF&dates=555555&border_radius=8" width="49%" />
+
+<br/><br/>
+
+<!-- LANGUAGES -->
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=adix-design&layout=compact&langs_count=8&hide_border=true&bg_color=0D0D0D&title_color=FF2020&text_color=C0C0C0&border_radius=8" width="42%" />
+
+<br/><br/>
+
+<!-- ACTIVITY GRAPH -->
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=adix-design&bg_color=0D0D0D&color=FF2020&line=FF4040&point=FFFFFF&area=true&area_color=FF2020&hide_border=true&custom_title=COMMIT%20FREQUENCY%20%3A%3A%20NEURAL%20ACTIVITY" width="95%" />
+
+</div>
+
+<br/>
+
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<!-- ░░░░░░░░░░░░░░░░░  SECTION 06 : CONTRIBUTION SNAKE  ░░░░░░░░░░░░░░░ -->
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+
+<div align="center">
+
+<img src="https://img.shields.io/badge/-%E2%96%90%E2%96%90%E2%96%90+06+%3A%3A+CONTRIBUTION+SNAKE+%E2%96%90%E2%96%90%E2%96%90-FF2020?style=for-the-badge&labelColor=0A0A0A" />
+
+<br/><br/>
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/adix-design/adix-design/output/github-contribution-grid-snake-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/adix-design/adix-design/output/github-contribution-grid-snake.svg">
-  <img alt="GitHub contribution snake animation" src="https://raw.githubusercontent.com/adix-design/adix-design/output/github-contribution-grid-snake.svg" width="100%">
+  <img alt="GitHub Contribution Snake Animation" src="https://raw.githubusercontent.com/adix-design/adix-design/output/github-contribution-grid-snake-dark.svg" width="100%">
 </picture>
 
 <br/><br/>
 
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=14&duration=2200&pause=700&color=FF3030&center=true&vCenter=true&width=650&height=35&lines=%3E+feeding+the+graph...;%3E+keep+shipping...;%3E+XP+increasing...;%3E+next+quest+loading..." />
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=13&duration=2000&pause=800&color=FF2020&center=true&vCenter=true&width=600&height=30&lines=%3E+CONSUMING+CONTRIBUTIONS...;%3E+FEEDING+THE+GRAPH...;%3E+XP+ACCUMULATING...;%3E+NEXT+LEVEL+APPROACHING...;%3E+KEEP+SHIPPING+%E2%96%88" alt="Snake Terminal"/>
 
 </div>
 
-🏆 ACHIEVEMENTS
+<br/>
+
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<!-- ░░░░░░░░░░░░░░░░░░░░  SECTION 07 : ACHIEVEMENTS  ░░░░░░░░░░░░░░░░░░ -->
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
 
 <div align="center">
 
+<img src="https://img.shields.io/badge/-%E2%96%90%E2%96%90%E2%96%90+07+%3A%3A+ACHIEVEMENTS+%E2%96%90%E2%96%90%E2%96%90-FF2020?style=for-the-badge&labelColor=0A0A0A" />
+
+<br/><br/>
+
 <img src="https://github-profile-trophy.vercel.app/?username=adix-design&theme=radical&no-frame=true&no-bg=true&margin-w=8&column=7" width="95%" />
+
+<br/><br/>
+
+<table>
+<tr>
+
+<td align="center" width="16%">
+<img src="assets/sprites/celebrate.png" width="50" alt="Achievement"/>
+<br/>
+<sub><b>🏆 BUILDER</b></sub>
+<br/>
+<sub>Ship Real Products</sub>
+</td>
+
+<td align="center" width="16%">
+<img src="assets/sprites/head-fire.png" width="45" alt="Achievement"/>
+<br/>
+<sub><b>🔥 ON FIRE</b></sub>
+<br/>
+<sub>Streak Warrior</sub>
+</td>
+
+<td align="center" width="16%">
+<img src="assets/sprites/head-cool.png" width="45" alt="Achievement"/>
+<br/>
+<sub><b>😎 SMOOTH</b></sub>
+<br/>
+<sub>Clean Code</sub>
+</td>
+
+<td align="center" width="16%">
+<img src="assets/sprites/icon-react.png" width="40" alt="Achievement"/>
+<br/>
+<sub><b>⚛️ REACT PRO</b></sub>
+<br/>
+<sub>Frontend Master</sub>
+</td>
+
+<td align="center" width="16%">
+<img src="assets/sprites/icon-github.png" width="40" alt="Achievement"/>
+<br/>
+<sub><b>🐙 OPEN SRC</b></sub>
+<br/>
+<sub>GitHub Native</sub>
+</td>
+
+<td align="center" width="16%">
+<img src="assets/sprites/variant-headphones.png" width="55" alt="Achievement"/>
+<br/>
+<sub><b>🎧 FOCUSED</b></sub>
+<br/>
+<sub>Deep Work Mode</sub>
+</td>
+
+</tr>
+</table>
 
 </div>
 
-📈 PLAYER PROGRESSION
+<br/>
+
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<!-- ░░░░░░░░░░░░░░░░░  SECTION 08 : PLAYER PROGRESSION  ░░░░░░░░░░░░░░░ -->
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+
+<div align="center">
+
+<img src="https://img.shields.io/badge/-%E2%96%90%E2%96%90%E2%96%90+08+%3A%3A+PLAYER+PROGRESSION+%E2%96%90%E2%96%90%E2%96%90-FF2020?style=for-the-badge&labelColor=0A0A0A" />
+
+</div>
+
+<br/>
 
 <table>
 <tr>
 
 <td width="50%" valign="top">
 
-🔥 STREAK MODE
+<div align="center">
 
-<img src="https://github-readme-streak-stats.herokuapp.com/?user=adix-design&hide_border=true&background=080808&ring=FF3030&fire=FF3030&currStreakLabel=FF3030&sideLabels=AAAAAA&currStreakNum=FFFFFF&sideNums=FFFFFF&dates=777777" width="100%" />
+**`🔥 STREAK MODE`**
+
+<img src="https://github-readme-streak-stats.herokuapp.com/?user=adix-design&hide_border=true&background=0D0D0D&ring=FF2020&fire=FF4040&currStreakLabel=FF2020&sideLabels=888888&currStreakNum=FFFFFF&sideNums=FFFFFF&dates=555555&border_radius=8" width="100%" />
+
+</div>
 
 </td>
 
 <td width="50%" valign="top">
 
-🧩 TOP LANGUAGES
+<div align="center">
 
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=adix-design&layout=donut&langs_count=6&hide_border=true&bg_color=080808&title_color=FF3030&text_color=EEEEEE" width="100%" />
+**`🧩 LANGUAGE MASTERY`**
+
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=adix-design&layout=donut&langs_count=6&hide_border=true&bg_color=0D0D0D&title_color=FF2020&text_color=C0C0C0&border_radius=8" width="100%" />
+
+</div>
 
 </td>
 
 </tr>
 </table>
 
-🥇 RANK
+<br/>
 
 <div align="center">
 
-╭──────────────────────────────────────────────╮
-│                                              │
-│              🏆 BUILDER ELITE                │
-│                                              │
-│   DESIGN     █████████░░   90%             │
-│   BUILD      ████████░░░   82%             │
-│   SHIP       ███████░░░░   74%             │
-│   LEARN      ██████████░  100%             │
-│                                              │
-│             KEEP PUSHING.                   │
-╰──────────────────────────────────────────────╯
+```
+╔══════════════════════════════════════════════════════════════════╗
+║                                                                  ║
+║                   🎖️  CURRENT RANK : BUILDER ELITE              ║
+║                                                                  ║
+║   ┌──────────────────────────────────────────────────────────┐  ║
+║   │                                                          │  ║
+║   │   🎨 DESIGN      ██████████████████████████████░░  90%  │  ║
+║   │   💻 BUILD       █████████████████████████░░░░░░░  82%  │  ║
+║   │   🚀 SHIP        ████████████████████████░░░░░░░░  74%  │  ║
+║   │   🧠 LEARN       ██████████████████████████████████ 100% │  ║
+║   │   🤖 AI          █████████████████████████████░░░  88%  │  ║
+║   │   ⚡ SPEED       ██████████████████████████░░░░░░  78%  │  ║
+║   │                                                          │  ║
+║   └──────────────────────────────────────────────────────────┘  ║
+║                                                                  ║
+║              ◈ NEXT RANK : LEGENDARY ARCHITECT ◈                ║
+║              ◈ REQUIREMENT : KEEP SHIPPING.    ◈                ║
+║                                                                  ║
+╚══════════════════════════════════════════════════════════════════╝
+```
+
+<br/>
+
+<img src="assets/sprites/terminal-bar.png" width="400" alt="HP Bar"/>
 
 </div>
 
-🚀 CURRENT MISSION
+<br/>
+
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<!-- ░░░░░░░░░░░░░░░░░  SECTION 09 : CONTACT TERMINAL  ░░░░░░░░░░░░░░░░░ -->
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
 
 <div align="center">
 
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=20&duration=2500&pause=900&color=FF3030&center=true&vCenter=true&width=850&height=45&lines=Build+better+products.;Make+AI+useful.;Create+beautiful+interfaces.;Ship+what+I+learn." />
+<img src="https://img.shields.io/badge/-%E2%96%90%E2%96%90%E2%96%90+09+%3A%3A+CONTACT+TERMINAL+%E2%96%90%E2%96%90%E2%96%90-FF2020?style=for-the-badge&labelColor=0A0A0A" />
 
-</div>
+<br/><br/>
 
-📡 CONTACT / TERMINAL
+<img src="assets/sprites/variant-headphones.png" width="120" alt="Contact Avatar"/>
 
-<div align="center">
+<br/><br/>
 
-╭────────────────────────────────────────────────────╮
-│                                                    │
-│  > open_connection --arpan                         │
-│                                                    │
-│  PORTFOLIO  :: https://arpanstudio.dev             │
-│  EMAIL      :: contact@arpanstudio.dev             │
-│  LINKEDIN   :: linkedin.com/in/arpan-deep-dubey    │
-│  GITHUB     :: github.com/adix-design              │
-│                                                    │
-│  STATUS     :: AVAILABLE FOR INTERESTING BUILDS   │
-│                                                    │
-╰────────────────────────────────────────────────────╯
+```
+╔══════════════════════════════════════════════════════════════╗
+║                                                              ║
+║  > ssh arpan@cyberspace --connect                           ║
+║                                                              ║
+║  ┌──────────────────────────────────────────────────────┐   ║
+║  │  CONNECTION ESTABLISHED                               │   ║
+║  │                                                       │   ║
+║  │  PORTFOLIO  ─── https://arpanstudio.dev              │   ║
+║  │  EMAIL      ─── contact@arpanstudio.dev              │   ║
+║  │  LINKEDIN   ─── linkedin.com/in/arpan-deep-dubey     │   ║
+║  │  GITHUB     ─── github.com/adix-design               │   ║
+║  │                                                       │   ║
+║  │  STATUS     ─── ◉ AVAILABLE FOR INTERESTING BUILDS   │   ║
+║  │  RESPONSE   ─── < 24 HOURS                           │   ║
+║  └──────────────────────────────────────────────────────┘   ║
+║                                                              ║
+║  > AWAITING TRANSMISSION... █                               ║
+║                                                              ║
+╚══════════════════════════════════════════════════════════════╝
+```
 
 <br/>
 
 <a href="mailto:contact@arpanstudio.dev">
-<img src="https://img.shields.io/badge/EMAIL%20ME-FF3030?style=for-the-badge&labelColor=080808" />
+<img src="https://img.shields.io/badge/📡_SEND_TRANSMISSION-FF2020?style=for-the-badge&labelColor=0A0A0A" />
 </a>
-&nbsp;
+&nbsp;&nbsp;
 <a href="https://arpanstudio.dev">
-<img src="https://img.shields.io/badge/VISIT%20PORTFOLIO-E50914?style=for-the-badge&labelColor=080808" />
+<img src="https://img.shields.io/badge/🌐_VISIT_HQ-CC0000?style=for-the-badge&labelColor=0A0A0A" />
+</a>
+&nbsp;&nbsp;
+<a href="https://www.linkedin.com/in/arpan-deep-dubey/">
+<img src="https://img.shields.io/badge/🔗_NEURAL_LINK-990000?style=for-the-badge&labelColor=0A0A0A" />
 </a>
 
-</div>
+<br/><br/>
+
+<!-- MISSION STATEMENT -->
+
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=18&duration=2500&pause=900&color=FF2020&center=true&vCenter=true&width=850&height=45&lines=Build+better+products.;Make+AI+useful.;Create+beautiful+interfaces.;Ship+what+I+learn.;Design+%E2%86%92+Build+%E2%86%92+Ship+%E2%86%92+Repeat." alt="Mission Statement"/>
+
+<br/><br/>
+
+<!-- PIXEL ART FULL SPRITE SHEET -->
+
+<details>
+<summary><b>🎮 VIEW FULL PIXEL SPRITE SHEET</b></summary>
+<br/>
+<img src="assets/arpan-pixel.png" width="700" alt="Full Pixel Art Sprite Sheet"/>
+</details>
+
+<br/><br/>
+
+<!-- FOOTER -->
+
+```
+┌──────────────────────────────────────────────────────────────────────┐
+│                                                                      │
+│   > THANK YOU FOR VISITING, TRAVELER.                               │
+│   > MAY YOUR CODE COMPILE AND YOUR DEPLOYS SUCCEED.                 │
+│   > UNTIL NEXT TIME... ◉                                            │
+│                                                                      │
+│                      ◆ ARPAN DEEP DUBEY ◆                           │
+│                 AI PRODUCT DESIGNER × FULL-STACK BUILDER            │
+│                                                                      │
+│   ╔═══╗  ╔═══╗  ╔═══╗  ╔═══╗  ╔═══╗  ╔═══╗                       │
+│   ║ D ║  ║ E ║  ║ S ║  ║ I ║  ║ G ║  ║ N ║                       │
+│   ╚═══╝  ╚═══╝  ╚═══╝  ╚═══╝  ╚═══╝  ╚═══╝                       │
+│                                                                      │
+│   ╔═══╗  ╔═══╗  ╔═══╗  ╔═══╗  ╔═══╗                               │
+│   ║ B ║  ║ U ║  ║ I ║  ║ L ║  ║ D ║                               │
+│   ╚═══╝  ╚═══╝  ╚═══╝  ╚═══╝  ╚═══╝                               │
+│                                                                      │
+│   ╔═══╗  ╔═══╗  ╔═══╗  ╔═══╗                                       │
+│   ║ S ║  ║ H ║  ║ I ║  ║ P ║                                       │
+│   ╚═══╝  ╚═══╝  ╚═══╝  ╚═══╝                                       │
+│                                                                      │
+└──────────────────────────────────────────────────────────────────────┘
+```
 
 <br/>
 
-<div align="center">
-
-THANK YOU FOR VISITING. ❤️
-
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:FF3030,35:B00020,70:180000,100:050505&height=150&section=footer" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:FF2020,35:CC0000,70:660000,100:0A0A0A&height=120&section=footer" width="100%"/>
 
 </div>
