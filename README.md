@@ -1,16 +1,124 @@
-## Hi there 👋
+<div align="center">
 
-<!--
-**adix-design/adix-design** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+<!-- Animated gradient banner -->
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:FF512F,100:F09819&height=220&section=header&text=Arpan%20Deep%20Dubey&fontSize=46&fontColor=ffffff&animation=fadeIn&fontAlignY=38&desc=AI%20Product%20Designer%20%7C%20Full-Stack%20Builder&descAlignY=58&descSize=18" width="100%"/>
 
-Here are some ideas to get you started:
+<!-- Social badges -->
+<p>
+  <a href="https://arpanstudio.dev">
+    <img src="https://img.shields.io/badge/Portfolio-arpanstudio.dev-FF512F?style=for-the-badge&logo=vercel&logoColor=white&labelColor=1a1a1a" />
+  </a>
+  <a href="https://www.linkedin.com/in/arpan-deep-dubey/">
+    <img src="https://img.shields.io/badge/LinkedIn-Connect-F09819?style=for-the-badge&logo=linkedin&logoColor=white&labelColor=1a1a1a" />
+  </a>
+  <a href="mailto:contact@arpanstudio.dev">
+    <img src="https://img.shields.io/badge/Email-Contact-FF6B35?style=for-the-badge&logo=gmail&logoColor=white&labelColor=1a1a1a" />
+  </a>
+  <a href="https://github.com/adix-design">
+    <img src="https://img.shields.io/badge/GitHub-Follow-FF7A18?style=for-the-badge&logo=github&logoColor=white&labelColor=1a1a1a" />
+  </a>
+</p>
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+<!-- Animated typing tagline -->
+<a href="https://github.com/adix-design">
+  <img src="https://readme-typing-svg.demolab.com/?font=Fira+Code&size=22&duration=3000&pause=1000&color=FF7A18&center=true&vCenter=true&width=650&lines=Designing+AI-powered+products;Building+with+Cursor+%2B+Claude+%2B+Lovable;Design-first+%E2%80%A2+Agent-directed+engineering;Turning+ideas+into+shipped+products" alt="Typing SVG" />
+</a>
+
+</div>
+
+<br/>
+
+<div align="center">
+  <img src="https://capsule-render.vercel.app/api?type=rect&color=0:1a1a1a,100:1a1a1a&height=2&width=900" />
+</div>
+
+## 🔥 About Me
+
+<table>
+<tr>
+<td width="60%" valign="top">
+
+- 🎨 **AI Product Designer & Full-Stack Builder** based in Indore, India
+- 🚀 Design-first — I build real products using AI coding agents like **Cursor, Lovable, Bolt, Claude & Google AI Studio**
+- 🧩 Currently building product for a family logistics business, plus personal & client projects
+- 🌌 Obsessed with dark, glassmorphic, animation-heavy interfaces
+- 📬 Reach me at **contact@arpanstudio.dev**
+
+</td>
+<td width="40%" valign="top" align="center">
+
+```yaml
+name: Arpan Deep Dubey
+role: AI Product Designer
+stack: [React, Tailwind, AI Agents]
+focus: Design → Ship → Iterate
+status: "Building in public 🔥"
+```
+
+</td>
+</tr>
+</table>
+
+<div align="center">
+  <img src="https://capsule-render.vercel.app/api?type=rect&color=0:1a1a1a,100:1a1a1a&height=2&width=900" />
+</div>
+
+## 🛠️ Tech & Tools
+
+<div align="center">
+
+![React](https://img.shields.io/badge/React-1a1a1a?style=for-the-badge&logo=react&logoColor=FF7A18)
+![TypeScript](https://img.shields.io/badge/TypeScript-1a1a1a?style=for-the-badge&logo=typescript&logoColor=FF7A18)
+![TailwindCSS](https://img.shields.io/badge/TailwindCSS-1a1a1a?style=for-the-badge&logo=tailwindcss&logoColor=FF7A18)
+![Node.js](https://img.shields.io/badge/Node.js-1a1a1a?style=for-the-badge&logo=node.js&logoColor=FF7A18)
+![Figma](https://img.shields.io/badge/Figma-1a1a1a?style=for-the-badge&logo=figma&logoColor=FF7A18)
+![Cursor](https://img.shields.io/badge/Cursor-1a1a1a?style=for-the-badge&logo=cursor&logoColor=FF7A18)
+![Claude](https://img.shields.io/badge/Claude-1a1a1a?style=for-the-badge&logo=anthropic&logoColor=FF7A18)
+![Vercel](https://img.shields.io/badge/Vercel-1a1a1a?style=for-the-badge&logo=vercel&logoColor=FF7A18)
+
+</div>
+
+<div align="center">
+  <img src="https://capsule-render.vercel.app/api?type=rect&color=0:1a1a1a,100:1a1a1a&height=2&width=900" />
+</div>
+
+## 📊 GitHub Stats
+
+<div align="center">
+
+<img src="https://github-readme-stats.vercel.app/api?username=adix-design&show_icons=true&theme=radical&hide_border=true&bg_color=0D0D0D&title_color=FF7A18&icon_color=F09819&text_color=ffffff&ring_color=FF512F" width="49%" />
+<img src="https://github-readme-streak-stats.herokuapp.com/?user=adix-design&theme=radical&hide_border=true&background=0D0D0D&ring=FF7A18&fire=F09819&currStreakLabel=FF7A18" width="49%" />
+
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=adix-design&layout=compact&theme=radical&hide_border=true&bg_color=0D0D0D&title_color=FF7A18&text_color=ffffff" width="49%" />
+
+</div>
+
+<div align="center">
+  <img src="https://capsule-render.vercel.app/api?type=rect&color=0:1a1a1a,100:1a1a1a&height=2&width=900" />
+</div>
+
+## 🏆 Trophies
+
+<div align="center">
+  <img src="https://github-profile-trophy.vercel.app/?username=adix-design&theme=radical&no-frame=true&no-bg=true&margin-w=8&column=7" />
+</div>
+
+<div align="center">
+  <img src="https://capsule-render.vercel.app/api?type=rect&color=0:1a1a1a,100:1a1a1a&height=2&width=900" />
+</div>
+
+## 🐍 Contribution Snake
+
+<div align="center">
+  <img src="https://raw.githubusercontent.com/adix-design/adix-design/output/github-contribution-grid-snake.svg" width="100%" />
+</div>
+
+<div align="center">
+  <sub>⚡ Generated by the <a href="https://github.com/Platane/snk">Platane/snk</a> GitHub Action — see setup notes below</sub>
+</div>
+
+<br/>
+
+<div align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:F09819,100:FF512F&height=120&section=footer" width="100%"/>
+</div>
