@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="420" viewBox="0 0 1200 420">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#07080b"/>
+    <stop offset="0.55" stop-color="#11090b"/>
+    <stop offset="1" stop-color="#180b10"/>
+  </linearGradient>
+  <linearGradient id="red" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#ff3347"/>
+    <stop offset="1" stop-color="#9d1023"/>
+  </linearGradient>
+  <pattern id="grid" width="28" height="28" patternUnits="userSpaceOnUse">
+    <path d="M 28 0 L 0 0 0 28" fill="none" stroke="#ff3347" stroke-opacity=".09"/>
+  </pattern>
+</defs>
+
+<rect x="0" y="0" width="1200" height="420" rx="22" fill="url(#bg)"/>
+<rect x="14" y="14" width="1172" height="392" rx="18" fill="url(#grid)" stroke="#ff3347" stroke-opacity=".45"/>
+
+<path d="M34 80 H320 M880 80 H1166" stroke="#ff3347" stroke-opacity=".55"/>
+<path d="M34 343 H410 M790 343 H1166" stroke="#ff3347" stroke-opacity=".32"/>
+
+<text x="52" y="56" font-family="monospace" font-size="17" fill="#ff5264">&gt; PROFILE.EXE</text>
+<text x="1145" y="56" text-anchor="end" font-family="monospace" font-size="15" fill="#a7a7ae">STATUS: ONLINE</text>
+
+<text x="52" y="140" font-family="monospace" font-size="56" font-weight="700" fill="#ffffff">ARPAN</text>
+<text x="52" y="198" font-family="monospace" font-size="56" font-weight="700" fill="#ff3347">DEEP DUBEY</text>
+<text x="55" y="235" font-family="monospace" font-size="19" fill="#d7d7dc">AI PRODUCT DESIGNER  •  FULL-STACK BUILDER</text>
+
+<text x="52" y="284" font-family="monospace" font-size="16" fill="#9fa0a7">MISSION</text>
+<text x="136" y="284" font-family="monospace" font-size="16" fill="#ffffff">Turn ideas into useful, polished products.</text>
+
+<text x="52" y="316" font-family="monospace" font-size="16" fill="#9fa0a7">STACK</text>
+<text x="128" y="316" font-family="monospace" font-size="16" fill="#ffffff">React  •  Node.js  •  MongoDB  •  AI</text>
+
+<rect x="750" y="105" width="390" height="210" rx="18" fill="#090a0e" stroke="#ff3347" stroke-opacity=".45"/>
+<text x="778" y="137" font-family="monospace" font-size="16" fill="#ff5264">PLAYER PROFILE</text>
+
+<text x="778" y="175" font-family="monospace" font-size="14" fill="#9fa0a7">CLASS</text>
+<text x="900" y="175" font-family="monospace" font-size="14" fill="#ffffff">PRODUCT BUILDER</text>
+
+<text x="778" y="204" font-family="monospace" font-size="14" fill="#9fa0a7">FOCUS</text>
+<text x="900" y="204" font-family="monospace" font-size="14" fill="#ffffff">AI • DESIGN • WEB</text>
+
+<text x="778" y="233" font-family="monospace" font-size="14" fill="#9fa0a7">PLAYSTYLE</text>
+<text x="900" y="233" font-family="monospace" font-size="14" fill="#ffffff">DESIGN → BUILD → SHIP</text>
+
+<text x="778" y="268" font-family="monospace" font-size="14" fill="#9fa0a7">XP</text>
+<rect x="828" y="256" width="270" height="12" rx="6" fill="#24262d"/>
+<rect x="828" y="256" width="199" height="12" rx="6" fill="url(#red)"/>
+<text x="1110" y="268" font-family="monospace" font-size="13" text-anchor="end" fill="#ffffff">74%</text>
+
+<text x="52" y="375" font-family="monospace" font-size="15" fill="#777a82">BUILD • SHIP • ITERATE • REPEAT</text>
+<text x="1148" y="375" text-anchor="end" font-family="monospace" font-size="15" fill="#ff5264">READY TO BUILD_</text>
+</svg>
