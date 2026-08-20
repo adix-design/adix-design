@@ -64,7 +64,7 @@ Build useful products, learn continuously, and turn strong ideas into things peo
 
 **Contact**
 
-`contact@arpanstudio.dev`
+`arpandubey21@gmail.com`
 
 </td>
 </tr>
