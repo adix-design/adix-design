@@ -174,10 +174,78 @@ Connecting AI, APIs and business processes to reduce repetitive work.
 
 ---
 
-## 📬 CONTACT TERMINAL
+## 📡 CONTACT TERMINAL
 
 <div align="center">
-<img src="./assets/contact-terminal.svg" alt="Contact Terminal" width="100%"/>
+
+<p align="center"><code><font color="#FF3347">LET'S BUILD SOMETHING USEFUL</font></code></p>
+
+<table width="100%">
+<tr>
+<td>
+
+<table width="100%">
+<tr>
+<td align="left">
+  <font color="#FF3347"><b>●</b></font> <font color="#F2F2F4"><b>CONNECTION ONLINE</b></font>
+</td>
+<td align="right">
+  <font color="#858994"><b>SESSION:</b></font> <font color="#F2F2F4"><b>ARPAN_01</b></font>
+</td>
+</tr>
+</table>
+
+<hr/>
+
+<p align="left"><code><font color="#FF3347"><b>&gt; open_connection</b></font> <font color="#858994">--arpan</font></code></p>
+
+<table width="100%">
+<tr>
+<td width="50%" align="left" valign="top">
+  <a href="https://arpanstudio.dev/">
+    <b><font color="#FF3347">🌐 PORTFOLIO</font></b><br/>
+    <font color="#858994"><code>arpanstudio.dev</code></font>
+  </a>
+</td>
+<td width="50%" align="left" valign="top">
+  <a href="mailto:contact@arpanstudio.dev">
+    <b><font color="#FF3347">✉ EMAIL</font></b><br/>
+    <font color="#858994"><code>contact@arpanstudio.dev</code></font>
+  </a>
+</td>
+</tr>
+<tr>
+<td width="50%" align="left" valign="top">
+  <a href="https://www.linkedin.com/in/arpan-deep-dubey/">
+    <b><font color="#FF3347">💼 LINKEDIN</font></b><br/>
+    <font color="#858994"><code>linkedin.com/in/arpan-deep-dubey</code></font>
+  </a>
+</td>
+<td width="50%" align="left" valign="top">
+  <a href="https://github.com/adix-design">
+    <b><font color="#FF3347">◉ GITHUB</font></b><br/>
+    <font color="#858994"><code>github.com/adix-design</code></font>
+  </a>
+</td>
+</tr>
+</table>
+
+<hr/>
+
+<p align="left"><code><font color="#FF3347"><b>STATUS ::</b></font> <font color="#F2F2F4"><b>READY TO BUILD_</b></font></code></p>
+
+</td>
+</tr>
+</table>
+
+<br/>
+
+<p align="center">
+<font color="#FF3347"><b>◆</b></font><br/>
+<code><font color="#FF3347"><b>&gt; connection ready_</b></font></code><br/>
+<font color="#F2F2F4">Let's build something useful.</font>
+</p>
+
 </div>
 
 <br/>
