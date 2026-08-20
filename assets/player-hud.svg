@@ -1,16 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" width="1200" height="420">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 440" width="1200" height="440">
 <defs>
   <!-- Background Gradient -->
   <linearGradient id="bg-grad" x1="0" y1="0" x2="1" y2="1">
     <stop offset="0%" stop-color="#050609"/>
     <stop offset="50%" stop-color="#080A0F"/>
     <stop offset="100%" stop-color="#0D1017"/>
-  </linearGradient>
-
-  <!-- Panel Gradient -->
-  <linearGradient id="card-grad" x1="0" y1="0" x2="0" y2="1">
-    <stop offset="0%" stop-color="#0B0E15"/>
-    <stop offset="100%" stop-color="#07090E"/>
   </linearGradient>
 
   <!-- Subtle Crimson Glow Filter -->
@@ -25,16 +19,16 @@
 </defs>
 
 <!-- Outer Canvas Background -->
-<rect width="1200" height="420" fill="#050609"/>
+<rect width="1200" height="440" fill="#050609"/>
 
 <!-- Main Outer HUD Frame with Chamfered Corners -->
 <path d="M 28 14 
          L 1172 14 
          L 1186 28 
-         L 1186 392 
-         L 1172 406 
-         L 28 406 
-         L 14 392 
+         L 1186 412 
+         L 1172 426 
+         L 28 426 
+         L 14 412 
          L 14 28 Z" 
       fill="url(#bg-grad)" 
       stroke="#FF3347" 
@@ -43,13 +37,13 @@
       filter="url(#hud-glow)"/>
 
 <!-- Background Grid -->
-<path d="M 28 14 L 1172 14 L 1186 28 L 1186 392 L 1172 406 L 28 406 L 14 392 L 14 28 Z" fill="url(#bg-grid)"/>
+<path d="M 28 14 L 1172 14 L 1186 28 L 1186 412 L 1172 426 L 28 426 L 14 412 L 14 28 Z" fill="url(#bg-grid)"/>
 
 <!-- Outer Corner Tech Accents -->
 <path d="M 14 48 L 14 28 L 28 14 L 48 14" fill="none" stroke="#FF3347" stroke-width="2.5"/>
 <path d="M 1152 14 L 1172 14 L 1186 28 L 1186 48" fill="none" stroke="#FF3347" stroke-width="2.5"/>
-<path d="M 1186 372 L 1186 392 L 1172 406 L 1152 406" fill="none" stroke="#FF3347" stroke-width="2.5"/>
-<path d="M 48 406 L 28 406 L 14 392 L 14 372" fill="none" stroke="#FF3347" stroke-width="2.5"/>
+<path d="M 1186 392 L 1186 412 L 1172 426 L 1152 426" fill="none" stroke="#FF3347" stroke-width="2.5"/>
+<path d="M 48 426 L 28 426 L 14 412 L 14 392" fill="none" stroke="#FF3347" stroke-width="2.5"/>
 
 <!-- ── TOP SYSTEM BAR ─────────────────────────────────────────── -->
 <g id="top-bar">
@@ -71,46 +65,46 @@
   <line x1="44" y1="50" x2="170" y2="50" stroke="#FF3347" stroke-width="1.5"/>
 </g>
 
-<!-- ── LEFT / MAIN CONTENT (LARGE IDENTITY + ROLE + CHIPS + MISSION) ── -->
-<g id="main-identity-mission" transform="translate(46, 66)">
-  <!-- Big Dominant Name Display (48px) -->
-  <text x="0" y="48" font-family="'JetBrains Mono', Consolas, monospace" font-size="50" font-weight="800" letter-spacing="1.5">
+<!-- ── LEFT / MAIN CONTENT (ENLARGED TYPOGRAPHY) ─────────────── -->
+<g id="main-identity-mission" transform="translate(46, 64)">
+  <!-- Big Dominant Name Display (~56px / +15-20%) -->
+  <text x="0" y="52" font-family="'JetBrains Mono', Consolas, monospace" font-size="56" font-weight="800" letter-spacing="1.5">
     <tspan fill="#F2F2F4">ARPAN </tspan>
     <tspan fill="#FF3347">DEEP DUBEY</tspan>
   </text>
 
-  <!-- Subtitle Role (21px) -->
-  <text x="2" y="82" fill="#F2F2F4" font-family="'JetBrains Mono', Consolas, monospace" font-size="20" font-weight="600" letter-spacing="1.2">
+  <!-- Subtitle Role (~22.5px / +10-15%) -->
+  <text x="2" y="88" fill="#F2F2F4" font-family="'JetBrains Mono', Consolas, monospace" font-size="22.5" font-weight="600" letter-spacing="1.2">
     AI PRODUCT DESIGNER  •  FULL-STACK BUILDER
   </text>
 
-  <!-- Professional Statement (16.5px) -->
-  <text x="2" y="114" fill="#858994" font-family="system-ui, -apple-system, sans-serif" font-size="16.5" font-weight="400">
+  <!-- Professional Statement (~18.5px / +10-15%) -->
+  <text x="2" y="122" fill="#858994" font-family="system-ui, -apple-system, sans-serif" font-size="18.5" font-weight="400">
     Building polished digital products at the intersection of AI, design and engineering.
   </text>
 
   <!-- Role / Skill HUD Chips -->
-  <g transform="translate(2, 134)">
+  <g transform="translate(2, 142)">
     <!-- Chip: AI -->
-    <rect x="0" y="0" width="60" height="28" rx="4" fill="#0E121A" stroke="#FF3347" stroke-width="1" stroke-opacity="0.7"/>
-    <text x="30" y="19" fill="#FF3347" font-family="'JetBrains Mono', monospace" font-size="12.5" font-weight="700" text-anchor="middle">AI</text>
+    <rect x="0" y="0" width="62" height="28" rx="4" fill="#0E121A" stroke="#FF3347" stroke-width="1" stroke-opacity="0.7"/>
+    <text x="31" y="19" fill="#FF3347" font-family="'JetBrains Mono', monospace" font-size="12.5" font-weight="700" text-anchor="middle">AI</text>
 
     <!-- Chip: PRODUCT DESIGN -->
-    <rect x="70" y="0" width="154" height="28" rx="4" fill="#0E121A" stroke="#FF3347" stroke-width="1" stroke-opacity="0.45"/>
-    <text x="147" y="19" fill="#F2F2F4" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="600" text-anchor="middle">PRODUCT DESIGN</text>
+    <rect x="72" y="0" width="158" height="28" rx="4" fill="#0E121A" stroke="#FF3347" stroke-width="1" stroke-opacity="0.45"/>
+    <text x="151" y="19" fill="#F2F2F4" font-family="'JetBrains Mono', monospace" font-size="12.5" font-weight="600" text-anchor="middle">PRODUCT DESIGN</text>
 
     <!-- Chip: FULL-STACK -->
-    <rect x="234" y="0" width="124" height="28" rx="4" fill="#0E121A" stroke="#FF3347" stroke-width="1" stroke-opacity="0.45"/>
-    <text x="296" y="19" fill="#F2F2F4" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="600" text-anchor="middle">FULL-STACK</text>
+    <rect x="240" y="0" width="128" height="28" rx="4" fill="#0E121A" stroke="#FF3347" stroke-width="1" stroke-opacity="0.45"/>
+    <text x="304" y="19" fill="#F2F2F4" font-family="'JetBrains Mono', monospace" font-size="12.5" font-weight="600" text-anchor="middle">FULL-STACK</text>
 
     <!-- Chip: AUTOMATION -->
-    <rect x="368" y="0" width="132" height="28" rx="4" fill="#0E121A" stroke="#FF3347" stroke-width="1" stroke-opacity="0.45"/>
-    <text x="434" y="19" fill="#F2F2F4" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="600" text-anchor="middle">AUTOMATION</text>
+    <rect x="378" y="0" width="136" height="28" rx="4" fill="#0E121A" stroke="#FF3347" stroke-width="1" stroke-opacity="0.45"/>
+    <text x="446" y="19" fill="#F2F2F4" font-family="'JetBrains Mono', monospace" font-size="12.5" font-weight="600" text-anchor="middle">AUTOMATION</text>
   </g>
 
-  <!-- Current Mission Box -->
-  <g transform="translate(2, 180)">
-    <rect x="0" y="0" width="700" height="96" rx="6" fill="#090C12" stroke="#8B1022" stroke-width="1" stroke-opacity="0.45"/>
+  <!-- Current Mission Box (Enlarged Body Text ~15.5px) -->
+  <g transform="translate(2, 188)">
+    <rect x="0" y="0" width="700" height="98" rx="6" fill="#090C12" stroke="#8B1022" stroke-width="1" stroke-opacity="0.45"/>
     
     <!-- Mission Header -->
     <text x="18" y="24" fill="#FF3347" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="700" letter-spacing="1.5">CURRENT MISSION</text>
@@ -121,26 +115,26 @@
     
     <line x1="18" y1="36" x2="682" y2="36" stroke="#FF3347" stroke-width="0.8" stroke-opacity="0.15"/>
 
-    <!-- Mission Description -->
-    <text x="18" y="60" fill="#F2F2F4" font-family="system-ui, -apple-system, sans-serif" font-size="14.5" font-weight="500">
+    <!-- Mission Description (~15.5px) -->
+    <text x="18" y="62" fill="#F2F2F4" font-family="system-ui, -apple-system, sans-serif" font-size="15.5" font-weight="500">
       Build useful products, learn continuously, and turn strong ideas into real, usable systems.
     </text>
-    <text x="18" y="80" fill="#858994" font-family="'JetBrains Mono', monospace" font-size="11" letter-spacing="0.5">
+    <text x="18" y="84" fill="#858994" font-family="'JetBrains Mono', monospace" font-size="11.5" letter-spacing="0.5">
       // OBJECTIVE: PRODUCTION-GRADE AI &amp; WEB TOOLS
     </text>
   </g>
 </g>
 
-<!-- ── RIGHT ZONE: COMPACT PLAYER STATUS PANEL ────────────────── -->
-<g id="status-panel" transform="translate(784, 76)">
+<!-- ── RIGHT ZONE: PLAYER STATUS PANEL (ENLARGED VALUES ~13.5px) ─ -->
+<g id="status-panel" transform="translate(776, 74)">
   <!-- Status Container Box with Chamfered Corners -->
   <path d="M 10 0 
-           L 362 0 
-           L 372 10 
-           L 372 266 
-           L 362 276 
-           L 10 276 
-           L 0 266 
+           L 370 0 
+           L 380 10 
+           L 380 276 
+           L 370 286 
+           L 10 286 
+           L 0 276 
            L 0 10 Z" 
         fill="#080B10" 
         stroke="#FF3347" 
@@ -149,62 +143,62 @@
 
   <!-- Panel Corner Accents -->
   <path d="M 0 20 L 0 10 L 10 0 L 20 0" fill="none" stroke="#FF3347" stroke-width="2"/>
-  <path d="M 352 0 L 362 0 L 372 10 L 372 20" fill="none" stroke="#FF3347" stroke-width="2"/>
-  <path d="M 372 256 L 372 266 L 362 276 L 352 276" fill="none" stroke="#FF3347" stroke-width="2"/>
-  <path d="M 20 276 L 10 276 L 0 266 L 0 256" fill="none" stroke="#FF3347" stroke-width="2"/>
+  <path d="M 360 0 L 370 0 L 380 10 L 380 20" fill="none" stroke="#FF3347" stroke-width="2"/>
+  <path d="M 380 266 L 380 276 L 370 286 L 360 286" fill="none" stroke="#FF3347" stroke-width="2"/>
+  <path d="M 20 286 L 10 286 L 0 276 L 0 266" fill="none" stroke="#FF3347" stroke-width="2"/>
 
   <!-- Header -->
   <text x="20" y="26" fill="#FF3347" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="700" letter-spacing="1.5">PLAYER STATUS</text>
-  <text x="352" y="26" fill="#858994" font-family="'JetBrains Mono', monospace" font-size="10.5" letter-spacing="1" text-anchor="end">SYS_ID: ARPAN_01</text>
-  <line x1="20" y1="38" x2="352" y2="38" stroke="#FF3347" stroke-width="0.8" stroke-opacity="0.25"/>
+  <text x="360" y="26" fill="#858994" font-family="'JetBrains Mono', monospace" font-size="10.5" letter-spacing="1" text-anchor="end">SYS_ID: ARPAN_01</text>
+  <line x1="20" y1="38" x2="360" y2="38" stroke="#FF3347" stroke-width="0.8" stroke-opacity="0.25"/>
 
   <!-- Status Row 1: ROLE -->
-  <g transform="translate(20, 60)">
+  <g transform="translate(20, 62)">
     <text x="0" y="14" fill="#858994" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="600" letter-spacing="1">ROLE</text>
-    <text x="84" y="14" fill="#F2F2F4" font-family="'JetBrains Mono', monospace" font-size="12.5" font-weight="700">AI PRODUCT DESIGNER</text>
+    <text x="84" y="14" fill="#F2F2F4" font-family="'JetBrains Mono', monospace" font-size="13.5" font-weight="700">AI PRODUCT DESIGNER</text>
   </g>
-  <line x1="20" y1="84" x2="352" y2="84" stroke="#FF3347" stroke-width="0.4" stroke-opacity="0.12"/>
+  <line x1="20" y1="88" x2="360" y2="88" stroke="#FF3347" stroke-width="0.4" stroke-opacity="0.12"/>
 
   <!-- Status Row 2: FOCUS -->
-  <g transform="translate(20, 106)">
+  <g transform="translate(20, 112)">
     <text x="0" y="14" fill="#858994" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="600" letter-spacing="1">FOCUS</text>
-    <text x="84" y="14" fill="#F2F2F4" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="500">AI • DESIGN • WEB • AUTOMATION</text>
+    <text x="84" y="14" fill="#F2F2F4" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="500">AI • DESIGN • WEB • AUTOMATION</text>
   </g>
-  <line x1="20" y1="130" x2="352" y2="130" stroke="#FF3347" stroke-width="0.4" stroke-opacity="0.12"/>
+  <line x1="20" y1="138" x2="360" y2="138" stroke="#FF3347" stroke-width="0.4" stroke-opacity="0.12"/>
 
   <!-- Status Row 3: STATUS -->
-  <g transform="translate(20, 152)">
+  <g transform="translate(20, 162)">
     <text x="0" y="14" fill="#858994" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="600" letter-spacing="1">STATUS</text>
-    <circle cx="90" cy="10" r="4" fill="#45E879"/>
-    <text x="100" y="14" fill="#45E879" font-family="'JetBrains Mono', monospace" font-size="12.5" font-weight="700" letter-spacing="1">BUILDING</text>
+    <circle cx="92" cy="10" r="4" fill="#45E879"/>
+    <text x="104" y="14" fill="#45E879" font-family="'JetBrains Mono', monospace" font-size="13.5" font-weight="700" letter-spacing="1">BUILDING</text>
   </g>
-  <line x1="20" y1="176" x2="352" y2="176" stroke="#FF3347" stroke-width="0.4" stroke-opacity="0.12"/>
+  <line x1="20" y1="188" x2="360" y2="188" stroke="#FF3347" stroke-width="0.4" stroke-opacity="0.12"/>
 
   <!-- Status Row 4: REGION -->
-  <g transform="translate(20, 198)">
+  <g transform="translate(20, 212)">
     <text x="0" y="14" fill="#858994" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="600" letter-spacing="1">REGION</text>
-    <text x="84" y="14" fill="#F2F2F4" font-family="'JetBrains Mono', monospace" font-size="12.5" font-weight="700">INDIA</text>
+    <text x="84" y="14" fill="#F2F2F4" font-family="'JetBrains Mono', monospace" font-size="13.5" font-weight="700">INDIA</text>
   </g>
-  <line x1="20" y1="222" x2="352" y2="222" stroke="#FF3347" stroke-width="0.4" stroke-opacity="0.12"/>
+  <line x1="20" y1="238" x2="360" y2="238" stroke="#FF3347" stroke-width="0.4" stroke-opacity="0.12"/>
 
   <!-- Bottom Telemetry Indicator in Status Card -->
-  <g transform="translate(20, 246)">
+  <g transform="translate(20, 258)">
     <text x="0" y="12" fill="#858994" font-family="'JetBrains Mono', monospace" font-size="9.5" letter-spacing="0.5">[■■■■■■■■■■■■■■■■] SIGNAL_OK</text>
-    <text x="332" y="12" fill="#45E879" font-family="'JetBrains Mono', monospace" font-size="9.5" font-weight="700" text-anchor="end">100%</text>
+    <text x="340" y="12" fill="#45E879" font-family="'JetBrains Mono', monospace" font-size="9.5" font-weight="700" text-anchor="end">100%</text>
   </g>
 </g>
 
 <!-- ── BOTTOM STATUS STRIP ────────────────────────────────────── -->
 <g id="bottom-strip">
   <!-- Bottom Divider Line -->
-  <line x1="44" y1="368" x2="1156" y2="368" stroke="#8B1022" stroke-width="1" stroke-opacity="0.3"/>
-  <line x1="44" y1="368" x2="180" y2="368" stroke="#FF3347" stroke-width="1.5"/>
+  <line x1="44" y1="388" x2="1156" y2="388" stroke="#8B1022" stroke-width="1" stroke-opacity="0.3"/>
+  <line x1="44" y1="388" x2="180" y2="388" stroke="#FF3347" stroke-width="1.5"/>
 
   <!-- Left: STATUS :: BUILDING -->
-  <text x="46" y="392" fill="#FF3347" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="700" letter-spacing="1.5">STATUS :: BUILDING</text>
+  <text x="46" y="412" fill="#FF3347" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="700" letter-spacing="1.5">STATUS :: BUILDING</text>
 
   <!-- Right: REGION :: INDIA -->
-  <text x="1154" y="392" fill="#858994" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="600" letter-spacing="1.5" text-anchor="end">REGION :: INDIA</text>
+  <text x="1154" y="412" fill="#858994" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="600" letter-spacing="1.5" text-anchor="end">REGION :: INDIA</text>
 </g>
 
 </svg>
