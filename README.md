@@ -175,56 +175,82 @@ Connecting AI, APIs and business processes to reduce repetitive work.
 ---
 
 ## 📡 CONTACT TERMINAL
+<sub><code><font color="#858994">FINAL CONNECTION</font></code></sub>
 
-<div align="center">
-
-<p align="center"><code><font color="#FF3347">LET'S BUILD SOMETHING USEFUL</font></code></p>
+<br/><br/>
 
 <table width="100%">
 <tr>
 <td>
 
+<!-- Top Status Bar -->
 <table width="100%">
 <tr>
 <td align="left">
-  <font color="#FF3347"><b>●</b></font> <font color="#F2F2F4"><b>CONNECTION ONLINE</b></font>
+  <font color="#FF3347"><b>●</b></font> <font color="#F2F2F4"><b>CONNECTION</b></font> <font color="#45E879"><b>ONLINE</b></font>
 </td>
 <td align="right">
-  <font color="#858994"><b>SESSION:</b></font> <font color="#F2F2F4"><b>ARPAN_01</b></font>
+  <font color="#858994"><b>SESSION:</b></font> <font color="#FF3347"><b>ARPAN_01</b></font>
 </td>
 </tr>
 </table>
 
 <hr/>
 
-<p align="left"><code><font color="#FF3347"><b>&gt; open_connection</b></font> <font color="#858994">--arpan</font></code></p>
+<!-- Terminal Command Line -->
+<p align="left"><code><font color="#FF3347"><b>&gt; open_connection</b></font> <font color="#F2F2F4">--arpan</font></code></p>
 
+<!-- 2x2 Contact Cards Grid -->
 <table width="100%">
 <tr>
 <td width="50%" align="left" valign="top">
   <a href="https://arpanstudio.dev/">
-    <b><font color="#FF3347">🌐 PORTFOLIO</font></b><br/>
-    <font color="#858994"><code>arpanstudio.dev</code></font>
+    <table width="100%">
+    <tr>
+      <td>
+        <font color="#FF3347">🌐</font> <b><font color="#F2F2F4">PORTFOLIO</font></b><br/>
+        <font color="#858994"><code>arpanstudio.dev</code></font> <font color="#FF3347">↗</font>
+      </td>
+    </tr>
+    </table>
   </a>
 </td>
 <td width="50%" align="left" valign="top">
   <a href="mailto:contact@arpanstudio.dev">
-    <b><font color="#FF3347">✉ EMAIL</font></b><br/>
-    <font color="#858994"><code>contact@arpanstudio.dev</code></font>
+    <table width="100%">
+    <tr>
+      <td>
+        <font color="#FF3347">✉</font> <b><font color="#F2F2F4">EMAIL</font></b><br/>
+        <font color="#858994"><code>contact@arpanstudio.dev</code></font> <font color="#FF3347">↗</font>
+      </td>
+    </tr>
+    </table>
   </a>
 </td>
 </tr>
 <tr>
 <td width="50%" align="left" valign="top">
   <a href="https://www.linkedin.com/in/arpan-deep-dubey/">
-    <b><font color="#FF3347">💼 LINKEDIN</font></b><br/>
-    <font color="#858994"><code>linkedin.com/in/arpan-deep-dubey</code></font>
+    <table width="100%">
+    <tr>
+      <td>
+        <font color="#FF3347">💼</font> <b><font color="#F2F2F4">LINKEDIN</font></b><br/>
+        <font color="#858994"><code>linkedin.com/in/arpan-deep-dubey</code></font> <font color="#FF3347">↗</font>
+      </td>
+    </tr>
+    </table>
   </a>
 </td>
 <td width="50%" align="left" valign="top">
   <a href="https://github.com/adix-design">
-    <b><font color="#FF3347">◉ GITHUB</font></b><br/>
-    <font color="#858994"><code>github.com/adix-design</code></font>
+    <table width="100%">
+    <tr>
+      <td>
+        <font color="#FF3347">◉</font> <b><font color="#F2F2F4">GITHUB</font></b><br/>
+        <font color="#858994"><code>github.com/adix-design</code></font> <font color="#FF3347">↗</font>
+      </td>
+    </tr>
+    </table>
   </a>
 </td>
 </tr>
@@ -232,7 +258,8 @@ Connecting AI, APIs and business processes to reduce repetitive work.
 
 <hr/>
 
-<p align="left"><code><font color="#FF3347"><b>STATUS ::</b></font> <font color="#F2F2F4"><b>READY TO BUILD_</b></font></code></p>
+<!-- Bottom Status Line -->
+<p align="left"><code><font color="#FF3347"><b>STATUS ::</b></font> <font color="#45E879"><b>READY TO BUILD_</b></font></code></p>
 
 </td>
 </tr>
@@ -240,12 +267,10 @@ Connecting AI, APIs and business processes to reduce repetitive work.
 
 <br/>
 
-<p align="center">
+<div align="center">
 <font color="#FF3347"><b>◆</b></font><br/>
-<code><font color="#FF3347"><b>&gt; connection ready_</b></font></code><br/>
+<code><font color="#FF3347"><b>&gt; CONNECTION READY_</b></font></code><br/>
 <font color="#F2F2F4">Let's build something useful.</font>
-</p>
-
 </div>
 
 <br/>
