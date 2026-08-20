@@ -169,25 +169,7 @@ Connecting AI, APIs and business processes to reduce repetitive work.
 ## 🧠 BUILD PHILOSOPHY
 
 <div align="center">
-
-```text
-IDEA
-  ↓
-DESIGN
-  ↓
-BUILD
-  ↓
-SHIP
-  ↓
-LEARN
-  ↓
-ITERATE
-```
-
-### I don't want to build more software just to say I built it.
-
-### I want to build things that are useful.
-
+<img src="./assets/build-philosophy.svg" alt="Build Philosophy" width="100%"/>
 </div>
 
 ---

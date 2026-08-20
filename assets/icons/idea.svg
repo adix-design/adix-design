@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
+  <!-- Lightbulb (IDEA) -->
+  <path d="M20 6C13.925 6 9 10.925 9 17C9 20.8 10.9 24.1 13.8 26.1C14.6 26.6 15 27.5 15 28.5V30C15 31.1 15.9 32 17 32H23C24.1 32 25 31.1 25 30V28.5C25 27.5 25.4 26.6 26.2 26.1C29.1 24.1 31 20.8 31 17C31 10.9 26.075 6 20 6Z" stroke="#FF3347" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M16 35H24" stroke="#FF3347" stroke-width="2.2" stroke-linecap="round"/>
+  <path d="M20 12V18M17 15H23" stroke="#FF5264" stroke-width="1.8" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,160 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="530" viewBox="0 0 1000 530">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="#07080b"/>
+    <stop offset="50%" stop-color="#0f090d"/>
+    <stop offset="100%" stop-color="#14080c"/>
+  </linearGradient>
+  <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+    <feGaussianBlur stdDeviation="3" result="blur" />
+    <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+  </filter>
+</defs>
+
+<!-- Outer Main Panel -->
+<rect x="10" y="10" width="980" height="510" rx="18" fill="url(#bg)" stroke="#ff3347" stroke-width="1.5" stroke-opacity="0.6"/>
+<!-- Corner HUD Ticks -->
+<path d="M 25 10 H 50 M 10 25 V 50 M 950 10 H 975 M 990 25 V 50 M 25 520 H 50 M 10 495 V 470 M 950 520 H 975 M 990 495 V 470" stroke="#ff3347" stroke-width="3" stroke-linecap="round"/>
+
+<!-- Section Subtitle Header -->
+<g font-family="monospace" text-anchor="middle">
+  <line x1="380" y1="42" x2="430" y2="42" stroke="#ff3347" stroke-opacity="0.5" stroke-width="1"/>
+  <circle cx="430" cy="42" r="2" fill="#ff3347"/>
+  <text x="500" y="46" font-size="13" font-weight="bold" fill="#ff5264" letter-spacing="3">THE LOOP</text>
+  <circle cx="570" cy="42" r="2" fill="#ff3347"/>
+  <line x1="570" y1="42" x2="620" y2="42" stroke="#ff3347" stroke-opacity="0.5" stroke-width="1"/>
+</g>
+
+<!-- 6 Progression Cards -->
+<g font-family="monospace" text-anchor="middle">
+  <!-- Card 1: IDEA -->
+  <g transform="translate(40, 75)">
+    <rect x="0" y="0" width="125" height="155" rx="12" fill="#0b0d12" stroke="#ff3347" stroke-width="1.2" stroke-opacity="0.6"/>
+    <text x="62.5" y="26" font-size="12" font-weight="bold" fill="#ff5264">01</text>
+    <!-- Lightbulb Icon -->
+    <g transform="translate(45, 42)">
+      <path d="M17.5 4C12.25 4 8 8.25 8 13.5C8 16.8 9.65 19.65 12.2 21.4C12.9 21.85 13.25 22.65 13.25 23.5V24.75C13.25 25.7 14.05 26.5 15 26.5H20C20.95 26.5 21.75 25.7 21.75 24.75V23.5C21.75 22.65 22.1 21.85 22.8 21.4C25.35 19.65 27 16.8 27 13.5C27 8.25 22.75 4 17.5 4Z" stroke="#ff3347" stroke-width="2" stroke-linecap="round" fill="none" filter="url(#glow)"/>
+      <path d="M14 29.5H21" stroke="#ff3347" stroke-width="2" stroke-linecap="round"/>
+    </g>
+    <text x="62.5" y="132" font-size="14" font-weight="bold" fill="#ffffff" letter-spacing="1">IDEA</text>
+  </g>
+
+  <!-- Arrow 1-2 -->
+  <path d="M 175 152 L 188 152" stroke="#ff3347" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M 184 148 L 189 152 L 184 156" stroke="#ff3347" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Card 2: DESIGN -->
+  <g transform="translate(198, 75)">
+    <rect x="0" y="0" width="125" height="155" rx="12" fill="#0b0d12" stroke="#ff3347" stroke-width="1.2" stroke-opacity="0.6"/>
+    <text x="62.5" y="26" font-size="12" font-weight="bold" fill="#ff5264">02</text>
+    <!-- Pencil/Draft Icon -->
+    <g transform="translate(45, 42)">
+      <rect x="5" y="5" width="25" height="25" rx="4" stroke="#ff3347" stroke-width="2" fill="none" filter="url(#glow)"/>
+      <path d="M14 21L23 12M23 12L20 9M23 12L26 15" stroke="#ff5264" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+    <text x="62.5" y="132" font-size="14" font-weight="bold" fill="#ffffff" letter-spacing="1">DESIGN</text>
+  </g>
+
+  <!-- Arrow 2-3 -->
+  <path d="M 333 152 L 346 152" stroke="#ff3347" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M 342 148 L 347 152 L 342 156" stroke="#ff3347" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Card 3: BUILD -->
+  <g transform="translate(356, 75)">
+    <rect x="0" y="0" width="125" height="155" rx="12" fill="#0b0d12" stroke="#ff3347" stroke-width="1.2" stroke-opacity="0.6"/>
+    <text x="62.5" y="26" font-size="12" font-weight="bold" fill="#ff5264">03</text>
+    <!-- Code Bracket Icon -->
+    <g transform="translate(45, 42)">
+      <path d="M11 10L5 17.5L11 25" stroke="#ff3347" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)"/>
+      <path d="M24 10L30 17.5L24 25" stroke="#ff3347" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)"/>
+      <path d="M19 8L16 27" stroke="#ff5264" stroke-width="2" stroke-linecap="round"/>
+    </g>
+    <text x="62.5" y="132" font-size="14" font-weight="bold" fill="#ffffff" letter-spacing="1">BUILD</text>
+  </g>
+
+  <!-- Arrow 3-4 -->
+  <path d="M 491 152 L 504 152" stroke="#ff3347" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M 500 148 L 505 152 L 500 156" stroke="#ff3347" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Card 4: SHIP -->
+  <g transform="translate(514, 75)">
+    <rect x="0" y="0" width="125" height="155" rx="12" fill="#0b0d12" stroke="#ff3347" stroke-width="1.2" stroke-opacity="0.6"/>
+    <text x="62.5" y="26" font-size="12" font-weight="bold" fill="#ff5264">04</text>
+    <!-- Rocket Icon -->
+    <g transform="translate(45, 42)">
+      <path d="M17.5 4C17.5 4 24.5 7.5 24.5 17C24.5 20.5 22.75 23 22.75 23L17.5 20.5L12.25 23C12.25 23 10.5 20.5 10.5 17C10.5 7.5 17.5 4 17.5 4Z" stroke="#ff3347" stroke-width="2" stroke-linejoin="round" filter="url(#glow)"/>
+      <circle cx="17.5" cy="12.5" r="2.5" stroke="#ff5264" stroke-width="1.8"/>
+      <path d="M8.75 18L5.25 21.5V25L10.5 23.25" stroke="#ff3347" stroke-width="1.8"/>
+      <path d="M26.25 18L29.75 21.5V25L24.5 23.25" stroke="#ff3347" stroke-width="1.8"/>
+    </g>
+    <text x="62.5" y="132" font-size="14" font-weight="bold" fill="#ffffff" letter-spacing="1">SHIP</text>
+  </g>
+
+  <!-- Arrow 4-5 -->
+  <path d="M 649 152 L 662 152" stroke="#ff3347" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M 658 148 L 663 152 L 658 156" stroke="#ff3347" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Card 5: LEARN -->
+  <g transform="translate(672, 75)">
+    <rect x="0" y="0" width="125" height="155" rx="12" fill="#0b0d12" stroke="#ff3347" stroke-width="1.2" stroke-opacity="0.6"/>
+    <text x="62.5" y="26" font-size="12" font-weight="bold" fill="#ff5264">05</text>
+    <!-- Brain Icon -->
+    <g transform="translate(45, 42)">
+      <path d="M12 9C10.1 9 8.5 10.6 8.5 12.5C8.5 13.4 8.8 14.2 9.4 14.7C8.3 15.4 7.6 16.7 7.6 18.2C7.6 20.2 9.1 21.8 11.1 22V23C11.1 24 11.9 24.8 12.9 24.8H16.3V9H12Z" stroke="#ff3347" stroke-width="1.8" stroke-linejoin="round" filter="url(#glow)"/>
+      <path d="M22.3 9C24.2 9 25.8 10.6 25.8 12.5C25.8 13.4 25.5 14.2 24.9 14.7C26 15.4 26.7 16.7 26.7 18.2C26.7 20.2 25.2 21.8 23.2 22V23C23.2 24 22.4 24.8 21.4 24.8H18V9H22.3Z" stroke="#ff3347" stroke-width="1.8" stroke-linejoin="round" filter="url(#glow)"/>
+    </g>
+    <text x="62.5" y="132" font-size="14" font-weight="bold" fill="#ffffff" letter-spacing="1">LEARN</text>
+  </g>
+
+  <!-- Arrow 5-6 -->
+  <path d="M 807 152 L 820 152" stroke="#ff3347" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M 816 148 L 821 152 L 816 156" stroke="#ff3347" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Card 6: ITERATE -->
+  <g transform="translate(830, 75)">
+    <rect x="0" y="0" width="125" height="155" rx="12" fill="#0b0d12" stroke="#ff3347" stroke-width="1.2" stroke-opacity="0.6"/>
+    <text x="62.5" y="26" font-size="12" font-weight="bold" fill="#ff5264">06</text>
+    <!-- Refresh Loop Icon -->
+    <g transform="translate(45, 42)">
+      <path d="M24.5 12.25C22.75 9.18 19.42 7 15.75 7C10.93 7 7 10.93 7 15.75C7 17.5 7.52 19.07 8.4 20.47" stroke="#ff3347" stroke-width="2" stroke-linecap="round" filter="url(#glow)"/>
+      <path d="M20.12 12.25H25.37V7" stroke="#ff3347" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M10.5 19.25C12.25 22.32 15.58 24.5 19.25 24.5C24.07 24.5 28 20.57 28 15.75C28 14 27.48 12.43 26.6 11.03" stroke="#ff5264" stroke-width="2" stroke-linecap="round"/>
+      <path d="M14.88 19.25H9.63V24.5" stroke="#ff5264" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+    <text x="62.5" y="132" font-size="14" font-weight="bold" fill="#ffffff" letter-spacing="1">ITERATE</text>
+  </g>
+</g>
+
+<!-- Dashed Loop Line connecting bottom of Card 6 back to Card 1 -->
+<path d="M 892.5 230 V 258 H 102.5 V 230" fill="none" stroke="#ff3347" stroke-width="1.2" stroke-dasharray="4,4" stroke-opacity="0.6"/>
+<path d="M 98.5 234 L 102.5 228 L 106.5 234" stroke="#ff3347" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+<!-- Middle Progression Pill Button -->
+<g font-family="monospace" text-anchor="middle" transform="translate(300, 280)">
+  <rect x="0" y="0" width="400" height="38" rx="19" fill="#090a0e" stroke="#ff3347" stroke-width="1.2" stroke-opacity="0.7"/>
+  <text x="200" y="24" font-size="13" font-weight="bold" fill="#ffffff" letter-spacing="1">
+    BUILD <tspan fill="#ff5264"> ➔ </tspan> SHIP <tspan fill="#ff5264"> ➔ </tspan> LEARN <tspan fill="#ff5264"> ➔ </tspan> ITERATE
+  </text>
+</g>
+
+<!-- Bottom Quote Callout Panel -->
+<g transform="translate(40, 345)">
+  <rect x="0" y="0" width="920" height="145" rx="12" fill="#090a0e" stroke="#ff3347" stroke-width="1" stroke-opacity="0.4"/>
+  <!-- Quote Marks -->
+  <text x="50" y="65" font-family="sans-serif" font-size="44" font-weight="bold" fill="#ff3347" opacity="0.8">“</text>
+  <text x="870" y="125" font-family="sans-serif" font-size="44" font-weight="bold" fill="#ff3347" text-anchor="end" opacity="0.8">”</text>
+
+  <!-- Quote Lines -->
+  <g font-family="monospace" text-anchor="middle">
+    <text x="460" y="55" font-size="17" font-weight="bold" fill="#ffffff" letter-spacing="0.5">I don't want to build more software just to say I built it.</text>
+    
+    <!-- Divider -->
+    <line x1="380" y1="80" x2="435" y2="80" stroke="#ff3347" stroke-opacity="0.4" stroke-width="1"/>
+    <polygon points="460,76 465,80 460,84 455,80" fill="#ff3347"/>
+    <line x1="485" y1="80" x2="540" y2="80" stroke="#ff3347" stroke-opacity="0.4" stroke-width="1"/>
+
+    <text x="460" y="112" font-size="17" font-weight="bold" fill="#ffffff" letter-spacing="0.5">I want to build things that are useful.</text>
+  </g>
+</g>
+
+</svg>

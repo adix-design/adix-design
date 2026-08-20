@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
+  <!-- Brain (LEARN) -->
+  <path d="M14 12C11.8 12 10 13.8 10 16C10 17 10.4 17.9 11.1 18.5C9.8 19.3 9 20.8 9 22.5C9 24.8 10.7 26.7 13 26.9V28C13 29.1 13.9 30 15 30H19V12H14Z" stroke="#FF3347" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M26 12C28.2 12 30 13.8 30 16C30 17 29.6 17.9 28.9 18.5C30.2 19.3 31 20.8 31 22.5C31 24.8 29.3 26.7 27 26.9V28C27 29.1 26.1 30 25 30H21V12H26Z" stroke="#FF3347" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M14 18H19M21 18H26M14 24H19M21 24H26" stroke="#FF5264" stroke-width="1.8" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
+  <!-- Refresh Loop Arrows (ITERATE) -->
+  <path d="M28 14C26 10.5 22.2 8 18 8C12.5 8 8 12.5 8 18C8 20 8.6 21.8 9.6 23.4" stroke="#FF3347" stroke-width="2.2" stroke-linecap="round"/>
+  <path d="M23 14H29V8" stroke="#FF3347" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M12 26C14 29.5 17.8 32 22 32C27.5 32 32 27.5 32 22C32 20 31.4 18.2 30.4 16.6" stroke="#FF5264" stroke-width="2.2" stroke-linecap="round"/>
+  <path d="M17 26H11V32" stroke="#FF5264" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
