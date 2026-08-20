@@ -5,24 +5,24 @@
 <br/><br/>
 
 <a href="https://arpanstudio.dev">
-  <img src="https://img.shields.io/badge/PORTFOLIO-FF3347?style=for-the-badge&labelColor=0A0B0F" />
+  <img src="./assets/contact/btn-portfolio.svg" alt="Portfolio" />
 </a>
 &nbsp;
 <a href="https://www.linkedin.com/in/arpan-deep-dubey/">
-  <img src="https://img.shields.io/badge/LINKEDIN-E50924?style=for-the-badge&labelColor=0A0B0F&logo=linkedin&logoColor=white" />
+  <img src="./assets/contact/btn-linkedin.svg" alt="LinkedIn" />
 </a>
 &nbsp;
 <a href="mailto:contact@arpanstudio.dev">
-  <img src="https://img.shields.io/badge/EMAIL-FF5364?style=for-the-badge&labelColor=0A0B0F&logo=gmail&logoColor=white" />
+  <img src="./assets/contact/btn-email.svg" alt="Email" />
 </a>
 &nbsp;
 <a href="https://github.com/adix-design">
-  <img src="https://img.shields.io/badge/GITHUB-8B1022?style=for-the-badge&labelColor=0A0B0F&logo=github&logoColor=white" />
+  <img src="./assets/contact/btn-github.svg" alt="GitHub" />
 </a>
 
 <br/><br/>
 
-<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=17&duration=2600&pause=850&color=FF4356&center=true&vCenter=true&width=780&height=35&lines=%3E+Designing+AI-powered+products;%3E+Building+modern+full-stack+experiences;%3E+Turning+ideas+into+real+products;%3E+Build.+Ship.+Iterate." alt="Typing animation"/>
+<code>BUILD • SHIP • ITERATE</code>
 
 </div>
 
