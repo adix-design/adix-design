@@ -26,7 +26,8 @@ jobs:
 
       - name: Generate animated contribution activity GIF
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_PAT: ${{ secrets.GH_PAT || secrets.PAT || secrets.PERSONAL_ACCESS_TOKEN || secrets.METRICS_TOKEN || secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GH_PAT || secrets.PAT || secrets.PERSONAL_ACCESS_TOKEN || secrets.METRICS_TOKEN || secrets.GITHUB_TOKEN }}
         run: |
           python scripts/generate_contribution_activity.py adix-design assets/github-contribution-activity.gif
 

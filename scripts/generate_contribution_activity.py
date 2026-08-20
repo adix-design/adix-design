@@ -183,30 +183,44 @@ def fetch_contributions_public(username: str) -> dict:
         "weeks": weeks
     }
 
+def get_token() -> str:
+    for var in ["GH_PAT", "PAT", "PERSONAL_ACCESS_TOKEN", "METRICS_TOKEN", "GH_TOKEN", "GITHUB_TOKEN"]:
+        token = os.environ.get(var)
+        if token and token.strip():
+            return token.strip()
+    return ""
+
 def get_official_contributions(username: str) -> dict:
-    token = os.environ.get("GITHUB_TOKEN") or os.environ.get("GH_TOKEN")
+    token = get_token()
+    auth_method = "GraphQL (Authenticated)" if token else "Public Contributions Endpoint"
+    
     if token:
         try:
-            print(f"Fetching official contributionCalendar via GraphQL for {username}...")
+            print(f"Fetching official contributionCalendar via GraphQL for {username} (Token present)...")
             calendar = fetch_contributions_graphql(username, token)
         except Exception as e:
             print(f"GraphQL request failed: {e}. Falling back to public contributions endpoint...", file=sys.stderr)
             calendar = fetch_contributions_public(username)
+            auth_method = "Public Endpoint (Fallback)"
     else:
         print(f"Fetching official contributionCalendar via public endpoint for {username}...")
         calendar = fetch_contributions_public(username)
 
-    total = calendar["totalContributions"]
-    sum_days = sum(d["contributionCount"] for w in calendar["weeks"] for d in w["contributionDays"])
-    diff = total - sum_days
-    
+    official_total = calendar.get("totalContributions", 0)
+    generated_total = sum(d.get("contributionCount", 0) for w in calendar.get("weeks", []) for d in w.get("contributionDays", []))
+    diff = official_total - generated_total
+
     print("\n" + "="*50)
-    print("OFFICIAL CONTRIBUTION DATASET VALIDATION:")
-    print(f"  Official GitHub Total : {total}")
-    print(f"  Sum of Daily Counts   : {sum_days}")
-    print(f"  Difference            : {diff}")
-    print(f"  Total Weeks           : {len(calendar['weeks'])}")
+    print(f"OFFICIAL GITHUB TOTAL: {official_total}")
+    print(f"GENERATED DATA TOTAL: {generated_total}")
+    print(f"DIFFERENCE: {diff}")
+    print(f"AUTHENTICATION METHOD: {auth_method}")
+    print(f"TOTAL WEEKS: {len(calendar.get('weeks', []))}")
     print("="*50 + "\n")
+
+    if diff != 0:
+        print(f"Contribution data mismatch.\nOfficial: {official_total}\nGenerated: {generated_total}", file=sys.stderr)
+        raise RuntimeError(f"Contribution data mismatch. Official: {official_total}, Generated: {generated_total}")
 
     return calendar
 
