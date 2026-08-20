@@ -175,136 +175,23 @@ Connecting AI, APIs and business processes to reduce repetitive work.
 ---
 
 ## 📡 CONTACT TERMINAL
-<sub><code><font color="#FF3347">FINAL CONNECTION</font></code></sub>
 
----
+<img src="./assets/contact/contact-header.svg" alt="Contact Terminal" width="100%"/>
 
 <table width="100%">
 <tr>
-<td>
-
-<!-- Top Status Bar -->
-<table width="100%">
+  <td width="50%"><a href="https://arpanstudio.dev"><img src="./assets/contact/portfolio-card.svg" alt="Portfolio" width="100%"/></a></td>
+  <td width="50%"><a href="mailto:contact@arpanstudio.dev"><img src="./assets/contact/email-card.svg" alt="Email" width="100%"/></a></td>
+</tr>
 <tr>
-<td align="left">
-  <font color="#FF3347"><b>●</b></font> <font color="#F2F2F4"><b>CONNECTION</b></font> <font color="#45E879"><b>ONLINE</b></font>
-</td>
-<td align="right">
-  <font color="#8B8E97"><b>SESSION:</b></font> <font color="#FF3347"><b>ARPAN_01</b></font>
-</td>
+  <td width="50%"><a href="https://www.linkedin.com/in/arpan-deep-dubey/"><img src="./assets/contact/linkedin-card.svg" alt="LinkedIn" width="100%"/></a></td>
+  <td width="50%"><a href="https://github.com/adix-design"><img src="./assets/contact/github-card.svg" alt="GitHub" width="100%"/></a></td>
 </tr>
 </table>
 
-<hr/>
+<img src="./assets/contact/status-bar.svg" alt="Status Bar" width="100%"/>
 
-<!-- Terminal Command Line -->
-<p align="left"><code><font color="#FF3347"><b>&gt; open_connection</b></font> <font color="#F2F2F4">--arpan</font></code></p>
-
-<!-- 2x2 Contact Cards Grid -->
-<table width="100%">
-<tr>
-<td width="50%" align="left" valign="middle">
-  <a href="https://arpanstudio.dev/">
-    <table width="100%">
-    <tr>
-      <td width="15%" align="center" valign="middle">
-        <font color="#FF3347" size="4"><b>🌐</b></font>
-      </td>
-      <td width="70%" align="left" valign="middle">
-        <b><font color="#F2F2F4">PORTFOLIO</font></b><br/>
-        <font color="#8B8E97"><code>arpanstudio.dev</code></font>
-      </td>
-      <td width="15%" align="right" valign="middle">
-        <font color="#FF3347"><b>↗</b></font>
-      </td>
-    </tr>
-    </table>
-  </a>
-</td>
-<td width="50%" align="left" valign="middle">
-  <a href="mailto:contact@arpanstudio.dev">
-    <table width="100%">
-    <tr>
-      <td width="15%" align="center" valign="middle">
-        <font color="#FF3347" size="4"><b>✉</b></font>
-      </td>
-      <td width="70%" align="left" valign="middle">
-        <b><font color="#F2F2F4">EMAIL</font></b><br/>
-        <font color="#8B8E97"><code>contact@arpanstudio.dev</code></font>
-      </td>
-      <td width="15%" align="right" valign="middle">
-        <font color="#FF3347"><b>↗</b></font>
-      </td>
-    </tr>
-    </table>
-  </a>
-</td>
-</tr>
-<tr>
-<td width="50%" align="left" valign="middle">
-  <a href="https://www.linkedin.com/in/arpan-deep-dubey/">
-    <table width="100%">
-    <tr>
-      <td width="15%" align="center" valign="middle">
-        <font color="#FF3347" size="4"><b>💼</b></font>
-      </td>
-      <td width="70%" align="left" valign="middle">
-        <b><font color="#F2F2F4">LINKEDIN</font></b><br/>
-        <font color="#8B8E97"><code>linkedin.com/in/arpan-deep-dubey</code></font>
-      </td>
-      <td width="15%" align="right" valign="middle">
-        <font color="#FF3347"><b>↗</b></font>
-      </td>
-    </tr>
-    </table>
-  </a>
-</td>
-<td width="50%" align="left" valign="middle">
-  <a href="https://github.com/adix-design">
-    <table width="100%">
-    <tr>
-      <td width="15%" align="center" valign="middle">
-        <font color="#FF3347" size="4"><b>◉</b></font>
-      </td>
-      <td width="70%" align="left" valign="middle">
-        <b><font color="#F2F2F4">GITHUB</font></b><br/>
-        <font color="#8B8E97"><code>github.com/adix-design</code></font>
-      </td>
-      <td width="15%" align="right" valign="middle">
-        <font color="#FF3347"><b>↗</b></font>
-      </td>
-    </tr>
-    </table>
-  </a>
-</td>
-</tr>
-</table>
-
-<hr/>
-
-<!-- Bottom Status Line -->
-<table width="100%">
-<tr>
-<td align="left">
-  <code><font color="#FF3347"><b>STATUS ::</b></font> <font color="#45E879"><b>READY TO BUILD_</b></font></code>
-</td>
-<td align="right">
-  <code><font color="#FF3347"><b>// /// ///</b></font></code>
-</td>
-</tr>
-</table>
-
-</td>
-</tr>
-</table>
-
-<br/>
-
-<div align="center">
-<font color="#FF3347"><b>◆</b></font><br/>
-<code><font color="#FF3347"><b>&gt; CONNECTION READY_</b></font></code><br/>
-<font color="#F2F2F4">Let's build something useful.</font>
-</div>
+<img src="./assets/contact/connection-footer.svg" alt="Connection Footer" width="100%"/>
 
 <br/>
 
