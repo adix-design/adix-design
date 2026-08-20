@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="180" viewBox="0 0 600 180">
+  <defs>
+    <!-- Red Neon Glow Filter -->
+    <filter id="glow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="0" stdDeviation="4" flood-color="#FF3347" flood-opacity="0.45"/>
+    </filter>
+    <filter id="icon-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="0" stdDeviation="3" flood-color="#FF3347" flood-opacity="0.6"/>
+    </filter>
+    
+    <!-- Background Gradient -->
+    <linearGradient id="card-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0E1017" />
+      <stop offset="60%" stop-color="#0A0C11" />
+      <stop offset="100%" stop-color="#06070A" />
+    </linearGradient>
+
+    <!-- Border Gradient -->
+    <linearGradient id="border-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF3347" />
+      <stop offset="50%" stop-color="#8B1022" />
+      <stop offset="100%" stop-color="#FF3347" />
+    </linearGradient>
+
+    <!-- Icon Box Background -->
+    <linearGradient id="icon-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1A0D12" />
+      <stop offset="100%" stop-color="#0F070A" />
+    </linearGradient>
+  </defs>
+
+  <!-- Card Cut-Corner Path -->
+  <!-- 600x180 with 14px chamfered corners -->
+  <path d="M 16 3 
+           L 584 3 
+           L 597 16 
+           L 597 164 
+           L 584 177 
+           L 16 177 
+           L 3 164 
+           L 3 16 
+           Z" 
+        fill="url(#card-bg)" 
+        stroke="url(#border-grad)" 
+        stroke-width="1.8" 
+        filter="url(#glow)" />
+
+  <!-- Inner HUD Tech Lines -->
+  <path d="M 20 8 L 580 8" stroke="#FF3347" stroke-width="0.5" stroke-opacity="0.25"/>
+  <path d="M 592 20 L 592 160" stroke="#FF3347" stroke-width="0.5" stroke-opacity="0.25"/>
+  <path d="M 20 172 L 580 172" stroke="#FF3347" stroke-width="0.5" stroke-opacity="0.25"/>
+  <path d="M 8 20 L 8 160" stroke="#FF3347" stroke-width="0.5" stroke-opacity="0.25"/>
+
+  <!-- Corner Tech Accents -->
+  <path d="M 3 35 L 3 16 L 16 3 L 35 3" fill="none" stroke="#FF3347" stroke-width="2.5"/>
+  <path d="M 565 3 L 584 3 L 597 16 L 597 35" fill="none" stroke="#FF3347" stroke-width="2.5"/>
+  <path d="M 597 145 L 597 164 L 584 177 L 565 177" fill="none" stroke="#FF3347" stroke-width="2.5"/>
+  <path d="M 35 177 L 16 177 L 3 164 L 3 145" fill="none" stroke="#FF3347" stroke-width="2.5"/>
+
+  <!-- Left Icon Frame Box (96x96 at x=32, y=42) -->
+  <rect x="32" y="42" width="96" height="96" rx="10" fill="url(#icon-bg)" stroke="#FF3347" stroke-width="1.5" stroke-opacity="0.7"/>
+  <rect x="36" y="46" width="88" height="88" rx="8" fill="none" stroke="#FF3347" stroke-width="0.5" stroke-dasharray="4 2" stroke-opacity="0.4"/>
+
+  <!-- Icon inside Frame (Centered in 96x96 box -> x=32+48=80, y=42+48=90) -->
+  <g transform="translate(80, 90)" filter="url(#icon-glow)">
+    <g transform="translate(-24, -24)">
+  <g fill="none" stroke="#FF3347" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="6" y="10" width="36" height="28" rx="4"/>
+    <path d="m6 14 18 12 18-12"/>
+  </g>
+</g>
+  </g>
+
+  <!-- Title (Large White Text) -->
+  <text x="148" y="70" fill="#F2F2F4" font-family="'JetBrains Mono', 'Segoe UI', -apple-system, monospace" font-size="24" font-weight="800" letter-spacing="2">EMAIL</text>
+
+  <!-- Subtitle (Muted Secondary URL) -->
+  <text x="148" y="102" fill="#858994" font-family="'JetBrains Mono', 'Segoe UI', monospace" font-size="15" font-weight="500" letter-spacing="0.5">contact@arpanstudio.dev</text>
+
+  <!-- Status / Tag Indicator -->
+  <g transform="translate(148, 126)">
+    <!-- Status Dot -->
+    <circle cx="6" cy="8" r="4" fill="#FF3347" filter="url(#icon-glow)"/>
+    <text x="18" y="12" fill="#FF3347" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="700" letter-spacing="1.5">CHANNEL: DIRECT</text>
+  </g>
+
+  <!-- Top Right External Link Arrow Box (40x40 at x=528, y=32) -->
+  <rect x="528" y="32" width="40" height="40" rx="6" fill="#12080B" stroke="#FF3347" stroke-width="1.2" stroke-opacity="0.8"/>
+  <path d="M 542 54 L 554 42 M 546 42 L 554 42 L 554 50" fill="none" stroke="#FF3347" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Subtle Bottom-Right Decorative Scan Dots -->
+  <circle cx="536" cy="148" r="1.5" fill="#FF3347" opacity="0.6"/>
+  <circle cx="546" cy="148" r="1.5" fill="#FF3347" opacity="0.6"/>
+  <circle cx="556" cy="148" r="1.5" fill="#FF3347" opacity="0.6"/>
+  <circle cx="566" cy="148" r="1.5" fill="#FF3347" opacity="0.6"/>
+  <line x1="536" y1="156" x2="568" y2="156" stroke="#FF3347" stroke-width="1" stroke-opacity="0.4" stroke-dasharray="2 2"/>
+</svg>
