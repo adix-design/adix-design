@@ -140,7 +140,7 @@ Connecting AI, APIs and business processes to reduce repetitive work.
 
 <div align="center">
 
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=adix-design&bg_color=0A0B0F&color=E9EAEE&line=FF3347&point=FF6675&area_color=8B1022&area=true&hide_border=true" width="100%" alt="GitHub activity graph"/>
+<img src="./assets/github-contribution-heatmap.svg" width="100%" alt="GitHub contribution activity"/>
 
 <br/><br/>
 
