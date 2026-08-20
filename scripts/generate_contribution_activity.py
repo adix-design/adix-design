@@ -1,12 +1,17 @@
 #!/usr/bin/env python3
 """
 Generate an animated Cyberpunk GitHub Contribution Activity GIF.
-Combines:
-  1. Real GitHub contribution calendar (last ~12 months)
-  2. Dark + crimson cyberpunk HUD styling
-  3. Interactive pixel snake traversing and consuming red contribution cells
-  4. Glowing particle effects on consumption
-  5. Optimized, seamless looping GIF export
+Real GitHub contribution calendar with a true game-engine snake simulation:
+  1. Identifies all real contribution cells (> 0).
+  2. The Snake intentionally targets each active red cell in order.
+  3. Cell-by-cell pathfinding (UP, DOWN, LEFT, RIGHT).
+  4. Precise eat collision events:
+     - Approach / Overlap
+     - Cell Flashes bright neon-white
+     - Cell Disappears into eaten_cells state (drawn permanently EMPTY for the rest of the cycle)
+     - Crimson particle explosion effect
+     - Snake continues to the next red target
+  5. Clean loop reset and optimized GIF export.
 """
 
 import json
@@ -24,13 +29,12 @@ COLOR_BG           = (7, 9, 13)       # #07090D
 COLOR_PANEL_BG     = (11, 13, 18)     # #0B0D12
 COLOR_BORDER       = (255, 51, 71)    # #FF3347
 COLOR_BORDER_DARK  = (139, 16, 34)    # #8B1022
-COLOR_ACCENT_GLOW  = (255, 80, 100)   # #FF5064
 COLOR_EMPTY_CELL   = (21, 24, 31)     # #15181F
 
-COLOR_LEVEL_1      = (58, 17, 23)     # #3A1117
-COLOR_LEVEL_2      = (111, 23, 34)    # #6F1722
-COLOR_LEVEL_3      = (181, 31, 50)    # #B51F32
-COLOR_LEVEL_4      = (255, 51, 71)    # #FF3347
+COLOR_LEVEL_1      = (58, 17, 23)     # #3A1117 - Low
+COLOR_LEVEL_2      = (111, 23, 34)    # #6F1722 - Medium
+COLOR_LEVEL_3      = (181, 31, 50)    # #B51F32 - High
+COLOR_LEVEL_4      = (255, 51, 71)    # #FF3347 - Highest
 
 COLOR_TEXT_MAIN    = (242, 242, 244)  # #F2F2F4
 COLOR_TEXT_MUTED   = (133, 137, 148)  # #858994
@@ -39,17 +43,9 @@ COLOR_TEXT_ACCENT  = (255, 51, 71)    # #FF3347
 COLOR_SNAKE_HEAD   = (255, 51, 71)    # #FF3347
 COLOR_SNAKE_EYES   = (255, 255, 255)  # #FFFFFF
 COLOR_SNAKE_BODY_1 = (255, 70, 90)    # #FF465A
-COLOR_SNAKE_BODY_2 = (181, 31, 50)    # #B51F32
-COLOR_SNAKE_BODY_3 = (111, 23, 34)    # #6F1722
-COLOR_SNAKE_BODY_4 = (58, 17, 23)     # #3A1117
-
-LEVEL_COLOR_MAP = {
-    "NONE":            COLOR_EMPTY_CELL,
-    "FIRST_QUARTILE":  COLOR_LEVEL_1,
-    "SECOND_QUARTILE": COLOR_LEVEL_2,
-    "THIRD_QUARTILE":  COLOR_LEVEL_3,
-    "FOURTH_QUARTILE": COLOR_LEVEL_4,
-}
+COLOR_SNAKE_BODY_2 = (200, 40, 60)    # #C8283C
+COLOR_SNAKE_BODY_3 = (139, 16, 34)    # #8B1022
+COLOR_SNAKE_BODY_4 = (70, 15, 25)     # #460F19
 
 # ── Data Fetching ──────────────────────────────────────────────────────────
 GRAPHQL_QUERY = """
@@ -111,7 +107,6 @@ def fetch_contributions_public(username: str) -> dict:
     
     matches.sort(key=lambda x: x[0])
     
-    # Try finding counts
     tooltip_matches = dict(re.findall(r'data-date="([^"]+)"[^>]*>.*?(\d+)\s+contribution', html, re.DOTALL))
     
     level_map = {
@@ -157,18 +152,35 @@ def get_contribution_data(username: str) -> dict:
             print(f"Fetching contribution data via GraphQL for {username}...")
             return fetch_contributions_graphql(username, token)
         except Exception as e:
-            print(f"GraphQL fetch failed: {e}. Falling back to public scraping...", file=sys.stderr)
+            print(f"GraphQL fetch failed: {e}. Falling back to public scraper...", file=sys.stderr)
     
     print(f"Fetching contribution data via public scraper for {username}...")
     return fetch_contributions_public(username)
 
+def get_cell_color(day):
+    count = day.get("contributionCount", 0)
+    level = day.get("contributionLevel", "NONE")
+    
+    if level == "FOURTH_QUARTILE" or count >= 10:
+        return COLOR_LEVEL_4
+    elif level == "THIRD_QUARTILE" or count >= 6:
+        return COLOR_LEVEL_3
+    elif level == "SECOND_QUARTILE" or count >= 3:
+        return COLOR_LEVEL_2
+    elif level == "FIRST_QUARTILE" or count >= 1:
+        return COLOR_LEVEL_1
+    return COLOR_EMPTY_CELL
+
+def is_active_day(day):
+    return day.get("contributionCount", 0) > 0 or day.get("contributionLevel", "NONE") != "NONE"
+
 # ── Font Loading ───────────────────────────────────────────────────────────
 def get_font(size: int, bold: bool = False):
-    # Try system fonts or default bitmap font
     font_names = [
         "consola.ttf" if not bold else "consolab.ttf",
         "cour.ttf" if not bold else "courbd.ttf",
         "JetBrainsMono-Bold.ttf" if bold else "JetBrainsMono-Regular.ttf",
+        "DejaVuSansMono.ttf",
         "Arial.ttf",
     ]
     for fn in font_names:
@@ -181,100 +193,229 @@ def get_font(size: int, bold: bool = False):
     except Exception:
         return None
 
-# ── Smart Snake Pathfinding ────────────────────────────────────────────────
-def build_snake_path(weeks_data, num_cols, num_rows):
+# ── Cluster-based Target Planning & Pathfinding ────────────────────────────
+def plan_targets(weeks_data, num_cols):
     """
-    Build a smooth continuous cyclic path on the (cols, rows) grid that visits
-    the active red cells across the board and returns smoothly to the start.
+    Extract active cells and plan a logical cluster-by-cluster target order
+    from left to right across the board.
     """
-    active_cells = set()
+    active_cells = []
     for col_idx, week in enumerate(weeks_data):
         for day in week["contributionDays"]:
-            if day["contributionLevel"] != "NONE" or day["contributionCount"] > 0:
-                active_cells.add((col_idx, day["weekday"]))
+            if is_active_day(day):
+                active_cells.append((col_idx, day["weekday"]))
 
-    # Sort active cells by column
-    sorted_active = sorted(list(active_cells), key=lambda pt: (pt[0], pt[1]))
+    if not active_cells:
+        # Fallback if brand new profile with 0 contributions
+        return [(c, 3) for c in range(10, num_cols - 10, 5)]
+
+    # Group into contiguous / nearby column clusters (cells within 3 columns of each other)
+    sorted_cells = sorted(active_cells, key=lambda pt: (pt[0], pt[1]))
+    clusters = []
+    curr_cluster = [sorted_cells[0]]
+    for pt in sorted_cells[1:]:
+        if pt[0] - curr_cluster[-1][0] <= 3:
+            curr_cluster.append(pt)
+        else:
+            clusters.append(curr_cluster)
+            curr_cluster = [pt]
+    clusters.append(curr_cluster)
+
+    ordered_targets = []
+    curr_pos = (0, 0)
+    for cluster in clusters:
+        # Solve local TSP for this cluster to visit all points in cluster starting from curr_pos
+        unvisited_cluster = set(cluster)
+        while unvisited_cluster:
+            nxt = min(unvisited_cluster, key=lambda pt: abs(pt[0] - curr_pos[0]) + abs(pt[1] - curr_pos[1]))
+            ordered_targets.append(nxt)
+            unvisited_cluster.remove(nxt)
+            curr_pos = nxt
+
+    return ordered_targets
+
+def path_between(pt1, pt2):
+    """
+    Generate step-by-step orthogonal grid path (UP, DOWN, LEFT, RIGHT)
+    from pt1 to pt2 (excluding pt1, including pt2).
+    """
+    cx, cy = pt1
+    tx, ty = pt2
+    steps = []
     
-    if not sorted_active:
-        # Fallback default loop across the grid
-        sorted_active = [(col, 3) for col in range(5, num_cols - 5, 4)]
+    # Move horizontally first, then vertically
+    step_x = 1 if tx > cx else -1
+    while cx != tx:
+        cx += step_x
+        steps.append((cx, cy))
+        
+    step_y = 1 if ty > cy else -1
+    while cy != ty:
+        cy += step_y
+        steps.append((cx, cy))
+        
+    return steps
 
-    # We want a sequence of key waypoints that traverses from left to right,
-    # visiting active clusters, then loops back along top/bottom edges.
-    # Sample waypoints:
-    waypoints = []
-    # Pick representative active points spread across the timeline
-    last_col = -10
-    for pt in sorted_active:
-        if pt[0] - last_col >= 2 or (pt[0] > last_col and len(waypoints) < 15):
-            waypoints.append(pt)
-            last_col = pt[0]
-            if len(waypoints) >= 20:
-                break
+# ── Simulation & Frame State Generation ────────────────────────────────────
+def simulate_animation_frames(weeks_data, num_cols, num_rows=7):
+    """
+    Run full discrete frame simulation of snake hunting, eating, particle bursts,
+    disappearing cells, and loop reset.
+    """
+    targets = plan_targets(weeks_data, num_cols)
+    first_target = targets[0]
     
-    if len(waypoints) < 4:
-        waypoints = [(5, 2), (15, 4), (25, 1), (35, 5), (45, 3)]
+    # Starting position 2 cells before first target
+    start_pos = (max(0, first_target[0] - 2), first_target[1])
+    
+    # Initial snake body (length 4)
+    snake_len = 4
+    snake_body = [start_pos] * snake_len
+    eaten_cells = set()
+    particles = []
+    
+    frames_state = []
+    
+    # 1. Approach to first target
+    steps_to_first = path_between(start_pos, first_target)
+    frames_state.append({
+        "snake": list(snake_body),
+        "eaten": set(eaten_cells),
+        "flash": None,
+        "particles": list(particles),
+        "phase": "move"
+    })
+    
+    for step in steps_to_first[:-1]:
+        snake_body = [step] + snake_body[:-1]
+        frames_state.append({
+            "snake": list(snake_body),
+            "eaten": set(eaten_cells),
+            "flash": None,
+            "particles": list(particles),
+            "phase": "move"
+        })
 
-    # Return loop waypoints from right back to left
-    return_pts = [
-        (min(num_cols - 2, waypoints[-1][0] + 3), 1),
-        (num_cols // 2, 0),
-        (max(1, waypoints[0][0] - 2), 0)
+    # 2. Sequential Target Hunting & Eating
+    for t_idx, target in enumerate(targets):
+        # Move head onto target cell
+        snake_body = [target] + snake_body[:-1]
+        
+        # Frame A: Overlap + Bright Flash
+        frames_state.append({
+            "snake": list(snake_body),
+            "eaten": set(eaten_cells), # not eaten yet
+            "flash": target,           # flashing bright
+            "particles": list(particles),
+            "phase": "flash"
+        })
+        
+        # Frame B: Consume! Target added to eaten_cells + spawn particles
+        eaten_cells.add(target)
+        
+        # Spawn glowing particle sparks
+        new_sparks = []
+        for angle_deg in [0, 45, 90, 135, 180, 225, 270, 315]:
+            rad = math.radians(angle_deg)
+            speed = 3.2
+            new_sparks.append({
+                "cell": target,
+                "vx": math.cos(rad) * speed,
+                "vy": math.sin(rad) * speed,
+                "age": 0,
+                "max_age": 3
+            })
+        particles.extend(new_sparks)
+        
+        frames_state.append({
+            "snake": list(snake_body),
+            "eaten": set(eaten_cells), # now permanently eaten
+            "flash": None,
+            "particles": list(particles),
+            "phase": "eat"
+        })
+        
+        # Move towards next target (if any)
+        if t_idx < len(targets) - 1:
+            next_target = targets[t_idx + 1]
+            steps = path_between(target, next_target)
+            
+            # Step along the path up to next target
+            for step in steps[:-1]:
+                snake_body = [step] + snake_body[:-1]
+                
+                # Advance active particles
+                updated_particles = []
+                for p in particles:
+                    p["age"] += 1
+                    if p["age"] < p["max_age"]:
+                        updated_particles.append(p)
+                particles = updated_particles
+                
+                frames_state.append({
+                    "snake": list(snake_body),
+                    "eaten": set(eaten_cells),
+                    "flash": None,
+                    "particles": list(particles),
+                    "phase": "move"
+                })
+
+    # 3. Return Loop Path back to Start
+    last_target = targets[-1]
+    
+    # Return loop: move up to row 0 / top channel, traverse left to col 0, down to start_pos
+    return_waypoints = [
+        (min(num_cols - 1, last_target[0] + 1), 0),
+        (0, 0),
+        start_pos
     ]
-    all_targets = waypoints + return_pts
-
-    # Generate step-by-step Manhattan path connecting all targets cyclically
-    full_path = []
-    curr = all_targets[0]
-    full_path.append(curr)
-
-    for target in all_targets[1:] + [all_targets[0]]:
-        cx, cy = curr
-        tx, ty = target
-        
-        # Move horizontally towards target X, then vertically towards target Y
-        # Introduce slight organic wiggles
-        step_x = 1 if tx > cx else -1
-        while cx != tx:
-            cx += step_x
-            full_path.append((cx, cy))
-        
-        step_y = 1 if ty > cy else -1
-        while cy != ty:
-            cy += step_y
-            full_path.append((cx, cy))
-        
-        curr = (tx, ty)
-
-    # Remove duplicates
-    cleaned_path = [full_path[0]]
-    for p in full_path[1:]:
-        if p != cleaned_path[-1]:
-            cleaned_path.append(p)
     
-    # Ensure cycle closes cleanly
-    if cleaned_path[-1] == cleaned_path[0]:
-        cleaned_path.pop()
+    curr = last_target
+    for r_pt in return_waypoints:
+        steps = path_between(curr, r_pt)
+        for step in steps:
+            snake_body = [step] + snake_body[:-1]
+            
+            # Age particles
+            updated_particles = []
+            for p in particles:
+                p["age"] += 1
+                if p["age"] < p["max_age"]:
+                    updated_particles.append(p)
+            particles = updated_particles
+            
+            frames_state.append({
+                "snake": list(snake_body),
+                "eaten": set(eaten_cells),
+                "flash": None,
+                "particles": list(particles),
+                "phase": "return"
+            })
+        curr = r_pt
 
-    return cleaned_path, active_cells
+    # 4. Seamless Loop Reset Transition (last 2 frames fade restored grid)
+    frames_state.append({
+        "snake": list(snake_body),
+        "eaten": set(), # Grid restored for seamless loop back to frame 0
+        "flash": None,
+        "particles": [],
+        "phase": "reset"
+    })
 
-# ── Frame Drawing ──────────────────────────────────────────────────────────
-def render_frame(
+    return frames_state
+
+# ── Frame Rendering ──────────────────────────────────────────────────────────
+def render_frame_image(
     calendar_data,
     weeks_data,
     total_contribs,
-    snake_path,
-    frame_idx,
-    total_frames,
-    active_cells,
+    state,
     fonts,
     width=980,
-    height=270
+    height=265
 ):
     im = Image.new("RGB", (width, height), COLOR_BG)
     draw = ImageDraw.Draw(im)
-
     font_title, font_sub, font_small, font_tiny = fonts
 
     # 1. Panel Background with Cut Corners
@@ -313,20 +454,17 @@ def render_frame(
     stat_text = f"{total_contribs:,} CONTRIBUTIONS"
 
     draw.text((38, 22), title_text, fill=COLOR_TEXT_MAIN, font=font_title)
-    
-    # Right-aligned count
     draw.text((width - 42, 24), stat_text, fill=COLOR_TEXT_MUTED, font=font_sub, anchor="ra")
 
     # Divider line
     draw.line([(38, 48), (width - 38, 48)], fill=COLOR_BORDER_DARK, width=1)
-    draw.line([(38, 48), (140, 48)], fill=COLOR_BORDER, width=1) # Neon accent on header
+    draw.line([(38, 48), (140, 48)], fill=COLOR_BORDER, width=1) # Neon header notch
 
-    # 4. Grid Coordinates
+    # 4. Grid Dimensions & Positions
     cell_size = 12
     cell_gap = 3
     left_margin = 68
     top_margin = 82
-    num_cols = len(weeks_data)
 
     # 5. Month Labels
     month_names = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
@@ -347,45 +485,10 @@ def render_frame(
         y = top_margin + w_idx * (cell_size + cell_gap) + 1
         draw.text((left_margin - 12, y), w_label, fill=COLOR_TEXT_MUTED, font=font_tiny, anchor="ra")
 
-    # 7. Snake position calculation
-    path_len = len(snake_path)
-    head_path_idx = (frame_idx) % path_len
-    snake_length = 5  # head + 4 tail segments
+    # 7. Draw Contribution Grid Cells (With Eaten State & Flash Check)
+    eaten_cells = state["eaten"]
+    flash_cell = state["flash"]
 
-    # Snake segment coordinates on grid
-    snake_coords = []
-    for s in range(snake_length):
-        idx = (head_path_idx - s) % path_len
-        snake_coords.append(snake_path[idx])
-
-    head_pos = snake_coords[0]
-
-    # Track recently consumed cell for particle / burst effects
-    # Find active cells that the snake head is visiting or recently visited
-    particles = []
-    for f_offset in range(4): # Last 4 frames
-        check_idx = (head_path_idx - f_offset) % path_len
-        check_pt = snake_path[check_idx]
-        if check_pt in active_cells:
-            # Generate sparkle particles expanding outwards
-            progress = f_offset / 3.0  # 0.0 to 1.0
-            pt_x = left_margin + check_pt[0] * (cell_size + cell_gap) + cell_size // 2
-            pt_y = top_margin + check_pt[1] * (cell_size + cell_gap) + cell_size // 2
-            
-            p_dist = progress * 9.0
-            p_alpha_color = (
-                int(255 - progress * 100),
-                int(51 + progress * 50),
-                int(71 + progress * 50)
-            )
-            # 4 particle sparks at diagonals
-            for angle_deg in [45, 135, 225, 315]:
-                rad = math.radians(angle_deg)
-                px = pt_x + math.cos(rad) * p_dist
-                py = pt_y + math.sin(rad) * p_dist
-                particles.append((px, py, max(1, int(3 - progress * 2)), p_alpha_color))
-
-    # 8. Draw Grid Cells
     for wi, week in enumerate(weeks_data):
         for day in week["contributionDays"]:
             col = wi
@@ -393,15 +496,16 @@ def render_frame(
             x = left_margin + col * (cell_size + cell_gap)
             y = top_margin + row * (cell_size + cell_gap)
 
-            base_color = LEVEL_COLOR_MAP.get(day["contributionLevel"], COLOR_EMPTY_CELL)
-            
-            # Check if this cell is currently under snake head (eaten glow)
-            is_head = (col, row) == head_pos
-            if is_head and (col, row) in active_cells:
-                # Brief neon burst
-                cell_fill = (255, 120, 140)
+            # Cell Color Logic
+            if (col, row) == flash_cell:
+                # EAT EVENT: Intense Neon Flash!
+                cell_fill = (255, 230, 240)
+            elif (col, row) in eaten_cells:
+                # EATEN STATE: Permanently Empty/Dark for this cycle!
+                cell_fill = COLOR_EMPTY_CELL
             else:
-                cell_fill = base_color
+                # Normal real contribution color
+                cell_fill = get_cell_color(day)
 
             # Draw rounded square cell
             draw.rounded_rectangle(
@@ -410,8 +514,11 @@ def render_frame(
                 fill=cell_fill
             )
 
-    # 9. Draw Snake Body and Head
-    # Draw body segments (from tail to head)
+    # 8. Draw Snake Body & Head
+    snake_coords = state["snake"]
+    head_pos = snake_coords[0]
+
+    # Body segments (tail to neck)
     body_colors = [COLOR_SNAKE_BODY_4, COLOR_SNAKE_BODY_3, COLOR_SNAKE_BODY_2, COLOR_SNAKE_BODY_1]
     for seg_idx in range(len(snake_coords) - 1, 0, -1):
         sc = snake_coords[seg_idx]
@@ -420,7 +527,6 @@ def render_frame(
         
         c_fill = body_colors[min(seg_idx - 1, len(body_colors) - 1)]
         
-        # Inner body segment
         draw.rounded_rectangle(
             [sx + 1, sy + 1, sx + cell_size - 2, sy + cell_size - 2],
             radius=3,
@@ -428,17 +534,15 @@ def render_frame(
             outline=COLOR_BORDER,
             width=1
         )
-        # Center core glow
         draw.rectangle(
             [sx + 4, sy + 4, sx + cell_size - 5, sy + cell_size - 5],
             fill=COLOR_BORDER
         )
 
-    # Draw Snake Head (Cyberpunk Pixel Head)
+    # Head Segment
     hx = left_margin + head_pos[0] * (cell_size + cell_gap)
     hy = top_margin + head_pos[1] * (cell_size + cell_gap)
-    
-    # Outer head
+
     draw.rounded_rectangle(
         [hx, hy, hx + cell_size - 1, hy + cell_size - 1],
         radius=3,
@@ -446,27 +550,40 @@ def render_frame(
         outline=(255, 200, 210),
         width=1
     )
-    
-    # Direction for eyes
+
+    # Orientation for eyes
     prev_pos = snake_coords[1] if len(snake_coords) > 1 else head_pos
     dx = head_pos[0] - prev_pos[0]
     dy = head_pos[1] - prev_pos[1]
 
-    # Glowing eyes
-    if dx >= 0 and dy == 0:  # Moving right
+    if dx >= 0 and dy == 0:  # Moving Right
         draw.point([(hx + 8, hy + 3), (hx + 8, hy + 8)], fill=COLOR_SNAKE_EYES)
-    elif dx < 0 and dy == 0: # Moving left
+    elif dx < 0 and dy == 0: # Moving Left
         draw.point([(hx + 3, hy + 3), (hx + 3, hy + 8)], fill=COLOR_SNAKE_EYES)
-    elif dy > 0:             # Moving down
+    elif dy > 0:             # Moving Down
         draw.point([(hx + 3, hy + 8), (hx + 8, hy + 8)], fill=COLOR_SNAKE_EYES)
-    else:                    # Moving up
+    else:                    # Moving Up
         draw.point([(hx + 3, hy + 3), (hx + 8, hy + 3)], fill=COLOR_SNAKE_EYES)
 
-    # 10. Draw Sparkle / Particle Effects
-    for px, py, pr, pcol in particles:
-        draw.ellipse([px - pr, py - pr, px + pr, py + pr], fill=pcol)
+    # 9. Draw Active Particle Sparks
+    for p in state["particles"]:
+        p_col, p_row = p["cell"]
+        center_x = left_margin + p_col * (cell_size + cell_gap) + cell_size // 2
+        center_y = top_margin + p_row * (cell_size + cell_gap) + cell_size // 2
+        
+        px = center_x + p["vx"] * (p["age"] + 1)
+        py = center_y + p["vy"] * (p["age"] + 1)
+        pr = max(1, 3 - p["age"])
+        
+        alpha_factor = max(0.2, 1.0 - (p["age"] / p["max_age"]))
+        spark_color = (
+            int(255 * alpha_factor),
+            int(51 * alpha_factor + 50),
+            int(71 * alpha_factor + 50)
+        )
+        draw.ellipse([px - pr, py - pr, px + pr, py + pr], fill=spark_color)
 
-    # 11. Legend (Bottom Left)
+    # 10. Legend (Bottom Left)
     legend_y = top_margin + 7 * (cell_size + cell_gap) + 20
     draw.text((left_margin, legend_y), "Less", fill=COLOR_TEXT_MUTED, font=font_tiny)
 
@@ -482,58 +599,54 @@ def render_frame(
 
     draw.text((leg_x + 4, legend_y), "More", fill=COLOR_TEXT_MUTED, font=font_tiny)
 
-    # 12. Bottom Right Subtle HUD Accent Dots
+    # 11. Bottom Right Subtle HUD Accent Dots
     for i in range(4):
         dot_x = width - 42 - i * 10
         draw.ellipse([dot_x - 1, legend_y + 6, dot_x + 1, legend_y + 8], fill=COLOR_BORDER)
 
     return im
 
-# ── Main Export ────────────────────────────────────────────────────────────
-def generate_contribution_activity_gif(username: str, output_path: str, num_frames: int = 60, duration_ms: int = 80):
+# ── Main Generator ─────────────────────────────────────────────────────────
+def generate_contribution_activity_gif(username: str, output_path: str, duration_ms: int = 90):
     calendar = get_contribution_data(username)
     weeks = calendar["weeks"]
     total = calendar["totalContributions"]
-    num_weeks = len(weeks)
+    num_cols = len(weeks)
 
-    print(f"Loaded {num_weeks} weeks of real data, Total Contributions: {total}")
+    print(f"Loaded {num_cols} weeks of real data, Total Contributions: {total}")
 
-    # Initialize fonts
+    # Fonts
     f_title = get_font(14, bold=True)
     f_sub   = get_font(12, bold=False)
     f_small = get_font(11, bold=False)
     f_tiny  = get_font(10, bold=False)
     fonts = (f_title, f_sub, f_small, f_tiny)
 
-    # Build snake path
-    snake_path, active_cells = build_snake_path(weeks, num_weeks, 7)
-    print(f"Snake path constructed with {len(snake_path)} cyclic steps across {len(active_cells)} active contribution cells.")
+    # Run Simulation to generate frame states
+    print("Simulating Snake hunting, eat collisions, and particle bursts...")
+    frame_states = simulate_animation_frames(weeks, num_cols, num_rows=7)
+    total_frames = len(frame_states)
+    print(f"Generated {total_frames} discrete game frames.")
 
-    # Determine total frames for one complete cyclic loop (or multiple of path)
-    actual_frames = len(snake_path)
-    print(f"Rendering {actual_frames} animation frames...")
-
+    # Render each frame
+    print(f"Rendering {total_frames} animation frames...")
     frames = []
-    for f in range(actual_frames):
-        frame_im = render_frame(
+    for f_idx, st in enumerate(frame_states):
+        frame_im = render_frame_image(
             calendar_data=calendar,
             weeks_data=weeks,
             total_contribs=total,
-            snake_path=snake_path,
-            frame_idx=f,
-            total_frames=actual_frames,
-            active_cells=active_cells,
+            state=st,
             fonts=fonts,
             width=980,
             height=265
         )
-        # Quantize to 128 colors with custom palette for clean GIF compression
         quantized = frame_im.quantize(colors=128, method=Image.Quantize.MEDIANCUT)
         frames.append(quantized)
 
     os.makedirs(os.path.dirname(output_path) or ".", exist_ok=True)
 
-    print(f"Saving animated GIF to {output_path}...")
+    print(f"Saving optimized animated GIF to {output_path}...")
     frames[0].save(
         output_path,
         save_all=True,
@@ -544,8 +657,8 @@ def generate_contribution_activity_gif(username: str, output_path: str, num_fram
     )
 
     file_size = os.path.getsize(output_path)
-    print(f"SUCCESS: Saved {output_path} ({file_size:,} bytes, {len(frames)} frames, {duration_ms}ms/frame)")
-    return actual_frames, total, file_size
+    print(f"SUCCESS: Saved {output_path} ({file_size:,} bytes, {total_frames} frames, {duration_ms}ms/frame)")
+    return total_frames, total, file_size
 
 if __name__ == "__main__":
     user = sys.argv[1] if len(sys.argv) > 1 else "adix-design"
