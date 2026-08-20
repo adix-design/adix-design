@@ -101,40 +101,11 @@ Build useful products, learn continuously, and turn strong ideas into things peo
 
 ## 🧩 BUILDING FOCUS
 
-<table>
-<tr>
-<td width="50%" valign="top">
+`Where I currently spend most of my design and engineering energy.`
 
-### 🤖 AI PRODUCTS
-
-AI-powered interfaces, tools, automations and intelligent workflows.
-
-</td>
-<td width="50%" valign="top">
-
-### 🌐 WEB EXPERIENCES
-
-Fast, responsive, modern websites and full-stack applications.
-
-</td>
-</tr>
-<tr>
-<td width="50%" valign="top">
-
-### 🎨 PRODUCT DESIGN
-
-Design-first thinking, visual systems and polished user experiences.
-
-</td>
-<td width="50%" valign="top">
-
-### ⚙️ AUTOMATION
-
-Connecting AI, APIs and business processes to reduce repetitive work.
-
-</td>
-</tr>
-</table>
+<div align="center">
+<img src="./assets/building-focus.svg" alt="Building Focus - Current Areas of Work" width="100%"/>
+</div>
 
 ---
 
