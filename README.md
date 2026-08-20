@@ -174,27 +174,30 @@ Connecting AI, APIs and business processes to reduce repetitive work.
 
 ---
 
-## 📡 CONTACT TERMINAL
-
-<img src="./assets/contact/contact-header.svg" alt="Contact Terminal" width="100%"/>
-
-<table width="100%">
-<tr>
-  <td width="50%"><a href="https://arpanstudio.dev"><img src="./assets/contact/portfolio-card.svg" alt="Portfolio" width="100%"/></a></td>
-  <td width="50%"><a href="mailto:contact@arpanstudio.dev"><img src="./assets/contact/email-card.svg" alt="Email" width="100%"/></a></td>
-</tr>
-<tr>
-  <td width="50%"><a href="https://www.linkedin.com/in/arpan-deep-dubey/"><img src="./assets/contact/linkedin-card.svg" alt="LinkedIn" width="100%"/></a></td>
-  <td width="50%"><a href="https://github.com/adix-design"><img src="./assets/contact/github-card.svg" alt="GitHub" width="100%"/></a></td>
-</tr>
-</table>
-
-<img src="./assets/contact/status-bar.svg" alt="Status Bar" width="100%"/>
-
-<img src="./assets/contact/connection-footer.svg" alt="Connection Footer" width="100%"/>
-
-<br/>
+## 📡 CONTACT
 
 <div align="center">
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:FF3347,45:9D1023,75:18090D,100:050609&height=140&section=footer" width="100%"/>
+
+<a href="https://arpanstudio.dev">
+<img src="https://img.shields.io/badge/%F0%9F%8C%90%20PORTFOLIO-FF3347?style=for-the-badge&labelColor=08090D" />
+</a>
+
+&nbsp;&nbsp;
+
+<a href="mailto:contact@arpanstudio.dev">
+<img src="https://img.shields.io/badge/%E2%9C%89%20EMAIL-FF3347?style=for-the-badge&labelColor=08090D" />
+</a>
+
+<br/><br/>
+
+<a href="https://www.linkedin.com/in/arpan-deep-dubey/">
+<img src="https://img.shields.io/badge/%F0%9F%92%BC%20LINKEDIN-FF3347?style=for-the-badge&labelColor=08090D" />
+</a>
+
+&nbsp;&nbsp;
+
+<a href="https://github.com/adix-design">
+<img src="https://img.shields.io/badge/%F0%9F%90%99%20GITHUB-FF3347?style=for-the-badge&labelColor=08090D" />
+</a>
+
 </div>
