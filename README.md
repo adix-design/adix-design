@@ -22,7 +22,7 @@
 
 <br/><br/>
 
-<code>BUILD • SHIP • ITERATE</code>
+<img src="./assets/typewriter-profile.gif" alt="Arpan Deep Dubey typewriter profile animation" />
 
 </div>
 
