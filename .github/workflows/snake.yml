@@ -1,9 +1,9 @@
 name: Generate Contribution Snake
 
 on:
-  workflow_dispatch:
   schedule:
     - cron: "0 0 * * *"
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -17,8 +17,7 @@ jobs:
         with:
           github_user_name: adix-design
           outputs: |
-            dist/github-contribution-grid-snake.svg
-            dist/github-contribution-grid-snake-dark.svg?palette=github-dark
+            dist/github-contribution-snake.svg?color_snake=#FF3347&color_dots=#15171D,#3A1117,#6F1722,#B51F32,#FF3347
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
