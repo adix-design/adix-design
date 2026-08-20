@@ -8,3 +8,8 @@ __pycache__/
 Thumbs.db
 .vscode/
 .idea/
+
+# Environment / Credentials
+.env
+.env.*
+!.env.example
