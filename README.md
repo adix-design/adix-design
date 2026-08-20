@@ -113,10 +113,10 @@ Build useful products, learn continuously, and turn strong ideas into things peo
 
 ## 🏆 ACHIEVEMENTS
 
-`VERIFIED MILESTONES`
+`PLAYER PROGRESSION`
 
 <div align="center">
-<img src="./assets/github-trophies.svg" width="100%" alt="Verified Developer Milestones"/>
+<img src="./assets/github-trophies.svg" width="100%" alt="Player Achievement Journey"/>
 </div>
 
 ---
