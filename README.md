@@ -101,7 +101,7 @@ Build useful products, learn continuously, and turn strong ideas into things peo
 
 ## 🧩 BUILDING FOCUS
 
-`Where I currently spend most of my design and engineering energy.`
+`CURRENT AREAS OF WORK`
 
 <div align="center">
 <img src="./assets/building-focus.svg" alt="Building Focus - Current Areas of Work" width="100%"/>
