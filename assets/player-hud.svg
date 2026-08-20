@@ -40,10 +40,10 @@
 <path d="M 28 14 L 1172 14 L 1186 28 L 1186 442 L 1172 456 L 28 456 L 14 442 L 14 28 Z" fill="url(#bg-grid)"/>
 
 <!-- Outer Corner Tech Accents -->
-<path d="M 14 48 L 14 28 L 28 14 L 48 14" fill="none" stroke="#FF3347" stroke-width="2.5"/>
-<path d="M 1152 14 L 1172 14 L 1186 28 L 1186 48" fill="none" stroke="#FF3347" stroke-width="2.5"/>
-<path d="M 1186 422 L 1186 442 L 1172 456 L 1152 456" fill="none" stroke="#FF3347" stroke-width="2.5"/>
-<path d="M 48 456 L 28 456 L 14 442 L 14 422" fill="none" stroke="#FF3347" stroke-width="2.5"/>
+<path d="M 14 52 L 14 28 L 28 14 L 52 14" fill="none" stroke="#FF3347" stroke-width="2"/>
+<path d="M 1148 14 L 1172 14 L 1186 28 L 1186 52" fill="none" stroke="#FF3347" stroke-width="2"/>
+<path d="M 1186 418 L 1186 442 L 1172 456 L 1148 456" fill="none" stroke="#FF3347" stroke-width="2"/>
+<path d="M 52 456 L 28 456 L 14 442 L 14 418" fill="none" stroke="#FF3347" stroke-width="2"/>
 
 <!-- ── TOP SYSTEM BAR ─────────────────────────────────────────── -->
 <g id="top-bar">
@@ -128,24 +128,24 @@
 <!-- ── RIGHT ZONE: PLAYER STATUS PANEL (Labels 13.5px, Values 16px) ─ -->
 <g id="status-panel" transform="translate(764, 70)">
   <!-- Status Container Box with Chamfered Corners -->
-  <path d="M 10 0 
-           L 380 0 
-           L 390 10 
-           L 390 286 
-           L 380 296 
-           L 10 296 
-           L 0 286 
-           L 0 10 Z" 
+  <path d="M 14 0 
+           L 376 0 
+           L 390 14 
+           L 390 282 
+           L 376 296 
+           L 14 296 
+           L 0 282 
+           L 0 14 Z" 
         fill="#080B10" 
         stroke="#FF3347" 
         stroke-width="1.2" 
         stroke-opacity="0.45"/>
 
   <!-- Panel Corner Accents -->
-  <path d="M 0 20 L 0 10 L 10 0 L 20 0" fill="none" stroke="#FF3347" stroke-width="2"/>
-  <path d="M 370 0 L 380 0 L 390 10 L 390 20" fill="none" stroke="#FF3347" stroke-width="2"/>
-  <path d="M 390 276 L 390 286 L 380 296 L 370 296" fill="none" stroke="#FF3347" stroke-width="2"/>
-  <path d="M 20 296 L 10 296 L 0 286 L 0 276" fill="none" stroke="#FF3347" stroke-width="2"/>
+  <path d="M 0 38 L 0 14 L 14 0 L 38 0" fill="none" stroke="#FF3347" stroke-width="2"/>
+  <path d="M 352 0 L 376 0 L 390 14 L 390 38" fill="none" stroke="#FF3347" stroke-width="2"/>
+  <path d="M 390 258 L 390 282 L 376 296 L 352 296" fill="none" stroke="#FF3347" stroke-width="2"/>
+  <path d="M 38 296 L 14 296 L 0 282 L 0 258" fill="none" stroke="#FF3347" stroke-width="2"/>
 
   <!-- Header (16px) -->
   <text x="22" y="28" fill="#FF3347" font-family="'JetBrains Mono', monospace" font-size="16" font-weight="700" letter-spacing="1.5">PLAYER STATUS</text>

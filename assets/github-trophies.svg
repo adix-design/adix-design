@@ -32,12 +32,14 @@
 <!-- ── 1. MAIN TIMELINE CONTAINER (1180 x 310) ──────────────────── -->
 <g id="journey-timeline" transform="translate(10, 10)">
   <!-- Container Card with Low-Intensity Border -->
-  <rect width="1180" height="310" rx="8" fill="url(#journey-bg)" stroke="#FF3347" stroke-width="1.2" stroke-opacity="0.32" filter="url(#achieve-glow)"/>
-  <rect width="1180" height="310" rx="8" fill="url(#achieve-grid)"/>
+  <path d="M 14 0 L 1166 0 L 1180 14 L 1180 296 L 1166 310 L 14 310 L 0 296 L 0 14 Z" fill="url(#journey-bg)" stroke="#8B1022" stroke-width="1" filter="url(#achieve-glow)"/>
+  <path d="M 14 0 L 1166 0 L 1180 14 L 1180 296 L 1166 310 L 14 310 L 0 296 L 0 14 Z" fill="url(#achieve-grid)"/>
 
-  <!-- Top Header Bar -->
-  <path d="M 0 20 L 0 8 Q 0 0 8 0 L 20 0" fill="none" stroke="#FF3347" stroke-width="2"/>
-  <line x1="8" y1="0" x2="160" y2="0" stroke="#FF3347" stroke-width="2"/>
+  <!-- All 4 Corner Accents (matching Contribution Activity) -->
+  <path d="M 0 38 L 0 14 L 14 0 L 38 0" fill="none" stroke="#FF3347" stroke-width="2"/>
+  <path d="M 1142 0 L 1166 0 L 1180 14 L 1180 38" fill="none" stroke="#FF3347" stroke-width="2"/>
+  <path d="M 1180 272 L 1180 296 L 1166 310 L 1142 310" fill="none" stroke="#FF3347" stroke-width="2"/>
+  <path d="M 38 310 L 14 310 L 0 296 L 0 272" fill="none" stroke="#FF3347" stroke-width="2"/>
 
   <text x="28" y="32" fill="#FF3347" font-family="'JetBrains Mono', Consolas, monospace" font-size="13" font-weight="700" letter-spacing="1.5">PLAYER ACHIEVEMENT JOURNEY</text>
   <text x="1152" y="32" fill="#858994" font-family="'JetBrains Mono', monospace" font-size="11.5" text-anchor="end" letter-spacing="1">EVOLUTION PIPELINE // 2024–2026</text>
@@ -155,7 +157,11 @@
 <!-- ── 2. BOTTOM SUPPORTING PANELS (GITHUB SNAPSHOT & SPECIALIZATION) ─ -->
 <!-- Left Panel: GITHUB SNAPSHOT (580 x 140) -->
 <g id="github-snapshot" transform="translate(10, 335)">
-  <rect width="580" height="145" rx="8" fill="url(#panel-subtle-bg)" stroke="#FF3347" stroke-width="1" stroke-opacity="0.25"/>
+  <path d="M 14 0 L 566 0 L 580 14 L 580 131 L 566 145 L 14 145 L 0 131 L 0 14 Z" fill="url(#panel-subtle-bg)" stroke="#8B1022" stroke-width="1"/>
+  <path d="M 0 38 L 0 14 L 14 0 L 38 0" fill="none" stroke="#FF3347" stroke-width="2"/>
+  <path d="M 542 0 L 566 0 L 580 14 L 580 38" fill="none" stroke="#FF3347" stroke-width="2"/>
+  <path d="M 580 107 L 580 131 L 566 145 L 542 145" fill="none" stroke="#FF3347" stroke-width="2"/>
+  <path d="M 38 145 L 14 145 L 0 131 L 0 107" fill="none" stroke="#FF3347" stroke-width="2"/>
   
   <text x="24" y="28" fill="#858994" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="700" letter-spacing="1.5">GITHUB SNAPSHOT</text>
   <line x1="24" y1="38" x2="556" y2="38" stroke="#FF3347" stroke-width="0.5" stroke-opacity="0.15"/>
@@ -188,7 +194,11 @@
 
 <!-- Right Panel: CURRENT SPECIALIZATION (580 x 140) -->
 <g id="specialization-panel" transform="translate(610, 335)">
-  <rect width="580" height="145" rx="8" fill="url(#panel-subtle-bg)" stroke="#FF3347" stroke-width="1" stroke-opacity="0.25"/>
+  <path d="M 14 0 L 566 0 L 580 14 L 580 131 L 566 145 L 14 145 L 0 131 L 0 14 Z" fill="url(#panel-subtle-bg)" stroke="#8B1022" stroke-width="1"/>
+  <path d="M 0 38 L 0 14 L 14 0 L 38 0" fill="none" stroke="#FF3347" stroke-width="2"/>
+  <path d="M 542 0 L 566 0 L 580 14 L 580 38" fill="none" stroke="#FF3347" stroke-width="2"/>
+  <path d="M 580 107 L 580 131 L 566 145 L 542 145" fill="none" stroke="#FF3347" stroke-width="2"/>
+  <path d="M 38 145 L 14 145 L 0 131 L 0 107" fill="none" stroke="#FF3347" stroke-width="2"/>
   
   <text x="24" y="28" fill="#858994" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="700" letter-spacing="1.5">CURRENT SPECIALIZATION</text>
   <line x1="24" y1="38" x2="556" y2="38" stroke="#FF3347" stroke-width="0.5" stroke-opacity="0.15"/>

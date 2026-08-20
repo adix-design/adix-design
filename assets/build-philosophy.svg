@@ -12,9 +12,12 @@
 </defs>
 
 <!-- Outer Main Panel -->
-<rect x="10" y="10" width="980" height="510" rx="18" fill="url(#bg)" stroke="#ff3347" stroke-width="1.5" stroke-opacity="0.6"/>
-<!-- Corner HUD Ticks -->
-<path d="M 25 10 H 50 M 10 25 V 50 M 950 10 H 975 M 990 25 V 50 M 25 520 H 50 M 10 495 V 470 M 950 520 H 975 M 990 495 V 470" stroke="#ff3347" stroke-width="3" stroke-linecap="round"/>
+<path d="M 24 10 L 976 10 L 990 24 L 990 506 L 976 520 L 24 520 L 10 506 L 10 24 Z" fill="url(#bg)" stroke="#8B1022" stroke-width="1"/>
+<!-- All 4 Corner Accents (matching Contribution Activity) -->
+  <path d="M 10 48 L 10 24 L 24 10 L 48 10" fill="none" stroke="#FF3347" stroke-width="2"/>
+  <path d="M 952 10 L 976 10 L 990 24 L 990 48" fill="none" stroke="#FF3347" stroke-width="2"/>
+  <path d="M 990 482 L 990 506 L 976 520 L 952 520" fill="none" stroke="#FF3347" stroke-width="2"/>
+  <path d="M 48 520 L 24 520 L 10 506 L 10 482" fill="none" stroke="#FF3347" stroke-width="2"/>
 
 <!-- Section Subtitle Header -->
 <g font-family="monospace" text-anchor="middle">
@@ -29,7 +32,11 @@
 <g font-family="monospace" text-anchor="middle">
   <!-- Card 1: IDEA -->
   <g transform="translate(40, 75)">
-    <rect x="0" y="0" width="125" height="155" rx="12" fill="#0b0d12" stroke="#ff3347" stroke-width="1.2" stroke-opacity="0.6"/>
+    <path d="M 10 0 L 115 0 L 125 10 L 125 145 L 115 155 L 10 155 L 0 145 L 0 10 Z" fill="#0b0d12" stroke="#8B1022" stroke-width="1"/>
+    <path d="M 0 26 L 0 10 L 10 0 L 26 0" fill="none" stroke="#FF3347" stroke-width="2"/>
+  <path d="M 99 0 L 115 0 L 125 10 L 125 26" fill="none" stroke="#FF3347" stroke-width="2"/>
+  <path d="M 125 129 L 125 145 L 115 155 L 99 155" fill="none" stroke="#FF3347" stroke-width="2"/>
+  <path d="M 26 155 L 10 155 L 0 145 L 0 129" fill="none" stroke="#FF3347" stroke-width="2"/>
     <text x="62.5" y="26" font-size="12" font-weight="bold" fill="#ff5264">01</text>
     <!-- Lightbulb Icon -->
     <g transform="translate(45, 42)">
@@ -45,7 +52,11 @@
 
   <!-- Card 2: DESIGN -->
   <g transform="translate(198, 75)">
-    <rect x="0" y="0" width="125" height="155" rx="12" fill="#0b0d12" stroke="#ff3347" stroke-width="1.2" stroke-opacity="0.6"/>
+    <path d="M 10 0 L 115 0 L 125 10 L 125 145 L 115 155 L 10 155 L 0 145 L 0 10 Z" fill="#0b0d12" stroke="#8B1022" stroke-width="1"/>
+    <path d="M 0 26 L 0 10 L 10 0 L 26 0" fill="none" stroke="#FF3347" stroke-width="2"/>
+  <path d="M 99 0 L 115 0 L 125 10 L 125 26" fill="none" stroke="#FF3347" stroke-width="2"/>
+  <path d="M 125 129 L 125 145 L 115 155 L 99 155" fill="none" stroke="#FF3347" stroke-width="2"/>
+  <path d="M 26 155 L 10 155 L 0 145 L 0 129" fill="none" stroke="#FF3347" stroke-width="2"/>
     <text x="62.5" y="26" font-size="12" font-weight="bold" fill="#ff5264">02</text>
     <!-- Pencil/Draft Icon -->
     <g transform="translate(45, 42)">
@@ -61,7 +72,11 @@
 
   <!-- Card 3: BUILD -->
   <g transform="translate(356, 75)">
-    <rect x="0" y="0" width="125" height="155" rx="12" fill="#0b0d12" stroke="#ff3347" stroke-width="1.2" stroke-opacity="0.6"/>
+    <path d="M 10 0 L 115 0 L 125 10 L 125 145 L 115 155 L 10 155 L 0 145 L 0 10 Z" fill="#0b0d12" stroke="#8B1022" stroke-width="1"/>
+    <path d="M 0 26 L 0 10 L 10 0 L 26 0" fill="none" stroke="#FF3347" stroke-width="2"/>
+  <path d="M 99 0 L 115 0 L 125 10 L 125 26" fill="none" stroke="#FF3347" stroke-width="2"/>
+  <path d="M 125 129 L 125 145 L 115 155 L 99 155" fill="none" stroke="#FF3347" stroke-width="2"/>
+  <path d="M 26 155 L 10 155 L 0 145 L 0 129" fill="none" stroke="#FF3347" stroke-width="2"/>
     <text x="62.5" y="26" font-size="12" font-weight="bold" fill="#ff5264">03</text>
     <!-- Code Bracket Icon -->
     <g transform="translate(45, 42)">
@@ -78,7 +93,11 @@
 
   <!-- Card 4: SHIP -->
   <g transform="translate(514, 75)">
-    <rect x="0" y="0" width="125" height="155" rx="12" fill="#0b0d12" stroke="#ff3347" stroke-width="1.2" stroke-opacity="0.6"/>
+    <path d="M 10 0 L 115 0 L 125 10 L 125 145 L 115 155 L 10 155 L 0 145 L 0 10 Z" fill="#0b0d12" stroke="#8B1022" stroke-width="1"/>
+    <path d="M 0 26 L 0 10 L 10 0 L 26 0" fill="none" stroke="#FF3347" stroke-width="2"/>
+  <path d="M 99 0 L 115 0 L 125 10 L 125 26" fill="none" stroke="#FF3347" stroke-width="2"/>
+  <path d="M 125 129 L 125 145 L 115 155 L 99 155" fill="none" stroke="#FF3347" stroke-width="2"/>
+  <path d="M 26 155 L 10 155 L 0 145 L 0 129" fill="none" stroke="#FF3347" stroke-width="2"/>
     <text x="62.5" y="26" font-size="12" font-weight="bold" fill="#ff5264">04</text>
     <!-- Rocket Icon -->
     <g transform="translate(45, 42)">
@@ -96,7 +115,11 @@
 
   <!-- Card 5: LEARN -->
   <g transform="translate(672, 75)">
-    <rect x="0" y="0" width="125" height="155" rx="12" fill="#0b0d12" stroke="#ff3347" stroke-width="1.2" stroke-opacity="0.6"/>
+    <path d="M 10 0 L 115 0 L 125 10 L 125 145 L 115 155 L 10 155 L 0 145 L 0 10 Z" fill="#0b0d12" stroke="#8B1022" stroke-width="1"/>
+    <path d="M 0 26 L 0 10 L 10 0 L 26 0" fill="none" stroke="#FF3347" stroke-width="2"/>
+  <path d="M 99 0 L 115 0 L 125 10 L 125 26" fill="none" stroke="#FF3347" stroke-width="2"/>
+  <path d="M 125 129 L 125 145 L 115 155 L 99 155" fill="none" stroke="#FF3347" stroke-width="2"/>
+  <path d="M 26 155 L 10 155 L 0 145 L 0 129" fill="none" stroke="#FF3347" stroke-width="2"/>
     <text x="62.5" y="26" font-size="12" font-weight="bold" fill="#ff5264">05</text>
     <!-- Brain Icon -->
     <g transform="translate(45, 42)">
@@ -112,7 +135,11 @@
 
   <!-- Card 6: ITERATE -->
   <g transform="translate(830, 75)">
-    <rect x="0" y="0" width="125" height="155" rx="12" fill="#0b0d12" stroke="#ff3347" stroke-width="1.2" stroke-opacity="0.6"/>
+    <path d="M 10 0 L 115 0 L 125 10 L 125 145 L 115 155 L 10 155 L 0 145 L 0 10 Z" fill="#0b0d12" stroke="#8B1022" stroke-width="1"/>
+    <path d="M 0 26 L 0 10 L 10 0 L 26 0" fill="none" stroke="#FF3347" stroke-width="2"/>
+  <path d="M 99 0 L 115 0 L 125 10 L 125 26" fill="none" stroke="#FF3347" stroke-width="2"/>
+  <path d="M 125 129 L 125 145 L 115 155 L 99 155" fill="none" stroke="#FF3347" stroke-width="2"/>
+  <path d="M 26 155 L 10 155 L 0 145 L 0 129" fill="none" stroke="#FF3347" stroke-width="2"/>
     <text x="62.5" y="26" font-size="12" font-weight="bold" fill="#ff5264">06</text>
     <!-- Refresh Loop Icon -->
     <g transform="translate(45, 42)">
@@ -139,7 +166,11 @@
 
 <!-- Bottom Quote Callout Panel -->
 <g transform="translate(40, 345)">
-  <rect x="0" y="0" width="920" height="145" rx="12" fill="#090a0e" stroke="#ff3347" stroke-width="1" stroke-opacity="0.4"/>
+  <path d="M 14 0 L 906 0 L 920 14 L 920 131 L 906 145 L 14 145 L 0 131 L 0 14 Z" fill="#090a0e" stroke="#8B1022" stroke-width="1"/>
+  <path d="M 0 38 L 0 14 L 14 0 L 38 0" fill="none" stroke="#FF3347" stroke-width="2"/>
+  <path d="M 882 0 L 906 0 L 920 14 L 920 38" fill="none" stroke="#FF3347" stroke-width="2"/>
+  <path d="M 920 107 L 920 131 L 906 145 L 882 145" fill="none" stroke="#FF3347" stroke-width="2"/>
+  <path d="M 38 145 L 14 145 L 0 131 L 0 107" fill="none" stroke="#FF3347" stroke-width="2"/>
   <!-- Quote Marks -->
   <text x="50" y="65" font-family="sans-serif" font-size="44" font-weight="bold" fill="#ff3347" opacity="0.8">“</text>
   <text x="870" y="125" font-family="sans-serif" font-size="44" font-weight="bold" fill="#ff3347" text-anchor="end" opacity="0.8">”</text>
