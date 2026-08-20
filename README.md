@@ -177,28 +177,7 @@ Connecting AI, APIs and business processes to reduce repetitive work.
 ## 📬 CONTACT TERMINAL
 
 <div align="center">
-
-```text
-> open_connection --arpan
-
-PORTFOLIO  ::  https://arpanstudio.dev
-EMAIL      ::  contact@arpanstudio.dev
-LINKEDIN   ::  https://www.linkedin.com/in/arpan-deep-dubey/
-GITHUB     ::  https://github.com/adix-design
-
-STATUS     ::  READY TO BUILD_
-```
-
-<br/>
-
-<a href="mailto:contact@arpanstudio.dev">
-  <img src="https://img.shields.io/badge/EMAIL%20ME-FF3347?style=for-the-badge&labelColor=0A0B0F" />
-</a>
-&nbsp;
-<a href="https://arpanstudio.dev">
-  <img src="https://img.shields.io/badge/VISIT%20PORTFOLIO-E50924?style=for-the-badge&labelColor=0A0B0F" />
-</a>
-
+<img src="./assets/contact-terminal.svg" alt="Contact Terminal" width="100%"/>
 </div>
 
 <br/>

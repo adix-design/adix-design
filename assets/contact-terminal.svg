@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="430" viewBox="0 0 1000 430">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="#07080b"/>
+    <stop offset="50%" stop-color="#0f090d"/>
+    <stop offset="100%" stop-color="#14080c"/>
+  </linearGradient>
+  <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+    <feGaussianBlur stdDeviation="2.5" result="blur" />
+    <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+  </filter>
+</defs>
+
+<!-- Outer Main Panel -->
+<rect x="10" y="10" width="980" height="340" rx="16" fill="url(#bg)" stroke="#ff3347" stroke-width="1.2" stroke-opacity="0.6"/>
+
+<!-- Panel Top Header Bar -->
+<g font-family="monospace">
+  <circle cx="35" cy="38" r="4" fill="#ff3347" filter="url(#glow)"/>
+  <text x="48" y="42" font-size="13" font-weight="bold" fill="#ffffff">CONNECTION <tspan fill="#ff5264">ONLINE</tspan></text>
+  
+  <text x="945" y="42" font-size="13" text-anchor="end" fill="#9fa0a7">SESSION ID: <tspan fill="#ffffff">ARPAN_01</tspan> &nbsp;|&nbsp; <tspan fill="#ff3347">📶</tspan></text>
+  <line x1="30" y1="58" x2="970" y2="58" stroke="#ff3347" stroke-opacity="0.25" stroke-width="1"/>
+</g>
+
+<!-- Command Prompt Line -->
+<g font-family="monospace">
+  <text x="40" y="90" font-size="15" font-weight="bold" fill="#ff3347">&gt; <tspan fill="#ffffff">open_connection</tspan> <tspan fill="#888888">--arpan</tspan></text>
+</g>
+
+<!-- 4 Contact Cards Grid -->
+<g font-family="monospace">
+  <!-- Card 1: PORTFOLIO -->
+  <a href="https://arpanstudio.dev" target="_blank">
+    <rect x="40" y="110" width="445" height="72" rx="10" fill="#0b0d12" stroke="#ff3347" stroke-width="1" stroke-opacity="0.4"/>
+    <!-- Globe Icon -->
+    <g transform="translate(60, 126)">
+      <circle cx="20" cy="20" r="14" stroke="#ff3347" stroke-width="1.8" fill="none"/>
+      <ellipse cx="20" cy="20" rx="6" ry="14" stroke="#ff3347" stroke-width="1.5" fill="none"/>
+      <line x1="6" y1="20" x2="34" y2="20" stroke="#ff3347" stroke-width="1.5"/>
+    </g>
+    <text x="115" y="142" font-size="14" font-weight="bold" fill="#ffffff" letter-spacing="1">PORTFOLIO</text>
+    <text x="115" y="163" font-size="12" fill="#9fa0a7">arpanstudio.dev</text>
+    <!-- Arrow Icon -->
+    <path d="M 450 135 L 462 147 M 462 135 V 147 H 450" stroke="#ff5264" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  </a>
+
+  <!-- Card 2: EMAIL -->
+  <a href="mailto:contact@arpanstudio.dev">
+    <rect x="515" y="110" width="445" height="72" rx="10" fill="#0b0d12" stroke="#ff3347" stroke-width="1" stroke-opacity="0.4"/>
+    <!-- Mail Icon -->
+    <g transform="translate(535, 126)">
+      <rect x="6" y="10" width="28" height="20" rx="3" stroke="#ff3347" stroke-width="1.8" fill="none"/>
+      <path d="M6 12L20 22L34 12" stroke="#ff3347" stroke-width="1.8" stroke-linejoin="round" fill="none"/>
+    </g>
+    <text x="590" y="142" font-size="14" font-weight="bold" fill="#ffffff" letter-spacing="1">EMAIL</text>
+    <text x="590" y="163" font-size="12" fill="#9fa0a7">contact@arpanstudio.dev</text>
+    <!-- Arrow Icon -->
+    <path d="M 925 135 L 937 147 M 937 135 V 147 H 925" stroke="#ff5264" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  </a>
+
+  <!-- Card 3: LINKEDIN -->
+  <a href="https://www.linkedin.com/in/arpan-deep-dubey/" target="_blank">
+    <rect x="40" y="198" width="445" height="72" rx="10" fill="#0b0d12" stroke="#ff3347" stroke-width="1" stroke-opacity="0.4"/>
+    <!-- LinkedIn Icon -->
+    <g transform="translate(60, 214)">
+      <rect x="6" y="6" width="28" height="28" rx="4" stroke="#ff3347" stroke-width="1.8" fill="none"/>
+      <text x="14" y="27" font-size="16" font-weight="bold" fill="#ff3347">in</text>
+    </g>
+    <text x="115" y="230" font-size="14" font-weight="bold" fill="#ffffff" letter-spacing="1">LINKEDIN</text>
+    <text x="115" y="251" font-size="12" fill="#9fa0a7">linkedin.com/in/arpan-deep-dubey</text>
+    <!-- Arrow Icon -->
+    <path d="M 450 223 L 462 235 M 462 223 V 235 H 450" stroke="#ff5264" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  </a>
+
+  <!-- Card 4: GITHUB -->
+  <a href="https://github.com/adix-design" target="_blank">
+    <rect x="515" y="198" width="445" height="72" rx="10" fill="#0b0d12" stroke="#ff3347" stroke-width="1" stroke-opacity="0.4"/>
+    <!-- GitHub Icon -->
+    <g transform="translate(535, 214)">
+      <path d="M20 6C12.27 6 6 12.27 6 20C6 26.18 10.02 31.42 15.58 33.27C16.28 33.4 16.54 32.97 16.54 32.6C16.54 32.27 16.53 31.4 16.52 30.24C12.63 31.08 11.81 28.37 11.81 28.37C11.17 26.75 10.25 26.32 10.25 26.32C8.98 25.45 10.35 25.47 10.35 25.47C11.75 25.57 12.49 26.91 12.49 26.91C13.74 29.05 15.77 28.43 16.57 28.07C16.7 27.16 17.06 26.54 17.46 26.19C14.35 25.84 11.08 24.64 11.08 19.27C11.08 17.74 11.63 16.49 12.53 15.51C12.38 15.16 11.9 13.73 12.67 11.79C12.67 11.79 13.85 11.41 16.54 13.23C17.66 12.92 18.86 12.77 20.06 12.76C21.26 12.77 22.46 12.92 23.58 13.23C26.27 11.41 27.44 11.79 27.44 11.79C28.22 13.73 27.74 15.16 27.59 15.51C28.49 16.49 29.03 17.74 29.03 19.27C29.03 24.65 25.75 25.83 22.63 26.18C23.13 26.61 23.58 27.47 23.58 28.78C23.58 30.66 23.56 32.18 23.56 32.6C23.56 32.97 23.82 33.41 24.53 33.27C30.08 31.41 34.1 26.18 34.1 20C34.1 12.27 27.83 6 20 6Z" fill="#ff3347"/>
+    </g>
+    <text x="590" y="230" font-size="14" font-weight="bold" fill="#ffffff" letter-spacing="1">GITHUB</text>
+    <text x="590" y="251" font-size="12" fill="#9fa0a7">github.com/adix-design</text>
+    <!-- Arrow Icon -->
+    <path d="M 925 223 L 937 235 M 937 223 V 235 H 925" stroke="#ff5264" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  </a>
+</g>
+
+<!-- Panel Footer Status -->
+<g font-family="monospace">
+  <line x1="30" y1="292" x2="970" y2="292" stroke="#ff3347" stroke-opacity="0.2" stroke-dasharray="4,4" stroke-width="1"/>
+  <text x="40" y="322" font-size="13" font-weight="bold" fill="#9fa0a7">STATUS <tspan fill="#ff3347">::</tspan> <tspan fill="#ff5264">READY TO BUILD_</tspan></text>
+</g>
+
+<!-- Bottom Outside Connection Lines -->
+<g font-family="monospace" text-anchor="middle">
+  <polygon points="500,368 505,373 500,378 495,373" fill="#ff3347"/>
+  <text x="500" y="398" font-size="14" font-weight="bold" fill="#ff5264">&gt; connection ready_</text>
+  <text x="500" y="418" font-size="13" fill="#ffffff">Let's build something useful.</text>
+</g>
+
+</svg>
