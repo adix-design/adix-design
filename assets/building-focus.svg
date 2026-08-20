@@ -26,12 +26,13 @@
 
 <!-- ── TIER 1: LARGE FEATURE CARD — AI PRODUCTS (1180 x 175) ──── -->
 <g id="feature-ai" transform="translate(10, 10)">
-  <!-- Angular Cut-Corner Card Base -->
-  <path d="M 10 0 L 1170 0 L 1180 10 L 1180 165 L 1170 175 L 10 175 L 0 165 L 0 10 Z" fill="url(#feature-bg)" stroke="#FF3347" stroke-width="1.2" stroke-opacity="0.38" filter="url(#feature-glow)"/>
-  
-  <!-- Subtle Top-Left Accent Notch -->
-  <path d="M 0 24 L 0 10 L 10 0 L 24 0" fill="none" stroke="#FF3347" stroke-width="2"/>
-  <line x1="10" y1="0" x2="120" y2="0" stroke="#FF3347" stroke-width="2"/>
+  <!-- Chamfered HUD Border (cut=22, matching Contribution Activity) -->
+  <path d="M 22 0 L 1158 0 L 1180 22 L 1180 153 L 1158 175 L 22 175 L 0 153 L 0 22 Z" fill="url(#feature-bg)" stroke="#8B1022" stroke-width="1"/>
+  <!-- All 4 Corner Accents (matching Contribution Activity) -->
+  <path d="M 0 50 L 0 22 L 22 0 L 50 0" fill="none" stroke="#FF3347" stroke-width="2"/>
+  <path d="M 1130 0 L 1158 0 L 1180 22 L 1180 50" fill="none" stroke="#FF3347" stroke-width="2"/>
+  <path d="M 1180 125 L 1180 153 L 1158 175 L 1130 175" fill="none" stroke="#FF3347" stroke-width="2"/>
+  <path d="M 50 175 L 22 175 L 0 153 L 0 125" fill="none" stroke="#FF3347" stroke-width="2"/>
 
   <!-- Icon + Title Header Row -->
   <g transform="translate(32, 28)">
@@ -42,7 +43,7 @@
   <text x="68" y="47" fill="#F2F2F4" font-family="system-ui, -apple-system, sans-serif" font-size="28" font-weight="800" letter-spacing="0.5">AI PRODUCTS</text>
   
   <!-- Pill on Right: CORE FOCUS -->
-  <path d="M 4 0 L 98 0 L 102 4 L 102 22 L 98 26 L 4 26 L 0 22 L 0 4 Z" transform="translate(1046, 28)" fill="#181B26" stroke="#FF3347" stroke-width="1" stroke-opacity="0.6"/>
+  <path d="M 5 0 L 97 0 L 102 5 L 102 21 L 97 26 L 5 26 L 0 21 L 0 5 Z" transform="translate(1046, 28)" fill="#181B26" stroke="#FF3347" stroke-width="1" stroke-opacity="0.6"/>
   <text x="1097" y="45" fill="#FF3347" font-family="'JetBrains Mono', monospace" font-size="11.5" font-weight="700" text-anchor="middle" letter-spacing="1">CORE FOCUS</text>
 
   <!-- Description (17.5px) -->
@@ -65,9 +66,14 @@
 <!-- ── TIER 2: TWO SIDE-BY-SIDE CARDS (580 x 175 each) ────────── -->
 <!-- Left Side Card: WEB EXPERIENCES -->
 <g id="card-web" transform="translate(10, 200)">
-  <!-- Angular Cut-Corner Base -->
-  <path d="M 10 0 L 570 0 L 580 10 L 580 165 L 570 175 L 10 175 L 0 165 L 0 10 Z" fill="url(#card-subtle-bg)" stroke="#FF3347" stroke-width="1" stroke-opacity="0.28" filter="url(#subtle-glow)"/>
-  
+  <!-- Chamfered HUD Border (cut=22, matching Contribution Activity) -->
+  <path d="M 22 0 L 558 0 L 580 22 L 580 153 L 558 175 L 22 175 L 0 153 L 0 22 Z" fill="url(#card-subtle-bg)" stroke="#8B1022" stroke-width="1"/>
+  <!-- All 4 Corner Accents -->
+  <path d="M 0 50 L 0 22 L 22 0 L 50 0" fill="none" stroke="#FF3347" stroke-width="2"/>
+  <path d="M 530 0 L 558 0 L 580 22 L 580 50" fill="none" stroke="#FF3347" stroke-width="2"/>
+  <path d="M 580 125 L 580 153 L 558 175 L 530 175" fill="none" stroke="#FF3347" stroke-width="2"/>
+  <path d="M 50 175 L 22 175 L 0 153 L 0 125" fill="none" stroke="#FF3347" stroke-width="2"/>
+
   <g transform="translate(28, 24)">
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FF3347" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
   <circle cx="12" cy="12" r="10"/>
@@ -94,9 +100,14 @@
 
 <!-- Right Side Card: PRODUCT DESIGN -->
 <g id="card-design" transform="translate(610, 200)">
-  <!-- Angular Cut-Corner Base -->
-  <path d="M 10 0 L 570 0 L 580 10 L 580 165 L 570 175 L 10 175 L 0 165 L 0 10 Z" fill="url(#card-subtle-bg)" stroke="#FF3347" stroke-width="1" stroke-opacity="0.28" filter="url(#subtle-glow)"/>
-  
+  <!-- Chamfered HUD Border (cut=22, matching Contribution Activity) -->
+  <path d="M 22 0 L 558 0 L 580 22 L 580 153 L 558 175 L 22 175 L 0 153 L 0 22 Z" fill="url(#card-subtle-bg)" stroke="#8B1022" stroke-width="1"/>
+  <!-- All 4 Corner Accents -->
+  <path d="M 0 50 L 0 22 L 22 0 L 50 0" fill="none" stroke="#FF3347" stroke-width="2"/>
+  <path d="M 530 0 L 558 0 L 580 22 L 580 50" fill="none" stroke="#FF3347" stroke-width="2"/>
+  <path d="M 580 125 L 580 153 L 558 175 L 530 175" fill="none" stroke="#FF3347" stroke-width="2"/>
+  <path d="M 50 175 L 22 175 L 0 153 L 0 125" fill="none" stroke="#FF3347" stroke-width="2"/>
+
   <g transform="translate(28, 24)">
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FF3347" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
   <path d="M12 19l7-7 3 3-7 7-3-3z"/>
@@ -124,9 +135,14 @@
 
 <!-- ── TIER 3: WIDE HORIZONTAL CARD — AI AUTOMATION (1180 x 115) ─ -->
 <g id="card-automation" transform="translate(10, 390)">
-  <!-- Angular Cut-Corner Base -->
-  <path d="M 10 0 L 1170 0 L 1180 10 L 1180 105 L 1170 115 L 10 115 L 0 105 L 0 10 Z" fill="url(#card-subtle-bg)" stroke="#FF3347" stroke-width="1" stroke-opacity="0.28" filter="url(#subtle-glow)"/>
-  
+  <!-- Chamfered HUD Border (cut=22, matching Contribution Activity) -->
+  <path d="M 22 0 L 1158 0 L 1180 22 L 1180 93 L 1158 115 L 22 115 L 0 93 L 0 22 Z" fill="url(#card-subtle-bg)" stroke="#8B1022" stroke-width="1"/>
+  <!-- All 4 Corner Accents -->
+  <path d="M 0 50 L 0 22 L 22 0 L 50 0" fill="none" stroke="#FF3347" stroke-width="2"/>
+  <path d="M 1130 0 L 1158 0 L 1180 22 L 1180 50" fill="none" stroke="#FF3347" stroke-width="2"/>
+  <path d="M 1180 65 L 1180 93 L 1158 115 L 1130 115" fill="none" stroke="#FF3347" stroke-width="2"/>
+  <path d="M 50 115 L 22 115 L 0 93 L 0 65" fill="none" stroke="#FF3347" stroke-width="2"/>
+
   <g transform="translate(32, 24)">
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FF3347" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
   <rect x="2" y="3" width="6" height="6" rx="1"/>
