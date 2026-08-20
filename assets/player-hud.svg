@@ -1,10 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 470" width="1200" height="470">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" width="1200" height="420">
 <defs>
   <!-- Background Gradient -->
   <linearGradient id="bg-grad" x1="0" y1="0" x2="1" y2="1">
     <stop offset="0%" stop-color="#050609"/>
     <stop offset="50%" stop-color="#080A0F"/>
-    <stop offset="100%" stop-color="#0E1118"/>
+    <stop offset="100%" stop-color="#0D1017"/>
   </linearGradient>
 
   <!-- Panel Gradient -->
@@ -13,28 +13,28 @@
     <stop offset="100%" stop-color="#07090E"/>
   </linearGradient>
 
-  <!-- Subtle Crimson Glow -->
+  <!-- Subtle Crimson Glow Filter -->
   <filter id="hud-glow" x="-10%" y="-10%" width="120%" height="120%">
     <feDropShadow dx="0" dy="0" stdDeviation="3" flood-color="#FF3347" flood-opacity="0.35"/>
   </filter>
 
-  <!-- Grid Pattern -->
+  <!-- Background Grid Pattern -->
   <pattern id="bg-grid" width="28" height="28" patternUnits="userSpaceOnUse">
     <path d="M 28 0 L 0 0 0 28" fill="none" stroke="#FF3347" stroke-width="0.8" stroke-opacity="0.04"/>
   </pattern>
 </defs>
 
-<!-- Outer Canvas -->
-<rect width="1200" height="470" fill="#050609"/>
+<!-- Outer Canvas Background -->
+<rect width="1200" height="420" fill="#050609"/>
 
-<!-- Main Outer HUD Frame with Cut Corners -->
+<!-- Main Outer HUD Frame with Chamfered Corners -->
 <path d="M 28 14 
          L 1172 14 
          L 1186 28 
-         L 1186 442 
-         L 1172 456 
-         L 28 456 
-         L 14 442 
+         L 1186 392 
+         L 1172 406 
+         L 28 406 
+         L 14 392 
          L 14 28 Z" 
       fill="url(#bg-grad)" 
       stroke="#FF3347" 
@@ -43,104 +43,104 @@
       filter="url(#hud-glow)"/>
 
 <!-- Background Grid -->
-<path d="M 28 14 L 1172 14 L 1186 28 L 1186 442 L 1172 456 L 28 456 L 14 442 L 14 28 Z" fill="url(#bg-grid)"/>
+<path d="M 28 14 L 1172 14 L 1186 28 L 1186 392 L 1172 406 L 28 406 L 14 392 L 14 28 Z" fill="url(#bg-grid)"/>
 
 <!-- Outer Corner Tech Accents -->
 <path d="M 14 48 L 14 28 L 28 14 L 48 14" fill="none" stroke="#FF3347" stroke-width="2.5"/>
 <path d="M 1152 14 L 1172 14 L 1186 28 L 1186 48" fill="none" stroke="#FF3347" stroke-width="2.5"/>
-<path d="M 1186 422 L 1186 442 L 1172 456 L 1152 456" fill="none" stroke="#FF3347" stroke-width="2.5"/>
-<path d="M 48 456 L 28 456 L 14 442 L 14 422" fill="none" stroke="#FF3347" stroke-width="2.5"/>
+<path d="M 1186 372 L 1186 392 L 1172 406 L 1152 406" fill="none" stroke="#FF3347" stroke-width="2.5"/>
+<path d="M 48 406 L 28 406 L 14 392 L 14 372" fill="none" stroke="#FF3347" stroke-width="2.5"/>
 
 <!-- ── TOP SYSTEM BAR ─────────────────────────────────────────── -->
 <g id="top-bar">
-  <text x="40" y="38" fill="#FF3347" font-family="'JetBrains Mono', Consolas, monospace" font-size="12.5" font-weight="700" letter-spacing="1.5">&gt; PROFILE.EXE</text>
-  <text x="160" y="38" fill="#858994" font-family="'JetBrains Mono', Consolas, monospace" font-size="11.5" letter-spacing="1">// COMMAND_CENTER: DEV_HUD</text>
+  <text x="44" y="38" fill="#FF3347" font-family="'JetBrains Mono', Consolas, monospace" font-size="13" font-weight="700" letter-spacing="1.5">&gt; PROFILE.EXE</text>
+  <text x="168" y="38" fill="#858994" font-family="'JetBrains Mono', Consolas, monospace" font-size="11.5" letter-spacing="1">// SYSTEM_STATUS: NOMINAL</text>
 
-  <!-- Center Decorative Telemetry Marks -->
+  <!-- Center Decorative Telemetry Notch -->
   <line x1="560" y1="34" x2="640" y2="34" stroke="#8B1022" stroke-width="1.5" stroke-dasharray="6 3"/>
   <circle cx="600" cy="34" r="2.5" fill="#FF3347"/>
 
-  <!-- Online Status on Right -->
+  <!-- Online Status Indicator -->
   <text x="1054" y="38" fill="#858994" font-family="'JetBrains Mono', Consolas, monospace" font-size="11.5" font-weight="600" letter-spacing="1">STATUS:</text>
   <circle cx="1114" cy="34" r="4" fill="#45E879"/>
   <circle cx="1114" cy="34" r="7" fill="none" stroke="#45E879" stroke-width="0.8" stroke-opacity="0.5"/>
   <text x="1126" y="38" fill="#F2F2F4" font-family="'JetBrains Mono', Consolas, monospace" font-size="11.5" font-weight="700" letter-spacing="1">ONLINE</text>
 
   <!-- Top Divider Line -->
-  <line x1="40" y1="50" x2="1160" y2="50" stroke="#8B1022" stroke-width="1" stroke-opacity="0.3"/>
-  <line x1="40" y1="50" x2="160" y2="50" stroke="#FF3347" stroke-width="1.5"/>
+  <line x1="44" y1="50" x2="1156" y2="50" stroke="#8B1022" stroke-width="1" stroke-opacity="0.3"/>
+  <line x1="44" y1="50" x2="170" y2="50" stroke="#FF3347" stroke-width="1.5"/>
 </g>
 
-<!-- ── LEFT / MAIN HERO CONTENT (IDENTITY + MISSION) ──────────── -->
-<g id="main-content" transform="translate(42, 68)">
-  <!-- Big Dominant Name Display -->
-  <text x="0" y="44" font-family="'JetBrains Mono', Consolas, monospace" font-size="46" font-weight="800" letter-spacing="1.5">
+<!-- ── LEFT / MAIN CONTENT (LARGE IDENTITY + ROLE + CHIPS + MISSION) ── -->
+<g id="main-identity-mission" transform="translate(46, 66)">
+  <!-- Big Dominant Name Display (48px) -->
+  <text x="0" y="48" font-family="'JetBrains Mono', Consolas, monospace" font-size="50" font-weight="800" letter-spacing="1.5">
     <tspan fill="#F2F2F4">ARPAN </tspan>
     <tspan fill="#FF3347">DEEP DUBEY</tspan>
   </text>
 
-  <!-- Professional Subtitle -->
-  <text x="2" y="74" fill="#F2F2F4" font-family="'JetBrains Mono', Consolas, monospace" font-size="15" font-weight="600" letter-spacing="1.2">
+  <!-- Subtitle Role (21px) -->
+  <text x="2" y="82" fill="#F2F2F4" font-family="'JetBrains Mono', Consolas, monospace" font-size="20" font-weight="600" letter-spacing="1.2">
     AI PRODUCT DESIGNER  •  FULL-STACK BUILDER
   </text>
 
-  <!-- Core Professional Statement -->
-  <text x="2" y="104" fill="#858994" font-family="system-ui, -apple-system, sans-serif" font-size="14.5" font-weight="400">
+  <!-- Professional Statement (16.5px) -->
+  <text x="2" y="114" fill="#858994" font-family="system-ui, -apple-system, sans-serif" font-size="16.5" font-weight="400">
     Building polished digital products at the intersection of AI, design and engineering.
   </text>
 
   <!-- Role / Skill HUD Chips -->
-  <g transform="translate(2, 122)">
+  <g transform="translate(2, 134)">
     <!-- Chip: AI -->
-    <rect x="0" y="0" width="56" height="26" rx="4" fill="#0E121A" stroke="#FF3347" stroke-width="1" stroke-opacity="0.7"/>
-    <text x="28" y="17" fill="#FF3347" font-family="'JetBrains Mono', monospace" font-size="11.5" font-weight="700" text-anchor="middle">AI</text>
+    <rect x="0" y="0" width="60" height="28" rx="4" fill="#0E121A" stroke="#FF3347" stroke-width="1" stroke-opacity="0.7"/>
+    <text x="30" y="19" fill="#FF3347" font-family="'JetBrains Mono', monospace" font-size="12.5" font-weight="700" text-anchor="middle">AI</text>
 
     <!-- Chip: PRODUCT DESIGN -->
-    <rect x="66" y="0" width="144" height="26" rx="4" fill="#0E121A" stroke="#FF3347" stroke-width="1" stroke-opacity="0.45"/>
-    <text x="138" y="17" fill="#F2F2F4" font-family="'JetBrains Mono', monospace" font-size="11.5" font-weight="600" text-anchor="middle">PRODUCT DESIGN</text>
+    <rect x="70" y="0" width="154" height="28" rx="4" fill="#0E121A" stroke="#FF3347" stroke-width="1" stroke-opacity="0.45"/>
+    <text x="147" y="19" fill="#F2F2F4" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="600" text-anchor="middle">PRODUCT DESIGN</text>
 
     <!-- Chip: FULL-STACK -->
-    <rect x="220" y="0" width="116" height="26" rx="4" fill="#0E121A" stroke="#FF3347" stroke-width="1" stroke-opacity="0.45"/>
-    <text x="278" y="17" fill="#F2F2F4" font-family="'JetBrains Mono', monospace" font-size="11.5" font-weight="600" text-anchor="middle">FULL-STACK</text>
+    <rect x="234" y="0" width="124" height="28" rx="4" fill="#0E121A" stroke="#FF3347" stroke-width="1" stroke-opacity="0.45"/>
+    <text x="296" y="19" fill="#F2F2F4" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="600" text-anchor="middle">FULL-STACK</text>
 
     <!-- Chip: AUTOMATION -->
-    <rect x="346" y="0" width="124" height="26" rx="4" fill="#0E121A" stroke="#FF3347" stroke-width="1" stroke-opacity="0.45"/>
-    <text x="408" y="17" fill="#F2F2F4" font-family="'JetBrains Mono', monospace" font-size="11.5" font-weight="600" text-anchor="middle">AUTOMATION</text>
+    <rect x="368" y="0" width="132" height="28" rx="4" fill="#0E121A" stroke="#FF3347" stroke-width="1" stroke-opacity="0.45"/>
+    <text x="434" y="19" fill="#F2F2F4" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="600" text-anchor="middle">AUTOMATION</text>
   </g>
 
   <!-- Current Mission Box -->
-  <g transform="translate(2, 164)">
-    <rect x="0" y="0" width="690" height="82" rx="6" fill="#090C12" stroke="#8B1022" stroke-width="1" stroke-opacity="0.45"/>
+  <g transform="translate(2, 180)">
+    <rect x="0" y="0" width="700" height="96" rx="6" fill="#090C12" stroke="#8B1022" stroke-width="1" stroke-opacity="0.45"/>
     
     <!-- Mission Header -->
-    <text x="16" y="22" fill="#FF3347" font-family="'JetBrains Mono', monospace" font-size="11.5" font-weight="700" letter-spacing="1.5">CURRENT MISSION</text>
+    <text x="18" y="24" fill="#FF3347" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="700" letter-spacing="1.5">CURRENT MISSION</text>
     
     <!-- Active status indicator -->
-    <circle cx="636" cy="18" r="3.5" fill="#45E879"/>
-    <text x="646" y="22" fill="#45E879" font-family="'JetBrains Mono', monospace" font-size="10.5" font-weight="700" letter-spacing="1">ACTIVE</text>
+    <circle cx="642" cy="20" r="3.5" fill="#45E879"/>
+    <text x="652" y="24" fill="#45E879" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700" letter-spacing="1">ACTIVE</text>
     
-    <line x1="16" y1="32" x2="674" y2="32" stroke="#FF3347" stroke-width="0.8" stroke-opacity="0.15"/>
+    <line x1="18" y1="36" x2="682" y2="36" stroke="#FF3347" stroke-width="0.8" stroke-opacity="0.15"/>
 
     <!-- Mission Description -->
-    <text x="16" y="52" fill="#F2F2F4" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="500">
+    <text x="18" y="60" fill="#F2F2F4" font-family="system-ui, -apple-system, sans-serif" font-size="14.5" font-weight="500">
       Build useful products, learn continuously, and turn strong ideas into real, usable systems.
     </text>
-    <text x="16" y="70" fill="#858994" font-family="'JetBrains Mono', monospace" font-size="10.5" letter-spacing="0.5">
-      // PLAYSTYLE: DESIGN → BUILD → SHIP
+    <text x="18" y="80" fill="#858994" font-family="'JetBrains Mono', monospace" font-size="11" letter-spacing="0.5">
+      // OBJECTIVE: PRODUCTION-GRADE AI &amp; WEB TOOLS
     </text>
   </g>
 </g>
 
 <!-- ── RIGHT ZONE: COMPACT PLAYER STATUS PANEL ────────────────── -->
-<g id="status-panel" transform="translate(778, 68)">
-  <!-- Status Container Box -->
+<g id="status-panel" transform="translate(784, 76)">
+  <!-- Status Container Box with Chamfered Corners -->
   <path d="M 10 0 
-           L 372 0 
-           L 382 10 
-           L 382 236 
-           L 372 246 
-           L 10 246 
-           L 0 236 
+           L 362 0 
+           L 372 10 
+           L 372 266 
+           L 362 276 
+           L 10 276 
+           L 0 266 
            L 0 10 Z" 
         fill="#080B10" 
         stroke="#FF3347" 
@@ -149,148 +149,62 @@
 
   <!-- Panel Corner Accents -->
   <path d="M 0 20 L 0 10 L 10 0 L 20 0" fill="none" stroke="#FF3347" stroke-width="2"/>
-  <path d="M 362 0 L 372 0 L 382 10 L 382 20" fill="none" stroke="#FF3347" stroke-width="2"/>
-  <path d="M 382 226 L 382 236 L 372 246 L 362 246" fill="none" stroke="#FF3347" stroke-width="2"/>
-  <path d="M 20 246 L 10 246 L 0 236 L 0 226" fill="none" stroke="#FF3347" stroke-width="2"/>
+  <path d="M 352 0 L 362 0 L 372 10 L 372 20" fill="none" stroke="#FF3347" stroke-width="2"/>
+  <path d="M 372 256 L 372 266 L 362 276 L 352 276" fill="none" stroke="#FF3347" stroke-width="2"/>
+  <path d="M 20 276 L 10 276 L 0 266 L 0 256" fill="none" stroke="#FF3347" stroke-width="2"/>
 
   <!-- Header -->
-  <text x="18" y="24" fill="#FF3347" font-family="'JetBrains Mono', monospace" font-size="12.5" font-weight="700" letter-spacing="1.5">PLAYER STATUS</text>
-  <text x="364" y="24" fill="#858994" font-family="'JetBrains Mono', monospace" font-size="10" letter-spacing="1" text-anchor="end">HUD_ID: ADIX-01</text>
-  <line x1="18" y1="34" x2="364" y2="34" stroke="#FF3347" stroke-width="0.8" stroke-opacity="0.25"/>
+  <text x="20" y="26" fill="#FF3347" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="700" letter-spacing="1.5">PLAYER STATUS</text>
+  <text x="352" y="26" fill="#858994" font-family="'JetBrains Mono', monospace" font-size="10.5" letter-spacing="1" text-anchor="end">SYS_ID: ARPAN_01</text>
+  <line x1="20" y1="38" x2="352" y2="38" stroke="#FF3347" stroke-width="0.8" stroke-opacity="0.25"/>
 
   <!-- Status Row 1: ROLE -->
-  <g transform="translate(18, 54)">
-    <text x="0" y="12" fill="#858994" font-family="'JetBrains Mono', monospace" font-size="10.5" font-weight="600" letter-spacing="1">ROLE</text>
-    <text x="80" y="12" fill="#F2F2F4" font-family="'JetBrains Mono', monospace" font-size="11.5" font-weight="700">AI PRODUCT DESIGNER</text>
+  <g transform="translate(20, 60)">
+    <text x="0" y="14" fill="#858994" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="600" letter-spacing="1">ROLE</text>
+    <text x="84" y="14" fill="#F2F2F4" font-family="'JetBrains Mono', monospace" font-size="12.5" font-weight="700">AI PRODUCT DESIGNER</text>
   </g>
-  <line x1="18" y1="74" x2="364" y2="74" stroke="#FF3347" stroke-width="0.4" stroke-opacity="0.12"/>
+  <line x1="20" y1="84" x2="352" y2="84" stroke="#FF3347" stroke-width="0.4" stroke-opacity="0.12"/>
 
   <!-- Status Row 2: FOCUS -->
-  <g transform="translate(18, 92)">
-    <text x="0" y="12" fill="#858994" font-family="'JetBrains Mono', monospace" font-size="10.5" font-weight="600" letter-spacing="1">FOCUS</text>
-    <text x="80" y="12" fill="#F2F2F4" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="500">AI • DESIGN • WEB • AUTOMATION</text>
+  <g transform="translate(20, 106)">
+    <text x="0" y="14" fill="#858994" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="600" letter-spacing="1">FOCUS</text>
+    <text x="84" y="14" fill="#F2F2F4" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="500">AI • DESIGN • WEB • AUTOMATION</text>
   </g>
-  <line x1="18" y1="112" x2="364" y2="112" stroke="#FF3347" stroke-width="0.4" stroke-opacity="0.12"/>
+  <line x1="20" y1="130" x2="352" y2="130" stroke="#FF3347" stroke-width="0.4" stroke-opacity="0.12"/>
 
-  <!-- Status Row 3: MODE -->
-  <g transform="translate(18, 130)">
-    <text x="0" y="12" fill="#858994" font-family="'JetBrains Mono', monospace" font-size="10.5" font-weight="600" letter-spacing="1">MODE</text>
-    <text x="80" y="12" fill="#FF3347" font-family="'JetBrains Mono', monospace" font-size="11.5" font-weight="700" letter-spacing="0.5">DESIGN → BUILD → SHIP</text>
+  <!-- Status Row 3: STATUS -->
+  <g transform="translate(20, 152)">
+    <text x="0" y="14" fill="#858994" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="600" letter-spacing="1">STATUS</text>
+    <circle cx="90" cy="10" r="4" fill="#45E879"/>
+    <text x="100" y="14" fill="#45E879" font-family="'JetBrains Mono', monospace" font-size="12.5" font-weight="700" letter-spacing="1">BUILDING</text>
   </g>
-  <line x1="18" y1="150" x2="364" y2="150" stroke="#FF3347" stroke-width="0.4" stroke-opacity="0.12"/>
+  <line x1="20" y1="176" x2="352" y2="176" stroke="#FF3347" stroke-width="0.4" stroke-opacity="0.12"/>
 
-  <!-- Status Row 4: STATUS -->
-  <g transform="translate(18, 168)">
-    <text x="0" y="12" fill="#858994" font-family="'JetBrains Mono', monospace" font-size="10.5" font-weight="600" letter-spacing="1">STATUS</text>
-    <circle cx="86" cy="8" r="3.5" fill="#45E879"/>
-    <text x="96" y="12" fill="#45E879" font-family="'JetBrains Mono', monospace" font-size="11.5" font-weight="700" letter-spacing="1">BUILDING</text>
+  <!-- Status Row 4: REGION -->
+  <g transform="translate(20, 198)">
+    <text x="0" y="14" fill="#858994" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="600" letter-spacing="1">REGION</text>
+    <text x="84" y="14" fill="#F2F2F4" font-family="'JetBrains Mono', monospace" font-size="12.5" font-weight="700">INDIA</text>
   </g>
-  <line x1="18" y1="188" x2="364" y2="188" stroke="#FF3347" stroke-width="0.4" stroke-opacity="0.12"/>
+  <line x1="20" y1="222" x2="352" y2="222" stroke="#FF3347" stroke-width="0.4" stroke-opacity="0.12"/>
 
-  <!-- Status Row 5: REGION -->
-  <g transform="translate(18, 206)">
-    <text x="0" y="12" fill="#858994" font-family="'JetBrains Mono', monospace" font-size="10.5" font-weight="600" letter-spacing="1">REGION</text>
-    <text x="80" y="12" fill="#F2F2F4" font-family="'JetBrains Mono', monospace" font-size="11.5" font-weight="700">INDIA</text>
-  </g>
-
-  <!-- Bottom Telemetry Indicator -->
-  <g transform="translate(18, 228)">
-    <text x="0" y="10" fill="#858994" font-family="'JetBrains Mono', monospace" font-size="9" letter-spacing="0.5">[■■■■■■■■■■■■■■■■] SIGNAL_OK</text>
-    <text x="346" y="10" fill="#45E879" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="700" text-anchor="end">100%</text>
-  </g>
-</g>
-
-<!-- ── TECH LOADOUT SECTION ───────────────────────────────────── -->
-<g id="tech-loadout" transform="translate(42, 332)">
-  <!-- Divider above Tech Loadout -->
-  <line x1="0" y1="0" x2="1118" y2="0" stroke="#8B1022" stroke-width="1" stroke-opacity="0.3"/>
-  <line x1="0" y1="0" x2="120" y2="0" stroke="#FF3347" stroke-width="1.5"/>
-
-  <text x="2" y="20" fill="#858994" font-family="'JetBrains Mono', monospace" font-size="11.5" font-weight="700" letter-spacing="1.5">TECH LOADOUT</text>
-
-  <!-- Inventory Slot Chips with Real Technologies -->
-  <g transform="translate(2, 30)">
-    <!-- React -->
-    <g transform="translate(0, 0)">
-      <rect width="96" height="30" rx="4" fill="#0A0D14" stroke="#FF3347" stroke-width="0.8" stroke-opacity="0.4"/>
-      <circle cx="16" cy="15" r="4" fill="#00D8FF"/>
-      <text x="28" y="19" fill="#F2F2F4" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="600">React</text>
-    </g>
-
-    <!-- JavaScript -->
-    <g transform="translate(106, 0)">
-      <rect width="128" height="30" rx="4" fill="#0A0D14" stroke="#FF3347" stroke-width="0.8" stroke-opacity="0.4"/>
-      <rect x="11" y="9" width="12" height="12" rx="2" fill="#F7DF1E"/>
-      <text x="17" y="18" fill="#000000" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="800" text-anchor="middle">JS</text>
-      <text x="32" y="19" fill="#F2F2F4" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="600">JavaScript</text>
-    </g>
-
-    <!-- TypeScript -->
-    <g transform="translate(244, 0)">
-      <rect width="128" height="30" rx="4" fill="#0A0D14" stroke="#FF3347" stroke-width="0.8" stroke-opacity="0.4"/>
-      <rect x="11" y="9" width="12" height="12" rx="2" fill="#3178C6"/>
-      <text x="17" y="18" fill="#FFFFFF" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="800" text-anchor="middle">TS</text>
-      <text x="32" y="19" fill="#F2F2F4" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="600">TypeScript</text>
-    </g>
-
-    <!-- Node.js -->
-    <g transform="translate(382, 0)">
-      <rect width="104" height="30" rx="4" fill="#0A0D14" stroke="#FF3347" stroke-width="0.8" stroke-opacity="0.4"/>
-      <circle cx="16" cy="15" r="4" fill="#5FA04E"/>
-      <text x="28" y="19" fill="#F2F2F4" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="600">Node.js</text>
-    </g>
-
-    <!-- MongoDB -->
-    <g transform="translate(496, 0)">
-      <rect width="104" height="30" rx="4" fill="#0A0D14" stroke="#FF3347" stroke-width="0.8" stroke-opacity="0.4"/>
-      <circle cx="16" cy="15" r="4" fill="#47A248"/>
-      <text x="28" y="19" fill="#F2F2F4" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="600">MongoDB</text>
-    </g>
-
-    <!-- Tailwind -->
-    <g transform="translate(610, 0)">
-      <rect width="104" height="30" rx="4" fill="#0A0D14" stroke="#FF3347" stroke-width="0.8" stroke-opacity="0.4"/>
-      <circle cx="16" cy="15" r="4" fill="#38BDF8"/>
-      <text x="28" y="19" fill="#F2F2F4" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="600">Tailwind</text>
-    </g>
-
-    <!-- Figma -->
-    <g transform="translate(724, 0)">
-      <rect width="90" height="30" rx="4" fill="#0A0D14" stroke="#FF3347" stroke-width="0.8" stroke-opacity="0.4"/>
-      <circle cx="16" cy="15" r="4" fill="#F24E1E"/>
-      <text x="28" y="19" fill="#F2F2F4" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="600">Figma</text>
-    </g>
-
-    <!-- Git -->
-    <g transform="translate(824, 0)">
-      <rect width="78" height="30" rx="4" fill="#0A0D14" stroke="#FF3347" stroke-width="0.8" stroke-opacity="0.4"/>
-      <circle cx="16" cy="15" r="4" fill="#F05032"/>
-      <text x="28" y="19" fill="#F2F2F4" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="600">Git</text>
-    </g>
-
-    <!-- AI -->
-    <g transform="translate(912, 0)">
-      <rect width="72" height="30" rx="4" fill="#0E121A" stroke="#FF3347" stroke-width="1.2" stroke-opacity="0.8"/>
-      <circle cx="16" cy="15" r="4" fill="#FF3347"/>
-      <text x="28" y="19" fill="#FF3347" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="700">AI</text>
-    </g>
+  <!-- Bottom Telemetry Indicator in Status Card -->
+  <g transform="translate(20, 246)">
+    <text x="0" y="12" fill="#858994" font-family="'JetBrains Mono', monospace" font-size="9.5" letter-spacing="0.5">[■■■■■■■■■■■■■■■■] SIGNAL_OK</text>
+    <text x="332" y="12" fill="#45E879" font-family="'JetBrains Mono', monospace" font-size="9.5" font-weight="700" text-anchor="end">100%</text>
   </g>
 </g>
 
 <!-- ── BOTTOM STATUS STRIP ────────────────────────────────────── -->
 <g id="bottom-strip">
   <!-- Bottom Divider Line -->
-  <line x1="40" y1="412" x2="1160" y2="412" stroke="#8B1022" stroke-width="1" stroke-opacity="0.3"/>
-  <line x1="550" y1="412" x2="650" y2="412" stroke="#FF3347" stroke-width="1.5"/>
+  <line x1="44" y1="368" x2="1156" y2="368" stroke="#8B1022" stroke-width="1" stroke-opacity="0.3"/>
+  <line x1="44" y1="368" x2="180" y2="368" stroke="#FF3347" stroke-width="1.5"/>
 
   <!-- Left: STATUS :: BUILDING -->
-  <text x="42" y="438" fill="#FF3347" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="700" letter-spacing="1.5">STATUS :: BUILDING</text>
-
-  <!-- Center: DESIGN → BUILD → SHIP -->
-  <text x="600" y="438" fill="#F2F2F4" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="600" letter-spacing="2" text-anchor="middle">DESIGN → BUILD → SHIP</text>
+  <text x="46" y="392" fill="#FF3347" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="700" letter-spacing="1.5">STATUS :: BUILDING</text>
 
   <!-- Right: REGION :: INDIA -->
-  <text x="1158" y="438" fill="#858994" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="600" letter-spacing="1.5" text-anchor="end">REGION :: INDIA</text>
+  <text x="1154" y="392" fill="#858994" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="600" letter-spacing="1.5" text-anchor="end">REGION :: INDIA</text>
 </g>
 
 </svg>
