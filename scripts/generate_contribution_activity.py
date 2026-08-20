@@ -8,6 +8,7 @@ Uses GitHub's official contributionCalendar dataset without estimation:
   4. Animates pixel snake hunting real non-zero contribution cells:
      - Approach -> Flash -> Consume (Particle Burst) -> Permanently Eaten (Empty).
   5. Clean seamless loop reset and optimized GIF export.
+  6. Includes 24px safe canvas margins around all 4 borders & corners to prevent any clipping.
 """
 
 import json
@@ -148,7 +149,6 @@ def fetch_contributions_public(username: str) -> dict:
                 d_count = tip_counts.get(d_id, 0)
                 
                 dt = datetime.strptime(d_str, "%Y-%m-%d")
-                # GitHub calendar: Sunday=0, Monday=1, ..., Saturday=6
                 github_weekday = (dt.weekday() + 1) % 7
                 
                 days_by_date[d_str] = {
@@ -196,7 +196,6 @@ def get_official_contributions(username: str) -> dict:
         print(f"Fetching official contributionCalendar via public endpoint for {username}...")
         calendar = fetch_contributions_public(username)
 
-    # Validate exact integrity
     total = calendar["totalContributions"]
     sum_days = sum(d["contributionCount"] for w in calendar["weeks"] for d in w["contributionDays"])
     diff = total - sum_days
@@ -208,9 +207,6 @@ def get_official_contributions(username: str) -> dict:
     print(f"  Difference            : {diff}")
     print(f"  Total Weeks           : {len(calendar['weeks'])}")
     print("="*50 + "\n")
-
-    if diff != 0 and total > sum_days:
-        print(f"Note: Account may have {diff} private contribution(s) outside public scope.", file=sys.stderr)
 
     return calendar
 
@@ -309,7 +305,6 @@ def simulate_animation_frames(weeks_data, num_cols, num_rows=7):
     targets = plan_targets(weeks_data, num_cols)
     first_target = targets[0]
     
-    # Starting position 2 cells before first target (or top-left)
     start_pos = (max(0, first_target[0] - 2), first_target[1])
     
     snake_len = 4
@@ -341,7 +336,6 @@ def simulate_animation_frames(weeks_data, num_cols, num_rows=7):
 
     # 2. Sequential Target Hunting & Eating
     for t_idx, target in enumerate(targets):
-        # Move head onto target cell
         snake_body = [target] + snake_body[:-1]
         
         # Frame A: Overlap + Flash
@@ -433,7 +427,7 @@ def simulate_animation_frames(weeks_data, num_cols, num_rows=7):
     # 4. Seamless Loop Reset Transition
     frames_state.append({
         "snake": list(snake_body),
-        "eaten": set(), # Restores original grid cleanly for infinite loop
+        "eaten": set(),
         "flash": None,
         "particles": [],
         "phase": "reset"
@@ -441,7 +435,7 @@ def simulate_animation_frames(weeks_data, num_cols, num_rows=7):
 
     return frames_state
 
-# ── Frame Rendering ──────────────────────────────────────────────────────────
+# ── Frame Rendering with Safe Canvas Margins ───────────────────────────────
 def render_frame_image(
     calendar_data,
     weeks_data,
@@ -449,16 +443,19 @@ def render_frame_image(
     state,
     fonts,
     width=980,
-    height=265
+    height=280
 ):
     im = Image.new("RGB", (width, height), COLOR_BG)
     draw = ImageDraw.Draw(im)
     font_title, font_sub, font_small, font_tiny = fonts
 
-    # 1. Panel Background with Cut Corners
-    panel_x, panel_y = 8, 8
-    panel_w, panel_h = width - 16, height - 16
-    cut = 12
+    # 1. Panel Background with Cut Corners (Safe 24px Margin from all canvas edges)
+    margin = 24
+    panel_x = margin
+    panel_y = margin
+    panel_w = width - (2 * margin)   # 932 px
+    panel_h = height - (2 * margin)  # 232 px
+    cut = 14
 
     panel_polygon = [
         (panel_x + cut, panel_y),
@@ -472,31 +469,40 @@ def render_frame_image(
     ]
     draw.polygon(panel_polygon, fill=COLOR_PANEL_BG, outline=COLOR_BORDER_DARK)
 
-    # 2. Corner Tech Accents
+    # 2. Symmetrical Corner Tech Accents (All 4 Corners strictly within safe margins)
     accent_len = 24
     cx, cy = panel_x, panel_y
     cw, ch = panel_w, panel_h
 
+    # Top-Left Accent
     draw.line([(cx, cy + cut + accent_len), (cx, cy + cut), (cx + cut, cy), (cx + cut + accent_len, cy)], fill=COLOR_BORDER, width=2)
+    # Top-Right Accent
     draw.line([(cx + cw - cut - accent_len, cy), (cx + cw - cut, cy), (cx + cw, cy + cut), (cx + cw, cy + cut + accent_len)], fill=COLOR_BORDER, width=2)
-    draw.line([(cx + cw, cy + ch - cut - accent_len), (cx + cw, cy + ch - cut), (cx + cw - cut, cy + ch), (cx + cw - cut + accent_len, cy + ch)], fill=COLOR_BORDER, width=2)
+    # Bottom-Right Accent (Completely within canvas: x <= width - 24, y <= height - 24)
+    draw.line([(cx + cw, cy + ch - cut - accent_len), (cx + cw, cy + ch - cut), (cx + cw - cut, cy + ch), (cx + cw - cut - accent_len, cy + ch)], fill=COLOR_BORDER, width=2)
+    # Bottom-Left Accent
     draw.line([(cx + cut + accent_len, cy + ch), (cx + cut, cy + ch), (cx, cy + ch - cut), (cx, cy + ch - cut - accent_len)], fill=COLOR_BORDER, width=2)
 
-    # 3. Header Section (Displays Exact Official Total Contributions)
+    # 3. Header Section (Title & Total Count)
     title_text = "CONTRIBUTION ACTIVITY"
     stat_text = f"{total_contribs:,} CONTRIBUTIONS"
 
-    draw.text((38, 22), title_text, fill=COLOR_TEXT_MAIN, font=font_title)
-    draw.text((width - 42, 24), stat_text, fill=COLOR_TEXT_MUTED, font=font_sub, anchor="ra")
+    header_x = panel_x + 24
+    header_y = panel_y + 16
+    header_right_x = panel_x + panel_w - 24
+    header_line_y = panel_y + 40
 
-    draw.line([(38, 48), (width - 38, 48)], fill=COLOR_BORDER_DARK, width=1)
-    draw.line([(38, 48), (140, 48)], fill=COLOR_BORDER, width=1)
+    draw.text((header_x, header_y), title_text, fill=COLOR_TEXT_MAIN, font=font_title)
+    draw.text((header_right_x, header_y + 2), stat_text, fill=COLOR_TEXT_MUTED, font=font_sub, anchor="ra")
+
+    draw.line([(header_x, header_line_y), (header_right_x, header_line_y)], fill=COLOR_BORDER_DARK, width=1)
+    draw.line([(header_x, header_line_y), (header_x + 100, header_line_y)], fill=COLOR_BORDER, width=1)
 
     # 4. Grid Dimensions & Positions
     cell_size = 12
     cell_gap = 3
-    left_margin = 68
-    top_margin = 82
+    left_margin = panel_x + 58  # 82px (Grid width = 53*15 - 3 = 792px, right edge = 874px, inside panel_w = 932px)
+    top_margin = panel_y + 70   # 94px
 
     # 5. Month Labels
     month_names = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
@@ -529,13 +535,10 @@ def render_frame_image(
             y = top_margin + row * (cell_size + cell_gap)
 
             if (col, row) == flash_cell:
-                # EAT FLASH: Intense Neon White-Pink
                 cell_fill = (255, 230, 240)
             elif (col, row) in eaten_cells:
-                # EATEN: Permanently Level 0 (Empty) for this cycle
                 cell_fill = COLOR_LEVEL_0
             else:
-                # Exact Official Level mapped to Crimson Red Palette
                 official_level = day.get("contributionLevel", "NONE")
                 cell_fill = LEVEL_COLOR_MAP.get(official_level, COLOR_LEVEL_0)
 
@@ -612,7 +615,7 @@ def render_frame_image(
         draw.ellipse([px - pr, py - pr, px + pr, py + pr], fill=spark_color)
 
     # 10. Legend (Bottom Left)
-    legend_y = top_margin + 7 * (cell_size + cell_gap) + 20
+    legend_y = top_margin + 7 * (cell_size + cell_gap) + 16
     draw.text((left_margin, legend_y), "Less", fill=COLOR_TEXT_MUTED, font=font_tiny)
 
     leg_colors = [COLOR_LEVEL_0, COLOR_LEVEL_1, COLOR_LEVEL_2, COLOR_LEVEL_3, COLOR_LEVEL_4]
@@ -627,9 +630,9 @@ def render_frame_image(
 
     draw.text((leg_x + 4, legend_y), "More", fill=COLOR_TEXT_MUTED, font=font_tiny)
 
-    # 11. Bottom Right Subtle HUD Accent Dots
+    # 11. Bottom Right Subtle HUD Accent Dots (Safely inside panel)
     for i in range(4):
-        dot_x = width - 42 - i * 10
+        dot_x = header_right_x - i * 10
         draw.ellipse([dot_x - 1, legend_y + 6, dot_x + 1, legend_y + 8], fill=COLOR_BORDER)
 
     return im
@@ -654,8 +657,8 @@ def generate_contribution_activity_gif(username: str, output_path: str, duration
     total_frames = len(frame_states)
     print(f"Generated {total_frames} discrete game frames.")
 
-    # Render Frames
-    print(f"Rendering {total_frames} animation frames...")
+    # Render Frames with safe 24px margins (980x280)
+    print(f"Rendering {total_frames} animation frames with safe canvas margins...")
     frames = []
     for f_idx, st in enumerate(frame_states):
         frame_im = render_frame_image(
@@ -665,7 +668,7 @@ def generate_contribution_activity_gif(username: str, output_path: str, duration
             state=st,
             fonts=fonts,
             width=980,
-            height=265
+            height=280
         )
         quantized = frame_im.quantize(colors=128, method=Image.Quantize.MEDIANCUT)
         frames.append(quantized)
