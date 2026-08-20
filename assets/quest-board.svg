@@ -1,216 +1,208 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 460" width="1200" height="460">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 490" width="1200" height="490">
 <defs>
-  <!-- Main Background Gradient -->
-  <linearGradient id="qb-bg" x1="0" y1="0" x2="1" y2="1">
-    <stop offset="0%" stop-color="#050609"/>
-    <stop offset="50%" stop-color="#080A0F"/>
-    <stop offset="100%" stop-color="#0E1118"/>
-  </linearGradient>
-
   <!-- Card Background Gradient -->
-  <linearGradient id="card-grad" x1="0" y1="0" x2="0" y2="1">
-    <stop offset="0%" stop-color="#0D1017"/>
-    <stop offset="100%" stop-color="#07090E"/>
+  <linearGradient id="qb-card-bg" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#0E1118"/>
+    <stop offset="100%" stop-color="#080A0F"/>
   </linearGradient>
 
-  <!-- Crimson Glow -->
-  <filter id="card-glow" x="-10%" y="-10%" width="120%" height="120%">
+  <!-- Subtle Crimson Glow Filter -->
+  <filter id="qb-glow" x="-10%" y="-10%" width="120%" height="120%">
     <feDropShadow dx="0" dy="0" stdDeviation="2.5" flood-color="#FF3347" flood-opacity="0.3"/>
   </filter>
 
-  <!-- Grid Pattern -->
-  <pattern id="card-grid" width="24" height="24" patternUnits="userSpaceOnUse">
-    <path d="M 24 0 L 0 0 0 24" fill="none" stroke="#FF3347" stroke-width="0.8" stroke-opacity="0.04"/>
+  <!-- Card Grid Pattern -->
+  <pattern id="qb-grid" width="24" height="24" patternUnits="userSpaceOnUse">
+    <path d="M 24 0 L 0 0 0 24" fill="none" stroke="#FF3347" stroke-width="0.8" stroke-opacity="0.035"/>
   </pattern>
 </defs>
 
-<!-- Outer Canvas -->
-<rect width="1200" height="460" fill="#050609"/>
+<!-- Transparent Canvas (NO black background) -->
 
-<!-- ── CARD 01: AI PRODUCTS (Top-Left: x=24, y=20, w=564, h=198) ──── -->
-<g id="quest-01" transform="translate(24, 20)">
+<!-- ── CARD 01: AI PRODUCTS (Top-Left: x=10, y=10, w=580, h=225) ──── -->
+<g id="quest-01" transform="translate(10, 10)">
   <!-- Card Base with Chamfered Corners -->
-  <path d="M 8 0 L 556 0 L 564 8 L 564 190 L 556 198 L 8 198 L 0 190 L 0 8 Z" 
-        fill="url(#card-grad)" stroke="#FF3347" stroke-width="1.2" stroke-opacity="0.45" filter="url(#card-glow)"/>
-  <path d="M 8 0 L 556 0 L 564 8 L 564 190 L 556 198 L 8 198 L 0 190 L 0 8 Z" fill="url(#card-grid)"/>
+  <path d="M 10 0 L 570 0 L 580 10 L 580 215 L 570 225 L 10 225 L 0 215 L 0 10 Z" 
+        fill="url(#qb-card-bg)" stroke="#FF3347" stroke-width="1.2" stroke-opacity="0.35" filter="url(#qb-glow)"/>
+  <path d="M 10 0 L 570 0 L 580 10 L 580 215 L 570 225 L 10 225 L 0 215 L 0 10 Z" fill="url(#qb-grid)"/>
   
   <!-- Corner Tech Accents -->
-  <path d="M 0 16 L 0 8 L 8 0 L 16 0" fill="none" stroke="#FF3347" stroke-width="2"/>
-  <path d="M 548 0 L 556 0 L 564 8 L 564 16" fill="none" stroke="#FF3347" stroke-width="2"/>
-  <path d="M 564 182 L 564 190 L 556 198 L 548 198" fill="none" stroke="#FF3347" stroke-width="2"/>
-  <path d="M 16 198 L 8 198 L 0 190 L 0 182" fill="none" stroke="#FF3347" stroke-width="2"/>
+  <path d="M 0 20 L 0 10 L 10 0 L 20 0" fill="none" stroke="#FF3347" stroke-width="2"/>
+  <path d="M 560 0 L 570 0 L 580 10 L 580 20" fill="none" stroke="#FF3347" stroke-width="2"/>
+  <path d="M 580 205 L 580 215 L 570 225 L 560 225" fill="none" stroke="#FF3347" stroke-width="2"/>
+  <path d="M 20 225 L 10 225 L 0 215 L 0 205" fill="none" stroke="#FF3347" stroke-width="2"/>
 
   <!-- Top Header Row inside Card -->
-  <text x="20" y="28" fill="#FF3347" font-family="'JetBrains Mono', Consolas, monospace" font-size="12" font-weight="700" letter-spacing="1.5">QUEST // 01</text>
+  <text x="24" y="32" fill="#FF3347" font-family="'JetBrains Mono', Consolas, monospace" font-size="13.5" font-weight="700" letter-spacing="1.5">QUEST // 01</text>
   
   <!-- Status: ACTIVE -->
-  <circle cx="488" cy="24" r="3.5" fill="#45E879"/>
-  <circle cx="488" cy="24" r="6.5" fill="none" stroke="#45E879" stroke-width="0.8" stroke-opacity="0.5"/>
-  <text x="500" y="28" fill="#45E879" font-family="'JetBrains Mono', Consolas, monospace" font-size="11.5" font-weight="700" letter-spacing="1">ACTIVE</text>
+  <circle cx="494" cy="28" r="4" fill="#45E879"/>
+  <circle cx="494" cy="28" r="7.5" fill="none" stroke="#45E879" stroke-width="0.8" stroke-opacity="0.5"/>
+  <text x="508" y="32" fill="#45E879" font-family="'JetBrains Mono', Consolas, monospace" font-size="13" font-weight="700" letter-spacing="1">ACTIVE</text>
   
-  <line x1="20" y1="40" x2="544" y2="40" stroke="#FF3347" stroke-width="0.8" stroke-opacity="0.2"/>
+  <line x1="24" y1="46" x2="556" y2="46" stroke="#FF3347" stroke-width="0.8" stroke-opacity="0.2"/>
 
-  <!-- Quest Title -->
-  <text x="20" y="72" fill="#F2F2F4" font-family="'JetBrains Mono', Consolas, monospace" font-size="19" font-weight="800" letter-spacing="1">AI PRODUCTS</text>
+  <!-- Quest Title (23px) -->
+  <text x="24" y="82" fill="#F2F2F4" font-family="system-ui, -apple-system, sans-serif" font-size="23" font-weight="800" letter-spacing="0.5">AI PRODUCTS</text>
 
-  <!-- Quest Description -->
-  <text x="20" y="102" fill="#9BA1B0" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="400">
-    Designing AI-powered products, intelligent interfaces and useful
+  <!-- Quest Description (17px) -->
+  <text x="24" y="116" fill="#9A9DA6" font-family="system-ui, -apple-system, sans-serif" font-size="16.5" font-weight="400">
+    Designing AI-powered products, intelligent interfaces and
   </text>
-  <text x="20" y="124" fill="#9BA1B0" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="400">
-    AI workflows.
+  <text x="24" y="140" fill="#9A9DA6" font-family="system-ui, -apple-system, sans-serif" font-size="16.5" font-weight="400">
+    useful AI workflows.
   </text>
 
   <!-- Bottom Metadata Row -->
-  <line x1="20" y1="150" x2="544" y2="150" stroke="#FF3347" stroke-width="0.6" stroke-opacity="0.15"/>
+  <line x1="24" y1="168" x2="556" y2="168" stroke="#FF3347" stroke-width="0.6" stroke-opacity="0.15"/>
   
   <!-- Tag Pill: CORE FOCUS -->
-  <rect x="20" y="162" width="104" height="22" rx="3" fill="#121620" stroke="#FF3347" stroke-width="0.8" stroke-opacity="0.5"/>
-  <text x="72" y="177" fill="#FF3347" font-family="'JetBrains Mono', monospace" font-size="10.5" font-weight="700" text-anchor="middle" letter-spacing="1">CORE FOCUS</text>
+  <rect x="24" y="182" width="112" height="26" rx="4" fill="#121620" stroke="#FF3347" stroke-width="0.8" stroke-opacity="0.5"/>
+  <text x="80" y="199" fill="#FF3347" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="700" text-anchor="middle" letter-spacing="1">CORE FOCUS</text>
 
   <!-- Priority -->
-  <text x="544" y="177" fill="#858994" font-family="'JetBrains Mono', monospace" font-size="11" text-anchor="end">
+  <text x="556" y="200" fill="#858994" font-family="'JetBrains Mono', monospace" font-size="13" text-anchor="end">
     PRIORITY: <tspan fill="#F2F2F4" font-weight="700">HIGH</tspan>
   </text>
 </g>
 
-<!-- ── CARD 02: WEB EXPERIENCES (Top-Right: x=612, y=20, w=564, h=198) ─ -->
-<g id="quest-02" transform="translate(612, 20)">
+<!-- ── CARD 02: WEB EXPERIENCES (Top-Right: x=610, y=10, w=580, h=225) ─ -->
+<g id="quest-02" transform="translate(610, 10)">
   <!-- Card Base -->
-  <path d="M 8 0 L 556 0 L 564 8 L 564 190 L 556 198 L 8 198 L 0 190 L 0 8 Z" 
-        fill="url(#card-grad)" stroke="#FF3347" stroke-width="1.2" stroke-opacity="0.45" filter="url(#card-glow)"/>
-  <path d="M 8 0 L 556 0 L 564 8 L 564 190 L 556 198 L 8 198 L 0 190 L 0 8 Z" fill="url(#card-grid)"/>
+  <path d="M 10 0 L 570 0 L 580 10 L 580 215 L 570 225 L 10 225 L 0 215 L 0 10 Z" 
+        fill="url(#qb-card-bg)" stroke="#FF3347" stroke-width="1.2" stroke-opacity="0.35" filter="url(#qb-glow)"/>
+  <path d="M 10 0 L 570 0 L 580 10 L 580 215 L 570 225 L 10 225 L 0 215 L 0 10 Z" fill="url(#qb-grid)"/>
   
   <!-- Corner Tech Accents -->
-  <path d="M 0 16 L 0 8 L 8 0 L 16 0" fill="none" stroke="#FF3347" stroke-width="2"/>
-  <path d="M 548 0 L 556 0 L 564 8 L 564 16" fill="none" stroke="#FF3347" stroke-width="2"/>
-  <path d="M 564 182 L 564 190 L 556 198 L 548 198" fill="none" stroke="#FF3347" stroke-width="2"/>
-  <path d="M 16 198 L 8 198 L 0 190 L 0 182" fill="none" stroke="#FF3347" stroke-width="2"/>
+  <path d="M 0 20 L 0 10 L 10 0 L 20 0" fill="none" stroke="#FF3347" stroke-width="2"/>
+  <path d="M 560 0 L 570 0 L 580 10 L 580 20" fill="none" stroke="#FF3347" stroke-width="2"/>
+  <path d="M 580 205 L 580 215 L 570 225 L 560 225" fill="none" stroke="#FF3347" stroke-width="2"/>
+  <path d="M 20 225 L 10 225 L 0 215 L 0 205" fill="none" stroke="#FF3347" stroke-width="2"/>
 
   <!-- Top Header Row -->
-  <text x="20" y="28" fill="#FF3347" font-family="'JetBrains Mono', Consolas, monospace" font-size="12" font-weight="700" letter-spacing="1.5">QUEST // 02</text>
+  <text x="24" y="32" fill="#FF3347" font-family="'JetBrains Mono', Consolas, monospace" font-size="13.5" font-weight="700" letter-spacing="1.5">QUEST // 02</text>
   
   <!-- Status: ONGOING -->
-  <circle cx="476" cy="24" r="3.5" fill="#FF3347"/>
-  <circle cx="476" cy="24" r="6.5" fill="none" stroke="#FF3347" stroke-width="0.8" stroke-opacity="0.5"/>
-  <text x="488" y="28" fill="#FF3347" font-family="'JetBrains Mono', Consolas, monospace" font-size="11.5" font-weight="700" letter-spacing="1">ONGOING</text>
+  <circle cx="482" cy="28" r="4" fill="#FF3347"/>
+  <circle cx="482" cy="28" r="7.5" fill="none" stroke="#FF3347" stroke-width="0.8" stroke-opacity="0.5"/>
+  <text x="496" y="32" fill="#FF3347" font-family="'JetBrains Mono', Consolas, monospace" font-size="13" font-weight="700" letter-spacing="1">ONGOING</text>
   
-  <line x1="20" y1="40" x2="544" y2="40" stroke="#FF3347" stroke-width="0.8" stroke-opacity="0.2"/>
+  <line x1="24" y1="46" x2="556" y2="46" stroke="#FF3347" stroke-width="0.8" stroke-opacity="0.2"/>
 
-  <!-- Quest Title -->
-  <text x="20" y="72" fill="#F2F2F4" font-family="'JetBrains Mono', Consolas, monospace" font-size="19" font-weight="800" letter-spacing="1">WEB EXPERIENCES</text>
+  <!-- Quest Title (23px) -->
+  <text x="24" y="82" fill="#F2F2F4" font-family="system-ui, -apple-system, sans-serif" font-size="23" font-weight="800" letter-spacing="0.5">WEB EXPERIENCES</text>
 
-  <!-- Quest Description -->
-  <text x="20" y="102" fill="#9BA1B0" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="400">
-    Creating modern, responsive and polished web experiences with
+  <!-- Quest Description (17px) -->
+  <text x="24" y="116" fill="#9A9DA6" font-family="system-ui, -apple-system, sans-serif" font-size="16.5" font-weight="400">
+    Creating modern, responsive and polished web experiences
   </text>
-  <text x="20" y="124" fill="#9BA1B0" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="400">
-    strong interaction design.
+  <text x="24" y="140" fill="#9A9DA6" font-family="system-ui, -apple-system, sans-serif" font-size="16.5" font-weight="400">
+    with strong interaction design.
   </text>
 
   <!-- Bottom Metadata Row -->
-  <line x1="20" y1="150" x2="544" y2="150" stroke="#FF3347" stroke-width="0.6" stroke-opacity="0.15"/>
+  <line x1="24" y1="168" x2="556" y2="168" stroke="#FF3347" stroke-width="0.6" stroke-opacity="0.15"/>
   
   <!-- Tag Pill: DESIGN FOCUS -->
-  <rect x="20" y="162" width="116" height="22" rx="3" fill="#121620" stroke="#FF3347" stroke-width="0.8" stroke-opacity="0.5"/>
-  <text x="78" y="177" fill="#F2F2F4" font-family="'JetBrains Mono', monospace" font-size="10.5" font-weight="700" text-anchor="middle" letter-spacing="1">DESIGN FOCUS</text>
+  <rect x="24" y="182" width="128" height="26" rx="4" fill="#121620" stroke="#FF3347" stroke-width="0.8" stroke-opacity="0.5"/>
+  <text x="88" y="199" fill="#F2F2F4" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="700" text-anchor="middle" letter-spacing="1">DESIGN FOCUS</text>
 
   <!-- Priority -->
-  <text x="544" y="177" fill="#858994" font-family="'JetBrains Mono', monospace" font-size="11" text-anchor="end">
+  <text x="556" y="200" fill="#858994" font-family="'JetBrains Mono', monospace" font-size="13" text-anchor="end">
     PRIORITY: <tspan fill="#F2F2F4" font-weight="700">HIGH</tspan>
   </text>
 </g>
 
-<!-- ── CARD 03: FULL-STACK SYSTEMS (Bottom-Left: x=24, y=242, w=564, h=198) -->
-<g id="quest-03" transform="translate(24, 242)">
+<!-- ── CARD 03: FULL-STACK SYSTEMS (Bottom-Left: x=10, y=250, w=580, h=225) ─ -->
+<g id="quest-03" transform="translate(10, 250)">
   <!-- Card Base -->
-  <path d="M 8 0 L 556 0 L 564 8 L 564 190 L 556 198 L 8 198 L 0 190 L 0 8 Z" 
-        fill="url(#card-grad)" stroke="#FF3347" stroke-width="1.2" stroke-opacity="0.45" filter="url(#card-glow)"/>
-  <path d="M 8 0 L 556 0 L 564 8 L 564 190 L 556 198 L 8 198 L 0 190 L 0 8 Z" fill="url(#card-grid)"/>
+  <path d="M 10 0 L 570 0 L 580 10 L 580 215 L 570 225 L 10 225 L 0 215 L 0 10 Z" 
+        fill="url(#qb-card-bg)" stroke="#FF3347" stroke-width="1.2" stroke-opacity="0.35" filter="url(#qb-glow)"/>
+  <path d="M 10 0 L 570 0 L 580 10 L 580 215 L 570 225 L 10 225 L 0 215 L 0 10 Z" fill="url(#qb-grid)"/>
   
   <!-- Corner Tech Accents -->
-  <path d="M 0 16 L 0 8 L 8 0 L 16 0" fill="none" stroke="#FF3347" stroke-width="2"/>
-  <path d="M 548 0 L 556 0 L 564 8 L 564 16" fill="none" stroke="#FF3347" stroke-width="2"/>
-  <path d="M 564 182 L 564 190 L 556 198 L 548 198" fill="none" stroke="#FF3347" stroke-width="2"/>
-  <path d="M 16 198 L 8 198 L 0 190 L 0 182" fill="none" stroke="#FF3347" stroke-width="2"/>
+  <path d="M 0 20 L 0 10 L 10 0 L 20 0" fill="none" stroke="#FF3347" stroke-width="2"/>
+  <path d="M 560 0 L 570 0 L 580 10 L 580 20" fill="none" stroke="#FF3347" stroke-width="2"/>
+  <path d="M 580 205 L 580 215 L 570 225 L 560 225" fill="none" stroke="#FF3347" stroke-width="2"/>
+  <path d="M 20 225 L 10 225 L 0 215 L 0 205" fill="none" stroke="#FF3347" stroke-width="2"/>
 
   <!-- Top Header Row -->
-  <text x="20" y="28" fill="#FF3347" font-family="'JetBrains Mono', Consolas, monospace" font-size="12" font-weight="700" letter-spacing="1.5">QUEST // 03</text>
+  <text x="24" y="32" fill="#FF3347" font-family="'JetBrains Mono', Consolas, monospace" font-size="13.5" font-weight="700" letter-spacing="1.5">QUEST // 03</text>
   
   <!-- Status: ONGOING -->
-  <circle cx="476" cy="24" r="3.5" fill="#FF3347"/>
-  <circle cx="476" cy="24" r="6.5" fill="none" stroke="#FF3347" stroke-width="0.8" stroke-opacity="0.5"/>
-  <text x="488" y="28" fill="#FF3347" font-family="'JetBrains Mono', Consolas, monospace" font-size="11.5" font-weight="700" letter-spacing="1">ONGOING</text>
+  <circle cx="482" cy="28" r="4" fill="#FF3347"/>
+  <circle cx="482" cy="28" r="7.5" fill="none" stroke="#FF3347" stroke-width="0.8" stroke-opacity="0.5"/>
+  <text x="496" y="32" fill="#FF3347" font-family="'JetBrains Mono', Consolas, monospace" font-size="13" font-weight="700" letter-spacing="1">ONGOING</text>
   
-  <line x1="20" y1="40" x2="544" y2="40" stroke="#FF3347" stroke-width="0.8" stroke-opacity="0.2"/>
+  <line x1="24" y1="46" x2="556" y2="46" stroke="#FF3347" stroke-width="0.8" stroke-opacity="0.2"/>
 
-  <!-- Quest Title -->
-  <text x="20" y="72" fill="#F2F2F4" font-family="'JetBrains Mono', Consolas, monospace" font-size="19" font-weight="800" letter-spacing="1">FULL-STACK SYSTEMS</text>
+  <!-- Quest Title (23px) -->
+  <text x="24" y="82" fill="#F2F2F4" font-family="system-ui, -apple-system, sans-serif" font-size="23" font-weight="800" letter-spacing="0.5">FULL-STACK SYSTEMS</text>
 
-  <!-- Quest Description -->
-  <text x="20" y="102" fill="#9BA1B0" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="400">
-    Building complete applications across frontend, backend, APIs
+  <!-- Quest Description (17px) -->
+  <text x="24" y="116" fill="#9A9DA6" font-family="system-ui, -apple-system, sans-serif" font-size="16.5" font-weight="400">
+    Building complete applications across frontend, backend,
   </text>
-  <text x="20" y="124" fill="#9BA1B0" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="400">
-    and databases.
+  <text x="24" y="140" fill="#9A9DA6" font-family="system-ui, -apple-system, sans-serif" font-size="16.5" font-weight="400">
+    APIs and databases.
   </text>
 
   <!-- Bottom Metadata Row -->
-  <line x1="20" y1="150" x2="544" y2="150" stroke="#FF3347" stroke-width="0.6" stroke-opacity="0.15"/>
+  <line x1="24" y1="168" x2="556" y2="168" stroke="#FF3347" stroke-width="0.6" stroke-opacity="0.15"/>
   
   <!-- Tag Pill: ENGINEERING -->
-  <rect x="20" y="162" width="112" height="22" rx="3" fill="#121620" stroke="#FF3347" stroke-width="0.8" stroke-opacity="0.5"/>
-  <text x="76" y="177" fill="#F2F2F4" font-family="'JetBrains Mono', monospace" font-size="10.5" font-weight="700" text-anchor="middle" letter-spacing="1">ENGINEERING</text>
+  <rect x="24" y="182" width="122" height="26" rx="4" fill="#121620" stroke="#FF3347" stroke-width="0.8" stroke-opacity="0.5"/>
+  <text x="85" y="199" fill="#F2F2F4" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="700" text-anchor="middle" letter-spacing="1">ENGINEERING</text>
 
   <!-- Priority -->
-  <text x="544" y="177" fill="#858994" font-family="'JetBrains Mono', monospace" font-size="11" text-anchor="end">
+  <text x="556" y="200" fill="#858994" font-family="'JetBrains Mono', monospace" font-size="13" text-anchor="end">
     PRIORITY: <tspan fill="#FF3347" font-weight="700">CORE</tspan>
   </text>
 </g>
 
-<!-- ── CARD 04: AI AUTOMATION (Bottom-Right: x=612, y=242, w=564, h=198) ─ -->
-<g id="quest-04" transform="translate(612, 242)">
+<!-- ── CARD 04: AI AUTOMATION (Bottom-Right: x=610, y=250, w=580, h=225) ─ -->
+<g id="quest-04" transform="translate(610, 250)">
   <!-- Card Base -->
-  <path d="M 8 0 L 556 0 L 564 8 L 564 190 L 556 198 L 8 198 L 0 190 L 0 8 Z" 
-        fill="url(#card-grad)" stroke="#FF3347" stroke-width="1.2" stroke-opacity="0.45" filter="url(#card-glow)"/>
-  <path d="M 8 0 L 556 0 L 564 8 L 564 190 L 556 198 L 8 198 L 0 190 L 0 8 Z" fill="url(#card-grid)"/>
+  <path d="M 10 0 L 570 0 L 580 10 L 580 215 L 570 225 L 10 225 L 0 215 L 0 10 Z" 
+        fill="url(#qb-card-bg)" stroke="#FF3347" stroke-width="1.2" stroke-opacity="0.35" filter="url(#qb-glow)"/>
+  <path d="M 10 0 L 570 0 L 580 10 L 580 215 L 570 225 L 10 225 L 0 215 L 0 10 Z" fill="url(#qb-grid)"/>
   
   <!-- Corner Tech Accents -->
-  <path d="M 0 16 L 0 8 L 8 0 L 16 0" fill="none" stroke="#FF3347" stroke-width="2"/>
-  <path d="M 548 0 L 556 0 L 564 8 L 564 16" fill="none" stroke="#FF3347" stroke-width="2"/>
-  <path d="M 564 182 L 564 190 L 556 198 L 548 198" fill="none" stroke="#FF3347" stroke-width="2"/>
-  <path d="M 16 198 L 8 198 L 0 190 L 0 182" fill="none" stroke="#FF3347" stroke-width="2"/>
+  <path d="M 0 20 L 0 10 L 10 0 L 20 0" fill="none" stroke="#FF3347" stroke-width="2"/>
+  <path d="M 560 0 L 570 0 L 580 10 L 580 20" fill="none" stroke="#FF3347" stroke-width="2"/>
+  <path d="M 580 205 L 580 215 L 570 225 L 560 225" fill="none" stroke="#FF3347" stroke-width="2"/>
+  <path d="M 20 225 L 10 225 L 0 215 L 0 205" fill="none" stroke="#FF3347" stroke-width="2"/>
 
   <!-- Top Header Row -->
-  <text x="20" y="28" fill="#FF3347" font-family="'JetBrains Mono', Consolas, monospace" font-size="12" font-weight="700" letter-spacing="1.5">QUEST // 04</text>
+  <text x="24" y="32" fill="#FF3347" font-family="'JetBrains Mono', Consolas, monospace" font-size="13.5" font-weight="700" letter-spacing="1.5">QUEST // 04</text>
   
   <!-- Status: EXPLORING -->
-  <circle cx="468" cy="24" r="3.5" fill="#FFA726"/>
-  <circle cx="468" cy="24" r="6.5" fill="none" stroke="#FFA726" stroke-width="0.8" stroke-opacity="0.5"/>
-  <text x="480" y="28" fill="#FFA726" font-family="'JetBrains Mono', Consolas, monospace" font-size="11.5" font-weight="700" letter-spacing="1">EXPLORING</text>
+  <circle cx="474" cy="28" r="4" fill="#FFA726"/>
+  <circle cx="474" cy="28" r="7.5" fill="none" stroke="#FFA726" stroke-width="0.8" stroke-opacity="0.5"/>
+  <text x="488" y="32" fill="#FFA726" font-family="'JetBrains Mono', Consolas, monospace" font-size="13" font-weight="700" letter-spacing="1">EXPLORING</text>
   
-  <line x1="20" y1="40" x2="544" y2="40" stroke="#FF3347" stroke-width="0.8" stroke-opacity="0.2"/>
+  <line x1="24" y1="46" x2="556" y2="46" stroke="#FF3347" stroke-width="0.8" stroke-opacity="0.2"/>
 
-  <!-- Quest Title -->
-  <text x="20" y="72" fill="#F2F2F4" font-family="'JetBrains Mono', Consolas, monospace" font-size="19" font-weight="800" letter-spacing="1">AI AUTOMATION</text>
+  <!-- Quest Title (23px) -->
+  <text x="24" y="82" fill="#F2F2F4" font-family="system-ui, -apple-system, sans-serif" font-size="23" font-weight="800" letter-spacing="0.5">AI AUTOMATION</text>
 
-  <!-- Quest Description -->
-  <text x="20" y="102" fill="#9BA1B0" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="400">
+  <!-- Quest Description (17px) -->
+  <text x="24" y="116" fill="#9A9DA6" font-family="system-ui, -apple-system, sans-serif" font-size="16.5" font-weight="400">
     Connecting AI, APIs and business workflows to automate
   </text>
-  <text x="20" y="124" fill="#9BA1B0" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="400">
+  <text x="24" y="140" fill="#9A9DA6" font-family="system-ui, -apple-system, sans-serif" font-size="16.5" font-weight="400">
     repetitive processes.
   </text>
 
   <!-- Bottom Metadata Row -->
-  <line x1="20" y1="150" x2="544" y2="150" stroke="#FF3347" stroke-width="0.6" stroke-opacity="0.15"/>
+  <line x1="24" y1="168" x2="556" y2="168" stroke="#FF3347" stroke-width="0.6" stroke-opacity="0.15"/>
   
   <!-- Tag Pill: SYSTEMS -->
-  <rect x="20" y="162" width="88" height="22" rx="3" fill="#121620" stroke="#FF3347" stroke-width="0.8" stroke-opacity="0.5"/>
-  <text x="64" y="177" fill="#F2F2F4" font-family="'JetBrains Mono', monospace" font-size="10.5" font-weight="700" text-anchor="middle" letter-spacing="1">SYSTEMS</text>
+  <rect x="24" y="182" width="96" height="26" rx="4" fill="#121620" stroke="#FF3347" stroke-width="0.8" stroke-opacity="0.5"/>
+  <text x="72" y="199" fill="#F2F2F4" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="700" text-anchor="middle" letter-spacing="1">SYSTEMS</text>
 
   <!-- Priority -->
-  <text x="544" y="177" fill="#858994" font-family="'JetBrains Mono', monospace" font-size="11" text-anchor="end">
+  <text x="556" y="200" fill="#858994" font-family="'JetBrains Mono', monospace" font-size="13" text-anchor="end">
     PRIORITY: <tspan fill="#F2F2F4" font-weight="700">HIGH</tspan>
   </text>
 </g>
