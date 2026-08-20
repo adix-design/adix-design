@@ -113,10 +113,10 @@ Build useful products, learn continuously, and turn strong ideas into things peo
 
 ## 🏆 ACHIEVEMENTS
 
+`VERIFIED DEVELOPER MILESTONES`
+
 <div align="center">
-
-<img src="./assets/github-trophies.svg" width="92%" alt="GitHub trophies"/>
-
+<img src="./assets/github-trophies.svg" width="100%" alt="Verified Developer Milestones"/>
 </div>
 
 ---

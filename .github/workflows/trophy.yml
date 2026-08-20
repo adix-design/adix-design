@@ -15,12 +15,16 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Generate trophy card
-        uses: soulteary/github-profile-trophy-action@v1.0.0
+      - name: Set up Python
+        uses: actions/setup-python@v5
         with:
-          options: "username=adix-design&theme=darkhub&no-frame=true&no-bg=true&margin-w=8&column=7"
-          path: assets/github-trophies.svg
-          token: ${{ secrets.GITHUB_TOKEN }}
+          python-version: '3.11'
+
+      - name: Generate verified achievements card
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python scripts/generate_achievements.py
 
       - name: Commit and push trophies
         run: |
