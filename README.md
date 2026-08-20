@@ -78,10 +78,6 @@ Build useful products, learn continuously, and turn strong ideas into things peo
 
 <img src="https://skillicons.dev/icons?i=react,js,ts,html,css,tailwind,vite,nodejs,express,mongodb,git,github,figma,vscode,vercel&theme=dark" alt="Tech stack"/>
 
-<br/><br/>
-
-<sub><b>AI WORKFLOW</b> &nbsp;│&nbsp; <code>Cursor</code> &nbsp;•&nbsp; <code>Claude</code> &nbsp;•&nbsp; <code>Google AI Studio</code></sub>
-
 </div>
 
 ---
