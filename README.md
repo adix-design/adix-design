@@ -36,10 +36,6 @@
 
 <img src="./assets/arpan-portrait.jpeg" alt="Arpan Deep Dubey" width="280"/>
 
-<br/><br/>
-
-<img src="./assets/arpan-pixel.png" alt="Arpan pixel character" width="180"/>
-
 </td>
 
 <td width="62%" valign="top">
