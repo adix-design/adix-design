@@ -173,7 +173,7 @@ Connecting AI, APIs and business processes to reduce repetitive work.
 <table width="100%">
 <tr>
   <td width="50%"><a href="https://arpanstudio.dev/"><img src="./assets/contact/portfolio-card.svg" alt="Portfolio" width="100%"/></a></td>
-  <td width="50%"><a href="mailto:contact@arpanstudio.dev"><img src="./assets/contact/email-card.svg" alt="Email" width="100%"/></a></td>
+  <td width="50%"><a href="mailto:arpandubey21@gmail.com"><img src="./assets/contact/email-card.svg" alt="Email" width="100%"/></a></td>
 </tr>
 <tr>
   <td width="50%"><a href="https://www.linkedin.com/in/arpan-deep-dubey/"><img src="./assets/contact/linkedin-card.svg" alt="LinkedIn" width="100%"/></a></td>
