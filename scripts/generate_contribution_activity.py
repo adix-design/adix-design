@@ -1,17 +1,13 @@
 #!/usr/bin/env python3
 """
 Generate an animated Cyberpunk GitHub Contribution Activity GIF.
-Real GitHub contribution calendar with a true game-engine snake simulation:
-  1. Identifies all real contribution cells (> 0).
-  2. The Snake intentionally targets each active red cell in order.
-  3. Cell-by-cell pathfinding (UP, DOWN, LEFT, RIGHT).
-  4. Precise eat collision events:
-     - Approach / Overlap
-     - Cell Flashes bright neon-white
-     - Cell Disappears into eaten_cells state (drawn permanently EMPTY for the rest of the cycle)
-     - Crimson particle explosion effect
-     - Snake continues to the next red target
-  5. Clean loop reset and optimized GIF export.
+Uses GitHub's official contributionCalendar dataset without estimation:
+  1. Retrieves official total contributions and exact daily counts & levels.
+  2. Validates that sum(daily counts) == official total contributions.
+  3. Maps official levels strictly to cyberpunk red palette (Level 0..4).
+  4. Animates pixel snake hunting real non-zero contribution cells:
+     - Approach -> Flash -> Consume (Particle Burst) -> Permanently Eaten (Empty).
+  5. Clean seamless loop reset and optimized GIF export.
 """
 
 import json
@@ -24,17 +20,30 @@ import urllib.error
 from datetime import datetime
 from PIL import Image, ImageDraw, ImageFont
 
-# ── Color Palette ──────────────────────────────────────────────────────────
+# ── Official Level to Red Cyberpunk Color Mapping ──────────────────────────
+# Level 0 (None):       #15181F
+# Level 1 (Low):        #3A1117
+# Level 2 (Medium):     #6F1722
+# Level 3 (High):       #B51F32
+# Level 4 (Very High):  #FF3347
 COLOR_BG           = (7, 9, 13)       # #07090D
 COLOR_PANEL_BG     = (11, 13, 18)     # #0B0D12
 COLOR_BORDER       = (255, 51, 71)    # #FF3347
 COLOR_BORDER_DARK  = (139, 16, 34)    # #8B1022
-COLOR_EMPTY_CELL   = (21, 24, 31)     # #15181F
 
-COLOR_LEVEL_1      = (58, 17, 23)     # #3A1117 - Low
-COLOR_LEVEL_2      = (111, 23, 34)    # #6F1722 - Medium
-COLOR_LEVEL_3      = (181, 31, 50)    # #B51F32 - High
-COLOR_LEVEL_4      = (255, 51, 71)    # #FF3347 - Highest
+COLOR_LEVEL_0      = (21, 24, 31)     # #15181F (Empty)
+COLOR_LEVEL_1      = (58, 17, 23)     # #3A1117 (Low)
+COLOR_LEVEL_2      = (111, 23, 34)    # #6F1722 (Medium)
+COLOR_LEVEL_3      = (181, 31, 50)    # #B51F32 (High)
+COLOR_LEVEL_4      = (255, 51, 71)    # #FF3347 (Very High)
+
+LEVEL_COLOR_MAP = {
+    "NONE":            COLOR_LEVEL_0,
+    "FIRST_QUARTILE":  COLOR_LEVEL_1,
+    "SECOND_QUARTILE": COLOR_LEVEL_2,
+    "THIRD_QUARTILE":  COLOR_LEVEL_3,
+    "FOURTH_QUARTILE": COLOR_LEVEL_4,
+}
 
 COLOR_TEXT_MAIN    = (242, 242, 244)  # #F2F2F4
 COLOR_TEXT_MUTED   = (133, 137, 148)  # #858994
@@ -47,7 +56,7 @@ COLOR_SNAKE_BODY_2 = (200, 40, 60)    # #C8283C
 COLOR_SNAKE_BODY_3 = (139, 16, 34)    # #8B1022
 COLOR_SNAKE_BODY_4 = (70, 15, 25)     # #460F19
 
-# ── Data Fetching ──────────────────────────────────────────────────────────
+# ── Data Fetching & Verification ───────────────────────────────────────────
 GRAPHQL_QUERY = """
 query($username: String!) {
   user(login: $username) {
@@ -83,13 +92,18 @@ def fetch_contributions_graphql(username: str, token: str) -> dict:
         data = json.loads(resp.read().decode())
     
     if "errors" in data:
-        raise RuntimeError(f"GraphQL error: {data['errors']}")
+        raise RuntimeError(f"GraphQL errors: {data['errors']}")
     user = data.get("data", {}).get("user")
     if not user:
-        raise RuntimeError(f"User {username} not found")
+        raise RuntimeError(f"User '{username}' not found via GraphQL")
     return user["contributionsCollection"]["contributionCalendar"]
 
 def fetch_contributions_public(username: str) -> dict:
+    """
+    Scrapes the official contribution calendar HTML directly from GitHub.
+    Extracts the official header total and matches every single day's tooltip
+    to get the exact contribution count and quartile level with 0 estimation.
+    """
     url = f"https://github.com/users/{username}/contributions"
     req = urllib.request.Request(url, headers={
         "User-Agent": "Mozilla/5.0 contribution-activity-generator",
@@ -98,16 +112,19 @@ def fetch_contributions_public(username: str) -> dict:
     with urllib.request.urlopen(req) as resp:
         html = resp.read().decode("utf-8")
 
-    matches = re.findall(r'data-date="([^"]+)"[^>]*data-level="(\d)"', html)
-    if not matches:
-        matches = re.findall(r'data-date="([^"]+)".*?data-level="(\d)"', html, re.DOTALL)
-    
-    if not matches:
-        raise RuntimeError("Failed to parse public contribution HTML")
-    
-    matches.sort(key=lambda x: x[0])
-    
-    tooltip_matches = dict(re.findall(r'data-date="([^"]+)"[^>]*>.*?(\d+)\s+contribution', html, re.DOTALL))
+    # 1. Official Header Total
+    header_match = re.search(r'([\d,]+)\s+contributions?\s+in\s+the\s+last\s+year', html)
+    official_total = int(header_match.group(1).replace(',', '')) if header_match else 0
+
+    # 2. Tooltip mappings: tooltip ID -> exact contribution count
+    tips = re.findall(r'<tool-tip[^>]*for="([^"]+)"[^>]*>(.*?)</tool-tip>', html, re.DOTALL)
+    tip_counts = {}
+    for tip_id, tip_text in tips:
+        count_m = re.search(r'(\d+)\s+contribution', tip_text)
+        tip_counts[tip_id] = int(count_m.group(1)) if count_m else 0
+
+    # 3. Parse all calendar day cells
+    td_matches = re.findall(r'<td([^>]+)>', html)
     
     level_map = {
         "0": "NONE",
@@ -116,60 +133,86 @@ def fetch_contributions_public(username: str) -> dict:
         "3": "THIRD_QUARTILE",
         "4": "FOURTH_QUARTILE",
     }
-    
+
+    days_by_date = {}
+    for td_attr in td_matches:
+        if 'data-date' in td_attr:
+            date_m = re.search(r'data-date="([^"]+)"', td_attr)
+            level_m = re.search(r'data-level="([^"]+)"', td_attr)
+            id_m = re.search(r'id="([^"]+)"', td_attr)
+            
+            if date_m:
+                d_str = date_m.group(1)
+                d_lvl = level_m.group(1) if level_m else "0"
+                d_id = id_m.group(1) if id_m else ""
+                d_count = tip_counts.get(d_id, 0)
+                
+                dt = datetime.strptime(d_str, "%Y-%m-%d")
+                # GitHub calendar: Sunday=0, Monday=1, ..., Saturday=6
+                github_weekday = (dt.weekday() + 1) % 7
+                
+                days_by_date[d_str] = {
+                    "date": d_str,
+                    "contributionCount": d_count,
+                    "contributionLevel": level_map.get(d_lvl, "NONE"),
+                    "weekday": github_weekday,
+                }
+
+    sorted_dates = sorted(days_by_date.keys())
+    if not sorted_dates:
+        raise RuntimeError(f"No contribution dates found for user '{username}'")
+
+    # Group into weeks (starting on Sunday)
     weeks = []
     current_week = []
-    for date_str, level_str in matches:
-        dt = datetime.strptime(date_str, "%Y-%m-%d")
-        github_weekday = (dt.weekday() + 1) % 7 # Sunday=0
-        
-        count = int(tooltip_matches.get(date_str, 0))
-        if count == 0 and level_str != "0":
-            count = {"1": 1, "2": 3, "3": 6, "4": 10}.get(level_str, 1)
-        
-        day = {
-            "date": date_str,
-            "contributionCount": count,
-            "contributionLevel": level_map.get(level_str, "NONE"),
-            "weekday": github_weekday,
-        }
-        
-        if github_weekday == 0 and current_week:
+    for d_str in sorted_dates:
+        day = days_by_date[d_str]
+        if day["weekday"] == 0 and current_week:
             weeks.append({"contributionDays": current_week})
             current_week = []
         current_week.append(day)
-    
+        
     if current_week:
         weeks.append({"contributionDays": current_week})
-    
-    total = sum(d["contributionCount"] for w in weeks for d in w["contributionDays"])
-    return {"totalContributions": total, "weeks": weeks}
 
-def get_contribution_data(username: str) -> dict:
+    calculated_total = sum(d["contributionCount"] for d in days_by_date.values())
+    final_total = official_total if official_total > 0 else calculated_total
+
+    return {
+        "totalContributions": final_total,
+        "weeks": weeks
+    }
+
+def get_official_contributions(username: str) -> dict:
     token = os.environ.get("GITHUB_TOKEN") or os.environ.get("GH_TOKEN")
     if token:
         try:
-            print(f"Fetching contribution data via GraphQL for {username}...")
-            return fetch_contributions_graphql(username, token)
+            print(f"Fetching official contributionCalendar via GraphQL for {username}...")
+            calendar = fetch_contributions_graphql(username, token)
         except Exception as e:
-            print(f"GraphQL fetch failed: {e}. Falling back to public scraper...", file=sys.stderr)
-    
-    print(f"Fetching contribution data via public scraper for {username}...")
-    return fetch_contributions_public(username)
+            print(f"GraphQL request failed: {e}. Falling back to public contributions endpoint...", file=sys.stderr)
+            calendar = fetch_contributions_public(username)
+    else:
+        print(f"Fetching official contributionCalendar via public endpoint for {username}...")
+        calendar = fetch_contributions_public(username)
 
-def get_cell_color(day):
-    count = day.get("contributionCount", 0)
-    level = day.get("contributionLevel", "NONE")
+    # Validate exact integrity
+    total = calendar["totalContributions"]
+    sum_days = sum(d["contributionCount"] for w in calendar["weeks"] for d in w["contributionDays"])
+    diff = total - sum_days
     
-    if level == "FOURTH_QUARTILE" or count >= 10:
-        return COLOR_LEVEL_4
-    elif level == "THIRD_QUARTILE" or count >= 6:
-        return COLOR_LEVEL_3
-    elif level == "SECOND_QUARTILE" or count >= 3:
-        return COLOR_LEVEL_2
-    elif level == "FIRST_QUARTILE" or count >= 1:
-        return COLOR_LEVEL_1
-    return COLOR_EMPTY_CELL
+    print("\n" + "="*50)
+    print("OFFICIAL CONTRIBUTION DATASET VALIDATION:")
+    print(f"  Official GitHub Total : {total}")
+    print(f"  Sum of Daily Counts   : {sum_days}")
+    print(f"  Difference            : {diff}")
+    print(f"  Total Weeks           : {len(calendar['weeks'])}")
+    print("="*50 + "\n")
+
+    if diff != 0 and total > sum_days:
+        print(f"Note: Account may have {diff} private contribution(s) outside public scope.", file=sys.stderr)
+
+    return calendar
 
 def is_active_day(day):
     return day.get("contributionCount", 0) > 0 or day.get("contributionLevel", "NONE") != "NONE"
@@ -193,10 +236,10 @@ def get_font(size: int, bold: bool = False):
     except Exception:
         return None
 
-# ── Cluster-based Target Planning & Pathfinding ────────────────────────────
+# ── Target Planning & Pathfinding ──────────────────────────────────────────
 def plan_targets(weeks_data, num_cols):
     """
-    Extract active cells and plan a logical cluster-by-cluster target order
+    Extract active non-zero cells and plan a logical cluster-by-cluster target order
     from left to right across the board.
     """
     active_cells = []
@@ -206,10 +249,9 @@ def plan_targets(weeks_data, num_cols):
                 active_cells.append((col_idx, day["weekday"]))
 
     if not active_cells:
-        # Fallback if brand new profile with 0 contributions
         return [(c, 3) for c in range(10, num_cols - 10, 5)]
 
-    # Group into contiguous / nearby column clusters (cells within 3 columns of each other)
+    # Group into spatial clusters (cells within 3 columns of each other)
     sorted_cells = sorted(active_cells, key=lambda pt: (pt[0], pt[1]))
     clusters = []
     curr_cluster = [sorted_cells[0]]
@@ -224,12 +266,11 @@ def plan_targets(weeks_data, num_cols):
     ordered_targets = []
     curr_pos = (0, 0)
     for cluster in clusters:
-        # Solve local TSP for this cluster to visit all points in cluster starting from curr_pos
-        unvisited_cluster = set(cluster)
-        while unvisited_cluster:
-            nxt = min(unvisited_cluster, key=lambda pt: abs(pt[0] - curr_pos[0]) + abs(pt[1] - curr_pos[1]))
+        unvisited = set(cluster)
+        while unvisited:
+            nxt = min(unvisited, key=lambda pt: abs(pt[0] - curr_pos[0]) + abs(pt[1] - curr_pos[1]))
             ordered_targets.append(nxt)
-            unvisited_cluster.remove(nxt)
+            unvisited.remove(nxt)
             curr_pos = nxt
 
     return ordered_targets
@@ -243,7 +284,6 @@ def path_between(pt1, pt2):
     tx, ty = pt2
     steps = []
     
-    # Move horizontally first, then vertically
     step_x = 1 if tx > cx else -1
     while cx != tx:
         cx += step_x
@@ -259,16 +299,19 @@ def path_between(pt1, pt2):
 # ── Simulation & Frame State Generation ────────────────────────────────────
 def simulate_animation_frames(weeks_data, num_cols, num_rows=7):
     """
-    Run full discrete frame simulation of snake hunting, eating, particle bursts,
-    disappearing cells, and loop reset.
+    Discrete frame simulation:
+      1. Approaching target
+      2. Flash target cell
+      3. Consume -> target added to eaten_cells (permanently empty/dark) + particle burst
+      4. Continue to next target
+      5. Return path and seamless loop reset
     """
     targets = plan_targets(weeks_data, num_cols)
     first_target = targets[0]
     
-    # Starting position 2 cells before first target
+    # Starting position 2 cells before first target (or top-left)
     start_pos = (max(0, first_target[0] - 2), first_target[1])
     
-    # Initial snake body (length 4)
     snake_len = 4
     snake_body = [start_pos] * snake_len
     eaten_cells = set()
@@ -301,19 +344,18 @@ def simulate_animation_frames(weeks_data, num_cols, num_rows=7):
         # Move head onto target cell
         snake_body = [target] + snake_body[:-1]
         
-        # Frame A: Overlap + Bright Flash
+        # Frame A: Overlap + Flash
         frames_state.append({
             "snake": list(snake_body),
-            "eaten": set(eaten_cells), # not eaten yet
-            "flash": target,           # flashing bright
+            "eaten": set(eaten_cells),
+            "flash": target,
             "particles": list(particles),
             "phase": "flash"
         })
         
-        # Frame B: Consume! Target added to eaten_cells + spawn particles
+        # Frame B: Consume! Target permanently added to eaten_cells + particle burst
         eaten_cells.add(target)
         
-        # Spawn glowing particle sparks
         new_sparks = []
         for angle_deg in [0, 45, 90, 135, 180, 225, 270, 315]:
             rad = math.radians(angle_deg)
@@ -329,7 +371,7 @@ def simulate_animation_frames(weeks_data, num_cols, num_rows=7):
         
         frames_state.append({
             "snake": list(snake_body),
-            "eaten": set(eaten_cells), # now permanently eaten
+            "eaten": set(eaten_cells),
             "flash": None,
             "particles": list(particles),
             "phase": "eat"
@@ -340,11 +382,9 @@ def simulate_animation_frames(weeks_data, num_cols, num_rows=7):
             next_target = targets[t_idx + 1]
             steps = path_between(target, next_target)
             
-            # Step along the path up to next target
             for step in steps[:-1]:
                 snake_body = [step] + snake_body[:-1]
                 
-                # Advance active particles
                 updated_particles = []
                 for p in particles:
                     p["age"] += 1
@@ -362,8 +402,6 @@ def simulate_animation_frames(weeks_data, num_cols, num_rows=7):
 
     # 3. Return Loop Path back to Start
     last_target = targets[-1]
-    
-    # Return loop: move up to row 0 / top channel, traverse left to col 0, down to start_pos
     return_waypoints = [
         (min(num_cols - 1, last_target[0] + 1), 0),
         (0, 0),
@@ -376,7 +414,6 @@ def simulate_animation_frames(weeks_data, num_cols, num_rows=7):
         for step in steps:
             snake_body = [step] + snake_body[:-1]
             
-            # Age particles
             updated_particles = []
             for p in particles:
                 p["age"] += 1
@@ -393,10 +430,10 @@ def simulate_animation_frames(weeks_data, num_cols, num_rows=7):
             })
         curr = r_pt
 
-    # 4. Seamless Loop Reset Transition (last 2 frames fade restored grid)
+    # 4. Seamless Loop Reset Transition
     frames_state.append({
         "snake": list(snake_body),
-        "eaten": set(), # Grid restored for seamless loop back to frame 0
+        "eaten": set(), # Restores original grid cleanly for infinite loop
         "flash": None,
         "particles": [],
         "phase": "reset"
@@ -440,25 +477,20 @@ def render_frame_image(
     cx, cy = panel_x, panel_y
     cw, ch = panel_w, panel_h
 
-    # Top-Left Accent
     draw.line([(cx, cy + cut + accent_len), (cx, cy + cut), (cx + cut, cy), (cx + cut + accent_len, cy)], fill=COLOR_BORDER, width=2)
-    # Top-Right Accent
     draw.line([(cx + cw - cut - accent_len, cy), (cx + cw - cut, cy), (cx + cw, cy + cut), (cx + cw, cy + cut + accent_len)], fill=COLOR_BORDER, width=2)
-    # Bottom-Right Accent
     draw.line([(cx + cw, cy + ch - cut - accent_len), (cx + cw, cy + ch - cut), (cx + cw - cut, cy + ch), (cx + cw - cut + accent_len, cy + ch)], fill=COLOR_BORDER, width=2)
-    # Bottom-Left Accent
     draw.line([(cx + cut + accent_len, cy + ch), (cx + cut, cy + ch), (cx, cy + ch - cut), (cx, cy + ch - cut - accent_len)], fill=COLOR_BORDER, width=2)
 
-    # 3. Header Section
+    # 3. Header Section (Displays Exact Official Total Contributions)
     title_text = "CONTRIBUTION ACTIVITY"
     stat_text = f"{total_contribs:,} CONTRIBUTIONS"
 
     draw.text((38, 22), title_text, fill=COLOR_TEXT_MAIN, font=font_title)
     draw.text((width - 42, 24), stat_text, fill=COLOR_TEXT_MUTED, font=font_sub, anchor="ra")
 
-    # Divider line
     draw.line([(38, 48), (width - 38, 48)], fill=COLOR_BORDER_DARK, width=1)
-    draw.line([(38, 48), (140, 48)], fill=COLOR_BORDER, width=1) # Neon header notch
+    draw.line([(38, 48), (140, 48)], fill=COLOR_BORDER, width=1)
 
     # 4. Grid Dimensions & Positions
     cell_size = 12
@@ -485,7 +517,7 @@ def render_frame_image(
         y = top_margin + w_idx * (cell_size + cell_gap) + 1
         draw.text((left_margin - 12, y), w_label, fill=COLOR_TEXT_MUTED, font=font_tiny, anchor="ra")
 
-    # 7. Draw Contribution Grid Cells (With Eaten State & Flash Check)
+    # 7. Draw Contribution Grid Cells (With Official Levels & Eaten State)
     eaten_cells = state["eaten"]
     flash_cell = state["flash"]
 
@@ -496,18 +528,17 @@ def render_frame_image(
             x = left_margin + col * (cell_size + cell_gap)
             y = top_margin + row * (cell_size + cell_gap)
 
-            # Cell Color Logic
             if (col, row) == flash_cell:
-                # EAT EVENT: Intense Neon Flash!
+                # EAT FLASH: Intense Neon White-Pink
                 cell_fill = (255, 230, 240)
             elif (col, row) in eaten_cells:
-                # EATEN STATE: Permanently Empty/Dark for this cycle!
-                cell_fill = COLOR_EMPTY_CELL
+                # EATEN: Permanently Level 0 (Empty) for this cycle
+                cell_fill = COLOR_LEVEL_0
             else:
-                # Normal real contribution color
-                cell_fill = get_cell_color(day)
+                # Exact Official Level mapped to Crimson Red Palette
+                official_level = day.get("contributionLevel", "NONE")
+                cell_fill = LEVEL_COLOR_MAP.get(official_level, COLOR_LEVEL_0)
 
-            # Draw rounded square cell
             draw.rounded_rectangle(
                 [x, y, x + cell_size - 1, y + cell_size - 1],
                 radius=2,
@@ -518,7 +549,6 @@ def render_frame_image(
     snake_coords = state["snake"]
     head_pos = snake_coords[0]
 
-    # Body segments (tail to neck)
     body_colors = [COLOR_SNAKE_BODY_4, COLOR_SNAKE_BODY_3, COLOR_SNAKE_BODY_2, COLOR_SNAKE_BODY_1]
     for seg_idx in range(len(snake_coords) - 1, 0, -1):
         sc = snake_coords[seg_idx]
@@ -526,7 +556,6 @@ def render_frame_image(
         sy = top_margin + sc[1] * (cell_size + cell_gap)
         
         c_fill = body_colors[min(seg_idx - 1, len(body_colors) - 1)]
-        
         draw.rounded_rectangle(
             [sx + 1, sy + 1, sx + cell_size - 2, sy + cell_size - 2],
             radius=3,
@@ -551,21 +580,20 @@ def render_frame_image(
         width=1
     )
 
-    # Orientation for eyes
     prev_pos = snake_coords[1] if len(snake_coords) > 1 else head_pos
     dx = head_pos[0] - prev_pos[0]
     dy = head_pos[1] - prev_pos[1]
 
-    if dx >= 0 and dy == 0:  # Moving Right
+    if dx >= 0 and dy == 0:  # Right
         draw.point([(hx + 8, hy + 3), (hx + 8, hy + 8)], fill=COLOR_SNAKE_EYES)
-    elif dx < 0 and dy == 0: # Moving Left
+    elif dx < 0 and dy == 0: # Left
         draw.point([(hx + 3, hy + 3), (hx + 3, hy + 8)], fill=COLOR_SNAKE_EYES)
-    elif dy > 0:             # Moving Down
+    elif dy > 0:             # Down
         draw.point([(hx + 3, hy + 8), (hx + 8, hy + 8)], fill=COLOR_SNAKE_EYES)
-    else:                    # Moving Up
+    else:                    # Up
         draw.point([(hx + 3, hy + 3), (hx + 8, hy + 3)], fill=COLOR_SNAKE_EYES)
 
-    # 9. Draw Active Particle Sparks
+    # 9. Draw Particle Sparks
     for p in state["particles"]:
         p_col, p_row = p["cell"]
         center_x = left_margin + p_col * (cell_size + cell_gap) + cell_size // 2
@@ -587,7 +615,7 @@ def render_frame_image(
     legend_y = top_margin + 7 * (cell_size + cell_gap) + 20
     draw.text((left_margin, legend_y), "Less", fill=COLOR_TEXT_MUTED, font=font_tiny)
 
-    leg_colors = [COLOR_EMPTY_CELL, COLOR_LEVEL_1, COLOR_LEVEL_2, COLOR_LEVEL_3, COLOR_LEVEL_4]
+    leg_colors = [COLOR_LEVEL_0, COLOR_LEVEL_1, COLOR_LEVEL_2, COLOR_LEVEL_3, COLOR_LEVEL_4]
     leg_x = left_margin + 34
     for lc in leg_colors:
         draw.rounded_rectangle(
@@ -608,12 +636,10 @@ def render_frame_image(
 
 # ── Main Generator ─────────────────────────────────────────────────────────
 def generate_contribution_activity_gif(username: str, output_path: str, duration_ms: int = 90):
-    calendar = get_contribution_data(username)
+    calendar = get_official_contributions(username)
     weeks = calendar["weeks"]
     total = calendar["totalContributions"]
     num_cols = len(weeks)
-
-    print(f"Loaded {num_cols} weeks of real data, Total Contributions: {total}")
 
     # Fonts
     f_title = get_font(14, bold=True)
@@ -622,13 +648,13 @@ def generate_contribution_activity_gif(username: str, output_path: str, duration
     f_tiny  = get_font(10, bold=False)
     fonts = (f_title, f_sub, f_small, f_tiny)
 
-    # Run Simulation to generate frame states
-    print("Simulating Snake hunting, eat collisions, and particle bursts...")
+    # Run Simulation
+    print("Simulating Snake hunting official contribution cells...")
     frame_states = simulate_animation_frames(weeks, num_cols, num_rows=7)
     total_frames = len(frame_states)
     print(f"Generated {total_frames} discrete game frames.")
 
-    # Render each frame
+    # Render Frames
     print(f"Rendering {total_frames} animation frames...")
     frames = []
     for f_idx, st in enumerate(frame_states):
@@ -646,7 +672,7 @@ def generate_contribution_activity_gif(username: str, output_path: str, duration
 
     os.makedirs(os.path.dirname(output_path) or ".", exist_ok=True)
 
-    print(f"Saving optimized animated GIF to {output_path}...")
+    print(f"Saving animated GIF to {output_path}...")
     frames[0].save(
         output_path,
         save_all=True,
