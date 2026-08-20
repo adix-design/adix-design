@@ -72,16 +72,6 @@ Build useful products, learn continuously, and turn strong ideas into things peo
 
 ---
 
-## 🎯 QUEST BOARD
-
-`CURRENT MISSIONS`
-
-<div align="center">
-<img src="./assets/quest-board.svg" alt="Quest board" width="100%"/>
-</div>
-
----
-
 ## ⚔️ TECH ARSENAL
 
 <div align="center">
