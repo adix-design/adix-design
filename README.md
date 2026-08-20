@@ -160,7 +160,7 @@ Connecting AI, APIs and business processes to reduce repetitive work.
 
 <div align="center">
 
-<img src="https://github-profile-trophy.vercel.app/?username=adix-design&theme=darkhub&no-frame=true&no-bg=true&margin-w=8&column=7" width="92%" alt="GitHub trophies"/>
+<img src="./assets/github-trophies.svg" width="92%" alt="GitHub trophies"/>
 
 </div>
 

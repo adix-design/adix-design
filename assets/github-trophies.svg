@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="170" viewBox="0 0 800 170" fill="none">
+  <style>
+    .title { font-family: 'Segoe UI', Ubuntu, Sans-Serif; font-size: 14px; font-weight: bold; fill: #FF3347; }
+    .rank { font-family: 'Segoe UI', Ubuntu, Sans-Serif; font-size: 22px; font-weight: bold; fill: #E9EAEE; }
+    .desc { font-family: 'Segoe UI', Ubuntu, Sans-Serif; font-size: 11px; fill: #888888; }
+    .card-bg { fill: #0A0B0F; rx: 6px; }
+  </style>
+
+  <!-- Trophy Card 1: Commits -->
+  <g transform="translate(10, 10)">
+    <rect class="card-bg" width="102" height="150" rx="6"/>
+    <text x="51" y="30" text-anchor="middle" class="title">Commits</text>
+    <g transform="translate(31, 42)">
+      <path fill="#FF3347" d="M20 2C10.059 2 2 10.059 2 20s8.059 18 18 18 18-8.059 18-18S29.941 2 20 2zm0 30c-6.627 0-12-5.373-12-12s5.373-12 12-12 12 5.373 12 12-5.373 12-12 12z"/>
+    </g>
+    <text x="51" y="112" text-anchor="middle" class="rank">B</text>
+    <text x="51" y="132" text-anchor="middle" class="desc">Commit</text>
+  </g>
+
+  <!-- Trophy Card 2: Repos -->
+  <g transform="translate(122, 10)">
+    <rect class="card-bg" width="102" height="150" rx="6"/>
+    <text x="51" y="30" text-anchor="middle" class="title">Repositories</text>
+    <g transform="translate(31, 42)">
+      <path fill="#FF5364" d="M4 6a2 2 0 0 1 2-2h28a2 2 0 0 1 2 2v28a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6zm4 4v20h24V10H8z"/>
+    </g>
+    <text x="51" y="112" text-anchor="middle" class="rank">C</text>
+    <text x="51" y="132" text-anchor="middle" class="desc">Repo</text>
+  </g>
+
+  <!-- Trophy Card 3: Stars -->
+  <g transform="translate(234, 10)">
+    <rect class="card-bg" width="102" height="150" rx="6"/>
+    <text x="51" y="30" text-anchor="middle" class="title">Stars</text>
+    <g transform="translate(31, 42)">
+      <path fill="#FF6675" d="M20 2l5.5 11.2L38 15l-9 8.8L31.1 36 20 30.2 8.9 36 11 23.8 2 15l12.5-1.8L20 2z"/>
+    </g>
+    <text x="51" y="112" text-anchor="middle" class="rank">C</text>
+    <text x="51" y="132" text-anchor="middle" class="desc">Star</text>
+  </g>
+
+  <!-- Trophy Card 4: Followers -->
+  <g transform="translate(346, 10)">
+    <rect class="card-bg" width="102" height="150" rx="6"/>
+    <text x="51" y="30" text-anchor="middle" class="title">Followers</text>
+    <g transform="translate(31, 42)">
+      <path fill="#8B1022" d="M20 4a8 8 0 1 0 0 16 8 8 0 0 0 0-16zm-12 28c0-5.3 4.7-8 12-8s12 2.7 12 8v2H8v-2z"/>
+    </g>
+    <text x="51" y="112" text-anchor="middle" class="rank">C</text>
+    <text x="51" y="132" text-anchor="middle" class="desc">Follower</text>
+  </g>
+
+  <!-- Trophy Card 5: Account Age -->
+  <g transform="translate(458, 10)">
+    <rect class="card-bg" width="102" height="150" rx="6"/>
+    <text x="51" y="30" text-anchor="middle" class="title">Experience</text>
+    <g transform="translate(31, 42)">
+      <path fill="#E9EAEE" d="M20 4v16l10 10-2.8 2.8L16 22V4h4z"/>
+    </g>
+    <text x="51" y="112" text-anchor="middle" class="rank">B</text>
+    <text x="51" y="132" text-anchor="middle" class="desc">2+ Years</text>
+  </g>
+</svg>
