@@ -80,10 +80,7 @@ Build useful products, learn continuously, and turn strong ideas into things peo
 
 <br/><br/>
 
-<img src="https://img.shields.io/badge/Cursor-0A0B0F?style=for-the-badge&logo=cursor&logoColor=FF3347"/>
-<img src="https://img.shields.io/badge/Claude-0A0B0F?style=for-the-badge&logo=anthropic&logoColor=FF3347"/>
-<img src="https://img.shields.io/badge/Google%20AI-0A0B0F?style=for-the-badge&logo=google&logoColor=FF3347"/>
-<img src="https://img.shields.io/badge/AI%20Automation-0A0B0F?style=for-the-badge&logo=openai&logoColor=FF3347"/>
+<sub><b>AI WORKFLOW</b> &nbsp;│&nbsp; <code>Cursor</code> &nbsp;•&nbsp; <code>Claude</code> &nbsp;•&nbsp; <code>Google AI Studio</code></sub>
 
 </div>
 
