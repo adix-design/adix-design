@@ -1,4 +1,4 @@
-name: Generate Contribution Heatmap
+name: Generate Contribution Activity
 
 on:
   schedule:
@@ -20,22 +20,26 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Generate heatmap SVG
+      - name: Install dependencies
+        run: |
+          pip install pillow
+
+      - name: Generate animated contribution activity GIF
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          python scripts/generate_heatmap.py adix-design assets/github-contribution-heatmap.svg
+          python scripts/generate_contribution_activity.py adix-design assets/github-contribution-activity.gif
 
       - name: Check for changes
         id: changes
         run: |
-          git diff --quiet assets/github-contribution-heatmap.svg && echo "changed=false" >> "$GITHUB_OUTPUT" || echo "changed=true" >> "$GITHUB_OUTPUT"
+          git diff --quiet assets/github-contribution-activity.gif && echo "changed=false" >> "$GITHUB_OUTPUT" || echo "changed=true" >> "$GITHUB_OUTPUT"
 
       - name: Commit and push
         if: steps.changes.outputs.changed == 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add assets/github-contribution-heatmap.svg
-          git commit -m "chore: update contribution heatmap [skip ci]"
+          git add assets/github-contribution-activity.gif
+          git commit -m "chore: update contribution activity [skip ci]"
           git push

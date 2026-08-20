@@ -139,18 +139,12 @@ Connecting AI, APIs and business processes to reduce repetitive work.
 ## 📊 CONTRIBUTION ACTIVITY
 
 <div align="center">
-  <img src="./assets/github-contribution-heatmap.svg" width="100%" alt="GitHub contribution activity"/>
+  <img
+    src="./assets/github-contribution-activity.gif"
+    width="100%"
+    alt="Animated GitHub contribution activity"
+  />
 </div>
-
----
-
-## 🐍 CONTRIBUTION SNAKE
-
-<div align="center">
-  <img src="https://raw.githubusercontent.com/adix-design/adix-design/output/github-contribution-snake.svg" width="100%" alt="GitHub contribution snake"/>
-</div>
-
-> `Built from real GitHub contribution activity.`
 
 ---
 
