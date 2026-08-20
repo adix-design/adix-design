@@ -1,129 +1,133 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 440" width="1200" height="440">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 450" width="1200" height="450">
 <defs>
-  <!-- Card Gradients -->
-  <linearGradient id="feat-grad" x1="0" y1="0" x2="1" y2="1">
-    <stop offset="0%" stop-color="#121622"/>
-    <stop offset="60%" stop-color="#0B0D14"/>
-    <stop offset="100%" stop-color="#07090E"/>
-  </linearGradient>
-
-  <linearGradient id="tile-grad" x1="0" y1="0" x2="0" y2="1">
-    <stop offset="0%" stop-color="#0E1118"/>
-    <stop offset="100%" stop-color="#080A0E"/>
-  </linearGradient>
-
-  <!-- Glow Filter -->
+  <!-- Subtle Glow Filter -->
   <filter id="achieve-glow" x="-10%" y="-10%" width="120%" height="120%">
-    <feDropShadow dx="0" dy="0" stdDeviation="2.5" flood-color="#FF3347" flood-opacity="0.3"/>
+    <feDropShadow dx="0" dy="0" stdDeviation="3" flood-color="#FF3347" flood-opacity="0.35"/>
   </filter>
 
-  <!-- Background Grid -->
-  <pattern id="achieve-grid" width="24" height="24" patternUnits="userSpaceOnUse">
-    <path d="M 24 0 L 0 0 0 24" fill="none" stroke="#FF3347" stroke-width="0.8" stroke-opacity="0.035"/>
-  </pattern>
+  <linearGradient id="feat-panel-bg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="#11141E"/>
+    <stop offset="60%" stop-color="#090B10"/>
+    <stop offset="100%" stop-color="#050609"/>
+  </linearGradient>
 </defs>
 
-<!-- Transparent Background -->
+<!-- Transparent Background (No giant outer black box) -->
 
-<!-- ── 1. FEATURED MILESTONE CENTERPIECE (1180 x 155) ───────────── -->
+<!-- ── 1. FEATURED MILESTONE PANEL (1180 x 140) ──────────────────── -->
 <g id="featured-milestone" transform="translate(10, 10)">
-  <rect width="1180" height="155" rx="8" fill="url(#feat-grad)" stroke="#FF3347" stroke-width="1.2" stroke-opacity="0.35" filter="url(#achieve-glow)"/>
-  <rect width="1180" height="155" rx="8" fill="url(#achieve-grid)"/>
+  <!-- Clean Subtle Container with Low-Intensity Border -->
+  <rect width="1180" height="140" rx="8" fill="url(#feat-panel-bg)" stroke="#FF3347" stroke-width="1.2" stroke-opacity="0.32" filter="url(#achieve-glow)"/>
+  
+  <!-- Left Accent Notch -->
+  <path d="M 0 20 L 0 8 Q 0 0 8 0 L 20 0" fill="none" stroke="#FF3347" stroke-width="2"/>
+  <line x1="8" y1="0" x2="120" y2="0" stroke="#FF3347" stroke-width="2"/>
 
-  <!-- Top Accent Notch -->
-  <path d="M 0 24 L 0 8 Q 0 0 8 0 L 24 0" fill="none" stroke="#FF3347" stroke-width="2"/>
-  <line x1="8" y1="0" x2="140" y2="0" stroke="#FF3347" stroke-width="2"/>
-
-  <!-- Icon + Sub-header -->
-  <g transform="translate(28, 22)">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FF3347" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
-      <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
-      <line x1="12" y1="22.08" x2="12" y2="12"/>
+  <!-- Icon + Milestone Name -->
+  <g transform="translate(28, 20)">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FF3347" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polygon points="12 2 22 12 12 22 2 12 12 2"/>
     </svg>
   </g>
-  <text x="60" y="38" fill="#FF3347" font-family="'JetBrains Mono', Consolas, monospace" font-size="13" font-weight="700" letter-spacing="1.5">FEATURED MILESTONE // BUILDER</text>
+  <text x="58" y="36" fill="#FF3347" font-family="'JetBrains Mono', Consolas, monospace" font-size="14" font-weight="700" letter-spacing="2">FEATURED MILESTONE // BUILDER</text>
 
-  <!-- Right Verified Tag -->
-  <rect x="1030" y="22" width="122" height="26" rx="4" fill="#121620" stroke="#45E879" stroke-width="0.8" stroke-opacity="0.5"/>
-  <circle cx="1046" cy="35" r="3.5" fill="#45E879"/>
-  <text x="1058" y="39" fill="#45E879" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700" letter-spacing="1">VERIFIED GITHUB</text>
+  <!-- Verified Tag on Right -->
+  <circle cx="1046" cy="32" r="3.5" fill="#45E879"/>
+  <circle cx="1046" cy="32" r="6.5" fill="none" stroke="#45E879" stroke-width="0.8" stroke-opacity="0.5"/>
+  <text x="1058" y="36" fill="#45E879" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="700" letter-spacing="1">VERIFIED GITHUB</text>
 
-  <line x1="28" y1="56" x2="1152" y2="56" stroke="#FF3347" stroke-width="0.6" stroke-opacity="0.15"/>
+  <line x1="28" y1="52" x2="1152" y2="52" stroke="#FF3347" stroke-width="0.6" stroke-opacity="0.15"/>
 
-  <!-- Big Metric Title (26px) -->
-  <text x="28" y="94" fill="#F2F2F4" font-family="system-ui, -apple-system, sans-serif" font-size="26" font-weight="800" letter-spacing="0.5">6 PUBLIC REPOSITORIES</text>
+  <!-- Big Real Metric Title (28px) -->
+  <text x="28" y="88" fill="#F2F2F4" font-family="system-ui, -apple-system, sans-serif" font-size="28" font-weight="800" letter-spacing="0.5">6 PUBLIC REPOSITORIES</text>
 
   <!-- Description (16px) -->
-  <text x="28" y="126" fill="#9296A0" font-family="system-ui, -apple-system, sans-serif" font-size="15.5" font-weight="400">
+  <text x="28" y="118" fill="#858994" font-family="system-ui, -apple-system, sans-serif" font-size="15.5" font-weight="400">
     Building and maintaining public software projects across AI, web and full-stack development.
   </text>
 </g>
 
-<!-- ── 2. REAL GITHUB METRICS STRIP (4 Data Tiles) ─────────────── -->
-<g id="metrics-row" transform="translate(10, 180)">
-  <!-- Tile 1: PUBLIC REPOS -->
-  <g transform="translate(0, 0)">
-    <rect width="280" height="85" rx="6" fill="url(#tile-grad)" stroke="#FF3347" stroke-width="1" stroke-opacity="0.25"/>
-    <text x="20" y="28" fill="#858994" font-family="'JetBrains Mono', monospace" font-size="11.5" font-weight="600" letter-spacing="1">PUBLIC REPOS</text>
-    <text x="20" y="64" fill="#F2F2F4" font-family="'JetBrains Mono', monospace" font-size="26" font-weight="800">6</text>
+<!-- ── 2. OPEN REAL GITHUB METRICS STRIP (No cards / boxes) ─────── -->
+<g id="metrics-strip" transform="translate(10, 168)">
+  <!-- Top Divider -->
+  <line x1="0" y1="0" x2="1180" y2="0" stroke="#FF3347" stroke-width="0.8" stroke-opacity="0.2"/>
+
+  <!-- Metric 1: PUBLIC REPOS -->
+  <g transform="translate(40, 18)">
+    <text x="0" y="16" fill="#858994" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="600" letter-spacing="1.2">PUBLIC REPOS</text>
+    <text x="0" y="56" fill="#F2F2F4" font-family="'JetBrains Mono', monospace" font-size="32" font-weight="800">6</text>
   </g>
 
-  <!-- Tile 2: ANNUAL CONTRIBUTIONS -->
-  <g transform="translate(300, 0)">
-    <rect width="280" height="85" rx="6" fill="url(#tile-grad)" stroke="#FF3347" stroke-width="1" stroke-opacity="0.25"/>
-    <text x="20" y="28" fill="#858994" font-family="'JetBrains Mono', monospace" font-size="11.5" font-weight="600" letter-spacing="1">CONTRIBUTIONS</text>
-    <text x="20" y="64" fill="#FF3347" font-family="'JetBrains Mono', monospace" font-size="26" font-weight="800">73</text>
+  <!-- Vertical Divider 1 -->
+  <line x1="300" y1="14" x2="300" y2="72" stroke="#FF3347" stroke-width="1" stroke-opacity="0.15"/>
+
+  <!-- Metric 2: CONTRIBUTIONS -->
+  <g transform="translate(340, 18)">
+    <text x="0" y="16" fill="#858994" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="600" letter-spacing="1.2">CONTRIBUTIONS</text>
+    <text x="0" y="56" fill="#FF3347" font-family="'JetBrains Mono', monospace" font-size="32" font-weight="800">73</text>
   </g>
 
-  <!-- Tile 3: ACTIVE STACK -->
-  <g transform="translate(600, 0)">
-    <rect width="280" height="85" rx="6" fill="url(#tile-grad)" stroke="#FF3347" stroke-width="1" stroke-opacity="0.25"/>
-    <text x="20" y="28" fill="#858994" font-family="'JetBrains Mono', monospace" font-size="11.5" font-weight="600" letter-spacing="1">SPECIALIZATION</text>
-    <text x="20" y="62" fill="#F2F2F4" font-family="'JetBrains Mono', monospace" font-size="20" font-weight="700">AI • FULL-STACK</text>
+  <!-- Vertical Divider 2 -->
+  <line x1="610" y1="14" x2="610" y2="72" stroke="#FF3347" stroke-width="1" stroke-opacity="0.15"/>
+
+  <!-- Metric 3: SPECIALIZATION -->
+  <g transform="translate(650, 18)">
+    <text x="0" y="16" fill="#858994" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="600" letter-spacing="1.2">SPECIALIZATION</text>
+    <text x="0" y="54" fill="#F2F2F4" font-family="'JetBrains Mono', monospace" font-size="24" font-weight="700">AI • FULL-STACK</text>
   </g>
 
-  <!-- Tile 4: PROFILE STATUS -->
-  <g transform="translate(900, 0)">
-    <rect width="280" height="85" rx="6" fill="url(#tile-grad)" stroke="#FF3347" stroke-width="1" stroke-opacity="0.25"/>
-    <text x="20" y="28" fill="#858994" font-family="'JetBrains Mono', monospace" font-size="11.5" font-weight="600" letter-spacing="1">STATUS</text>
-    <circle cx="28" cy="55" r="4.5" fill="#45E879"/>
-    <text x="40" y="62" fill="#45E879" font-family="'JetBrains Mono', monospace" font-size="20" font-weight="700">BUILDING</text>
+  <!-- Vertical Divider 3 -->
+  <line x1="910" y1="14" x2="910" y2="72" stroke="#FF3347" stroke-width="1" stroke-opacity="0.15"/>
+
+  <!-- Metric 4: STATUS -->
+  <g transform="translate(950, 18)">
+    <text x="0" y="16" fill="#858994" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="600" letter-spacing="1.2">DEV STATUS</text>
+    <circle cx="6" cy="46" r="4.5" fill="#45E879"/>
+    <text x="18" y="54" fill="#45E879" font-family="'JetBrains Mono', monospace" font-size="24" font-weight="700">ACTIVE</text>
   </g>
+
+  <!-- Bottom Divider -->
+  <line x1="0" y1="88" x2="1180" y2="88" stroke="#FF3347" stroke-width="0.8" stroke-opacity="0.2"/>
 </g>
 
-<!-- ── 3. MILESTONE PROGRESSION TIMELINE (1180 x 140) ───────────── -->
+<!-- ── 3. MILESTONE PROGRESSION TIMELINE (No individual cards) ──── -->
 <g id="milestone-timeline" transform="translate(10, 280)">
-  <rect width="1180" height="145" rx="8" fill="url(#tile-grad)" stroke="#FF3347" stroke-width="1" stroke-opacity="0.25"/>
-  
-  <text x="28" y="28" fill="#858994" font-family="'JetBrains Mono', monospace" font-size="11.5" font-weight="700" letter-spacing="1.5">DEVELOPER MILESTONE PROGRESSION</text>
-  <line x1="28" y1="38" x2="1152" y2="38" stroke="#FF3347" stroke-width="0.5" stroke-opacity="0.15"/>
+  <!-- Sub-label -->
+  <text x="32" y="24" fill="#858994" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="700" letter-spacing="1.5">MILESTONE PROGRESSION TIMELINE</text>
 
-  <!-- Connecting Timeline Axis -->
-  <line x1="190" y1="78" x2="990" y2="78" stroke="#FF3347" stroke-width="1.5" stroke-opacity="0.35" stroke-dasharray="6 3"/>
+  <!-- Main Horizontal Timeline Axis Line -->
+  <line x1="80" y1="74" x2="1100" y2="74" stroke="#FF3347" stroke-width="1.5" stroke-opacity="0.3" stroke-dasharray="6 4"/>
 
-  <!-- Node 1: BUILDER -->
-  <g transform="translate(190, 78)">
+  <!-- Milestone 1: BUILDER -->
+  <g transform="translate(120, 74)">
     <circle cx="0" cy="0" r="7" fill="#0E121A" stroke="#45E879" stroke-width="2"/>
     <circle cx="0" cy="0" r="3.5" fill="#45E879"/>
-    <text x="0" y="28" fill="#F2F2F4" font-family="'JetBrains Mono', monospace" font-size="14.5" font-weight="700" text-anchor="middle">BUILDER</text>
-    <text x="0" y="46" fill="#8D919A" font-family="system-ui, -apple-system, sans-serif" font-size="12" text-anchor="middle">Public software projects</text>
+    <text x="0" y="28" fill="#F2F2F4" font-family="'JetBrains Mono', monospace" font-size="15" font-weight="700" text-anchor="middle">● BUILDER</text>
+    <text x="0" y="48" fill="#858994" font-family="system-ui, -apple-system, sans-serif" font-size="13" text-anchor="middle">Public software projects</text>
   </g>
 
-  <!-- Node 2: CONTRIBUTOR -->
-  <g transform="translate(590, 78)">
+  <!-- Milestone 2: CONTRIBUTOR -->
+  <g transform="translate(440, 74)">
     <circle cx="0" cy="0" r="7" fill="#0E121A" stroke="#45E879" stroke-width="2"/>
     <circle cx="0" cy="0" r="3.5" fill="#45E879"/>
-    <text x="0" y="28" fill="#F2F2F4" font-family="'JetBrains Mono', monospace" font-size="14.5" font-weight="700" text-anchor="middle">CONTRIBUTOR</text>
-    <text x="0" y="46" fill="#8D919A" font-family="system-ui, -apple-system, sans-serif" font-size="12" text-anchor="middle">Consistent GitHub activity</text>
+    <text x="0" y="28" fill="#F2F2F4" font-family="'JetBrains Mono', monospace" font-size="15" font-weight="700" text-anchor="middle">● CONTRIBUTOR</text>
+    <text x="0" y="48" fill="#858994" font-family="system-ui, -apple-system, sans-serif" font-size="13" text-anchor="middle">Consistent GitHub activity</text>
   </g>
 
-  <!-- Node 3: PRODUCT BUILDER -->
-  <g transform="translate(990, 78)">
-    <circle cx="0" cy="0" r="7" fill="#0E121A" stroke="#FF3347" stroke-width="2"/>
-    <circle cx="0" cy="0" r="3.5" fill="#FF3347"/>
-    <text x="0" y="28" fill="#FF3347" font-family="'JetBrains Mono', monospace" font-size="14.5" font-weight="700" text-anchor="middle">PRODUCT BUILDER</text>
-    <text x="0" y="46" fill="#8D919A" font-family="system-ui, -apple-system, sans-serif" font-size="12" text-anchor="middle">AI + full-stack product work</text>
+  <!-- Milestone 3: OPEN SOURCE -->
+  <g transform="translate(760, 74)">
+    <circle cx="0" cy="0" r="7" fill="#0E121A" stroke="#45E879" stroke-width="2"/>
+    <circle cx="0" cy="0" r="3.5" fill="#45E879"/>
+    <text x="0" y="28" fill="#F2F2F4" font-family="'JetBrains Mono', monospace" font-size="15" font-weight="700" text-anchor="middle">● OPEN SOURCE</text>
+    <text x="0" y="48" fill="#858994" font-family="system-ui, -apple-system, sans-serif" font-size="13" text-anchor="middle">Public code &amp; tools</text>
+  </g>
+
+  <!-- Milestone 4: PRODUCT BUILDER (Featured Node) -->
+  <g transform="translate(1060, 74)">
+    <circle cx="0" cy="0" r="8" fill="#0E121A" stroke="#FF3347" stroke-width="2.5"/>
+    <circle cx="0" cy="0" r="4" fill="#FF3347"/>
+    <text x="0" y="28" fill="#FF3347" font-family="'JetBrains Mono', monospace" font-size="15" font-weight="700" text-anchor="middle">● PRODUCT BUILDER</text>
+    <text x="0" y="48" fill="#858994" font-family="system-ui, -apple-system, sans-serif" font-size="13" text-anchor="middle">AI + full-stack work</text>
   </g>
 </g>
 
