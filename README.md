@@ -16,7 +16,7 @@
   <img src="./assets/contact/btn-email.svg" alt="Email" />
 </a>
 &nbsp;
-<a href="https://github.com/adix-design">
+<a href="https://github.com/arpan-deep-dubey">
   <img src="./assets/contact/btn-github.svg" alt="GitHub" />
 </a>
 
@@ -133,6 +133,6 @@ Build useful products, learn continuously, and turn strong ideas into things peo
 </tr>
 <tr>
   <td width="50%"><a href="https://www.linkedin.com/in/arpan-deep-dubey/"><img src="./assets/contact/linkedin-card.svg" alt="LinkedIn" width="100%"/></a></td>
-  <td width="50%"><a href="https://github.com/adix-design"><img src="./assets/contact/github-card.svg" alt="GitHub" width="100%"/></a></td>
+  <td width="50%"><a href="https://github.com/arpan-deep-dubey"><img src="./assets/contact/github-card.svg" alt="GitHub" width="100%"/></a></td>
 </tr>
 </table>

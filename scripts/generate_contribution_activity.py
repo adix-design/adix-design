@@ -704,6 +704,6 @@ def generate_contribution_activity_gif(username: str, output_path: str, duration
     return total_frames, total, file_size
 
 if __name__ == "__main__":
-    user = sys.argv[1] if len(sys.argv) > 1 else "adix-design"
+    user = sys.argv[1] if len(sys.argv) > 1 else (os.environ.get("GITHUB_REPOSITORY_OWNER") or "arpan-deep-dubey")
     out = sys.argv[2] if len(sys.argv) > 2 else "assets/github-contribution-activity.gif"
     generate_contribution_activity_gif(user, out)

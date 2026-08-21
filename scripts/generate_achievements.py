@@ -15,8 +15,9 @@ def fetch_github_stats():
     if token:
         headers["Authorization"] = f"token {token}"
         
+    user = os.environ.get("GITHUB_REPOSITORY_OWNER") or os.environ.get("GITHUB_ACTOR") or "arpan-deep-dubey"
     try:
-        req = urllib.request.Request("https://api.github.com/users/adix-design", headers=headers)
+        req = urllib.request.Request(f"https://api.github.com/users/{user}", headers=headers)
         with urllib.request.urlopen(req, timeout=5) as resp:
             data = json.loads(resp.read().decode("utf-8"))
             stats["public_repos"] = data.get("public_repos", stats["public_repos"])
