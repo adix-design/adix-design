@@ -92,7 +92,11 @@ Build useful products, learn continuously, and turn strong ideas into things peo
 
 ---
 
+<div align="center">
+
 ## 📊 CONTRIBUTION ACTIVITY
+
+</div>
 
 <div align="center">
   <img
