@@ -68,7 +68,7 @@
   <text x="148" y="70" fill="#F2F2F4" font-family="'JetBrains Mono', 'Segoe UI', -apple-system, monospace" font-size="24" font-weight="800" letter-spacing="2">EMAIL</text>
 
   <!-- Subtitle (Muted Secondary URL) -->
-  <text x="148" y="102" fill="#858994" font-family="'JetBrains Mono', 'Segoe UI', monospace" font-size="15" font-weight="500" letter-spacing="0.5">contact@arpanstudio.dev</text>
+  <text x="148" y="102" fill="#858994" font-family="'JetBrains Mono', 'Segoe UI', monospace" font-size="15" font-weight="500" letter-spacing="0.5">arpandubey.dev@gmail.com</text>
 
   <!-- Status / Tag Indicator -->
   <g transform="translate(148, 126)">

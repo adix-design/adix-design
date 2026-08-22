@@ -12,7 +12,7 @@
   <img src="./assets/contact/btn-linkedin.svg" alt="LinkedIn" />
 </a>
 &nbsp;
-<a href="mailto:contact@arpanstudio.dev">
+<a href="mailto:arpandubey.dev@gmail.com">
   <img src="./assets/contact/btn-email.svg" alt="Email" />
 </a>
 &nbsp;
@@ -64,7 +64,7 @@ Build useful products, learn continuously, and turn strong ideas into things peo
 
 **Contact**
 
-`arpandubey21@gmail.com`
+`arpandubey.dev@gmail.com`
 
 </td>
 </tr>
@@ -129,7 +129,7 @@ Build useful products, learn continuously, and turn strong ideas into things peo
 <table width="100%">
 <tr>
   <td width="50%"><a href="https://arpanstudio.dev/"><img src="./assets/contact/portfolio-card.svg" alt="Portfolio" width="100%"/></a></td>
-  <td width="50%"><a href="mailto:arpandubey21@gmail.com"><img src="./assets/contact/email-card.svg" alt="Email" width="100%"/></a></td>
+  <td width="50%"><a href="mailto:arpandubey.dev@gmail.com"><img src="./assets/contact/email-card.svg" alt="Email" width="100%"/></a></td>
 </tr>
 <tr>
   <td width="50%"><a href="https://www.linkedin.com/in/arpan-deep-dubey/"><img src="./assets/contact/linkedin-card.svg" alt="LinkedIn" width="100%"/></a></td>
